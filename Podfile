@@ -9,6 +9,7 @@ target 'Finance' do
     pod 'SDWebImage' , '4.1.0'
     pod 'YYText' , '1.0.7'
     pod 'AFNetworking'
+    pod 'YYModel'
 end
     
 

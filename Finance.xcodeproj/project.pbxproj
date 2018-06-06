@@ -16,6 +16,11 @@
 		F9159E7820C4E855002BFB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E7720C4E855002BFB1B /* main.m */; };
 		F9159E8220C4E855002BFB1B /* FinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E8120C4E855002BFB1B /* FinanceTests.m */; };
 		F9159E8D20C4E855002BFB1B /* FinanceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E8C20C4E855002BFB1B /* FinanceUITests.m */; };
+		F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC8820C68D380000AE72 /* HttpRequest.m */; };
+		F93EBC8A20C68E400000AE72 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC8820C68D380000AE72 /* HttpRequest.m */; };
+		F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC9020C69DF20000AE72 /* GTMBase64.m */; };
+		F93EBC9520C69F330000AE72 /* WFEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC9420C69F330000AE72 /* WFEncrypt.m */; };
+		F93EBCDA20C79CCE0000AE72 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBCD920C79CCE0000AE72 /* JSONUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,16 @@
 		F9159E8820C4E855002BFB1B /* FinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9159E8C20C4E855002BFB1B /* FinanceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinanceUITests.m; sourceTree = "<group>"; };
 		F9159E8E20C4E855002BFB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F93EBC8720C68D380000AE72 /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		F93EBC8820C68D380000AE72 /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		F93EBC8B20C6908D0000AE72 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		F93EBC8F20C69DF20000AE72 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		F93EBC9020C69DF20000AE72 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		F93EBC9120C69DF20000AE72 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		F93EBC9320C69F330000AE72 /* WFEncrypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WFEncrypt.h; sourceTree = "<group>"; };
+		F93EBC9420C69F330000AE72 /* WFEncrypt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WFEncrypt.m; sourceTree = "<group>"; };
+		F93EBCD820C79CCE0000AE72 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		F93EBCD920C79CCE0000AE72 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +140,8 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F93EBCD720C79B830000AE72 /* Utils */,
+				F93EBC8620C68D280000AE72 /* Request */,
 				F9159E6820C4E853002BFB1B /* AppDelegate.h */,
 				F9159E6920C4E853002BFB1B /* AppDelegate.m */,
 				F9159E6B20C4E853002BFB1B /* ViewController.h */,
@@ -154,6 +171,30 @@
 				F9159E8E20C4E855002BFB1B /* Info.plist */,
 			);
 			path = FinanceUITests;
+			sourceTree = "<group>";
+		};
+		F93EBC8620C68D280000AE72 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				F93EBC8F20C69DF20000AE72 /* GTMBase64.h */,
+				F93EBC9020C69DF20000AE72 /* GTMBase64.m */,
+				F93EBC9120C69DF20000AE72 /* GTMDefines.h */,
+				F93EBC8720C68D380000AE72 /* HttpRequest.h */,
+				F93EBC8820C68D380000AE72 /* HttpRequest.m */,
+				F93EBC8B20C6908D0000AE72 /* API.h */,
+				F93EBC9320C69F330000AE72 /* WFEncrypt.h */,
+				F93EBC9420C69F330000AE72 /* WFEncrypt.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		F93EBCD720C79B830000AE72 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F93EBCD820C79CCE0000AE72 /* JSONUtils.h */,
+				F93EBCD920C79CCE0000AE72 /* JSONUtils.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +337,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -305,6 +347,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
+				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
+				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
 				F9159E7820C4E855002BFB1B /* main.m in Sources */,
+				F93EBCDA20C79CCE0000AE72 /* JSONUtils.m in Sources */,
+				F93EBC9520C69F330000AE72 /* WFEncrypt.m in Sources */,
 				F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9159E8220C4E855002BFB1B /* FinanceTests.m in Sources */,
+				F93EBC8A20C68E400000AE72 /* HttpRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPZY6FRDDL;
 				INFOPLIST_FILE = Finance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,6 +579,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QPZY6FRDDL;
 				INFOPLIST_FILE = Finance/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "HttpRequest.h"
+#import "API.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [HttpRequest postWithUrlString:SEND_IPHONE_CODE parameters:@{@"phone":@"15652376054"} result:^(NSDictionary *dic, NSError *error) {
+        
+    }];
 }
 
 
