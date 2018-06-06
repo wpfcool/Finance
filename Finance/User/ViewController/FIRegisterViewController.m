@@ -28,12 +28,7 @@
     
     
 }
--(void)showAlert:(NSString *)message{
-    UIAlertController * controller = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
-    [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    }]];
-    [self presentViewController:controller animated:YES completion:nil];
-}
+
 - (IBAction)getCodeClick:(id)sender {
     
     if(_phoneTextField.text.length == 0){
@@ -55,13 +50,9 @@
 - (IBAction)nextClick:(id)sender {
 
     if(_userNameTextField.text.length == 0 || _passwordTextField.text.length == 0 || _phoneTextField.text.length == 0  || _codeTextField.text.length == 0){
-        
-
         [self showAlert:@"输入不能为空"];
         return;
-        
     }
-    
     
     NSDictionary * dic = @{@"username":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     
@@ -70,9 +61,8 @@
             
         }
         else{
-            
             FIRegisterFinishViewController * registerNextVC = [[FIRegisterFinishViewController alloc]init];
-            registerNextVC.userId = dic;
+            registerNextVC.userId = [NSString stringWithFormat:@"%@",dic[@"user_id"]];;
             [self.navigationController pushViewController:registerNextVC animated:YES];
         }
     }];

@@ -33,6 +33,8 @@
 		F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBCFC20C7E0230000AE72 /* UIView+Toast.m */; };
 		F93EBD0120C7E53F0000AE72 /* SysUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0020C7E53F0000AE72 /* SysUtils.m */; };
 		F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0220C7E6070000AE72 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */; };
+		F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,9 @@
 		F93EBD0020C7E53F0000AE72 /* SysUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SysUtils.m; sourceTree = "<group>"; };
 		F93EBD0220C7E6070000AE72 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		F93EBD0320C7E6070000AE72 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeViewController.h; sourceTree = "<group>"; };
+		F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeViewController.m; sourceTree = "<group>"; };
+		F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +180,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F93EBD0520C7F0230000AE72 /* Home */,
 				F93EBC8620C68D280000AE72 /* Request */,
 				F93EBCE920C7BD9A0000AE72 /* Base */,
 				F93EBCDB20C7B3DF0000AE72 /* User */,
@@ -295,6 +301,24 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		F93EBD0520C7F0230000AE72 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F93EBD0620C7F02B0000AE72 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F93EBD0620C7F02B0000AE72 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */,
+				F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */,
+				F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +426,7 @@
 			files = (
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
+				F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F93EBCF820C7D46D0000AE72 /* FIRegisterFinishViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
@@ -482,6 +507,7 @@
 			files = (
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
+				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,

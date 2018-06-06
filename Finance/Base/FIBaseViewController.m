@@ -75,6 +75,13 @@
 -(void)hiddenHUD{
     [self.hud hideAnimated:YES];
 }
+
+-(void)showAlert:(NSString *)message{
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:controller animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 

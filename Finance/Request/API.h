@@ -11,6 +11,8 @@
 
 #define HOST @"http://45.56.88.145:80/"
 
+//登录
+#define Login_URL HOST "api/login/login"
 //注册接口
 #define REGISTER_URL HOST "api/login/register"
 

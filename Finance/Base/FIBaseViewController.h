@@ -13,4 +13,6 @@ typedef NS_ENUM(NSInteger,RequestMethod) {
 };
 @interface FIBaseViewController : UIViewController
 - (void)asyncSendRequestWithURL:(NSString *)url param:(NSDictionary*)param RequestMethod:(RequestMethod)method showHUD:(BOOL)showHUD result:(void(^)(id dic,NSError*error))resultBlock;
+
+-(void)showAlert:(NSString *)message;
 @end
