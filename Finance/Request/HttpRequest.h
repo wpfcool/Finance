@@ -13,4 +13,7 @@
 +(void)getWithUrlString:(NSString *)urlString parameters:(NSDictionary*)parameters result:(void(^)(id dic,NSError*error))resultBlock;
 
 +(void)postWithUrlString:(NSString *)urlString parameters:(NSDictionary*)parameters result:(void(^)(id dic,NSError*error))resultBlock;
+
+//获取错误描述
++(NSString *)errorDesc:(NSError *)error;
 @end

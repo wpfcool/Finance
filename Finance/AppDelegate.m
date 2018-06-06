@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "FILoginViewController.h"
+#import "UIImage+Color.h"
+#import "FIBaseNavigationViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
+                                      forBarPosition:UIBarPositionTopAttached
+                                          barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTranslucent:YES];
+    FILoginViewController * login = [[FILoginViewController alloc]init];
+    self.window.rootViewController = [[FIBaseNavigationViewController alloc]initWithRootViewController:login];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "HttpRequest.h"
-#import "API.h"
 @interface ViewController ()
 
 @end

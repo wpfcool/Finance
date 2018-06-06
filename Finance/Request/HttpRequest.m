@@ -37,12 +37,22 @@
     [manager.requestSerializer setValue:method forHTTPHeaderField:@"Method"];
     
     [manager GET:urlString parameters:@{@"value":JsonDES} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        id json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSDictionary * json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         json = [JSONUtils JSONObjectWithoutNull:json];        //去除[NSNULL null]; 避免闪退
+    
+        NSString * code =  json[@"code"];
+        if([code integerValue] == 10000){
+            id result = json[@"results"];
+            resultBlock(result,nil);
+        }
+        else{
+            NSError * error = [self errorWithJSON:json];
+            resultBlock(nil,error);
+        }
 
-        resultBlock(json,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        resultBlock(nil,error);
+        NSError * networkerror= [self networkError];
+        resultBlock(nil,networkerror);
     }];
     
 }
@@ -64,14 +74,45 @@
     
     
     [manager POST:urlString parameters:@{@"value":JsonDES} progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        id json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        NSDictionary * json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
         //去除[NSNULL null]; 避免闪退
         json = [JSONUtils JSONObjectWithoutNull:json];
-        resultBlock(json,nil);
+        
+        NSString * code =  json[@"code"];
+        if([code integerValue] == 10000){
+            id result = json[@"results"];
+            resultBlock(result,nil);
+        }
+        else{
+            NSError * error = [self errorWithJSON:json];
+            resultBlock(nil,error);
+        }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        resultBlock(nil,error);
+        NSError * networkerror= [self networkError];
+        resultBlock(nil,networkerror);
     }];
 }
+
++(NSString *)errorDesc:(NSError *)error{
+     return error.userInfo[@"message"];
+}
++(NSError *)networkError {
+    NSDictionary *dict = nil;
+    NSString *domain = nil;
+    dict = @{@"message": @"网络异常，请稍后重试！"};
+    domain = @"com.wpf.finance";
+    return [NSError errorWithDomain:domain code:404 userInfo:dict];
+}
++(NSError *)errorWithJSON:(NSDictionary *)json {
+    NSDictionary *dict = nil;
+    NSString *domain = nil;
+    NSString *errorCode = json[@"errorCode"];
+    dict = @{@"message": json[@"msg"] ?: @""};
+    domain = @"com.wpf.finance";
+    return [NSError errorWithDomain:domain code:[errorCode integerValue] userInfo:dict];
+}
+
 
 
 @end
