@@ -20,6 +20,7 @@ PODS:
   - SDWebImage (4.1.0):
     - SDWebImage/Core (= 4.1.0)
   - SDWebImage/Core (4.1.0)
+  - WRNavigationBar (1.2.0)
   - YYModel (1.0.4)
   - YYText (1.0.7)
 
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - MBProgressHUD (= 1.0.0)
   - MJRefresh (= 3.1.12)
   - SDWebImage (= 4.1.0)
+  - WRNavigationBar (~> 1.2.0)
   - YYModel
   - YYText (= 1.0.7)
 
@@ -39,6 +41,7 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - SDWebImage
+    - WRNavigationBar
     - YYModel
     - YYText
 
@@ -48,9 +51,10 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
+  WRNavigationBar: dc952230effbb646785f962587caaac06c60f229
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: edfd1dba06f7ed0b8a0cd8eef354f7791cbde3e0
+PODFILE CHECKSUM: f4850d082d72f87798cbd2dbc42b3d8ba3123a30
 
 COCOAPODS: 1.5.3

@@ -10,6 +10,7 @@ target 'Finance' do
     pod 'YYText' , '1.0.7'
     pod 'AFNetworking'
     pod 'YYModel'
+    pod 'WRNavigationBar','~>1.2.0'
 end
     
 
