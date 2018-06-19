@@ -10,12 +10,18 @@
 #import "FIRegisterFinishViewController.h"
 #import "HttpRequest.h"
 #import "SysUtils.h"
-@interface FIRegisterViewController ()
+@interface FIRegisterViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
-
+@property (weak, nonatomic) IBOutlet UIButton *codeButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextStepButton;
+@property (nonatomic,strong)dispatch_source_t timer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topestonstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *codeTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *codeBottonConstraint;
 @end
 
 @implementation FIRegisterViewController
@@ -23,9 +29,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.edgesForExtendedLayout  = UIRectEdgeNone;
     
+    self.topestonstraint.constant = kIphone6Scale(122);
+    self.passwordTopConstraint.constant = kIphone6Scale(69);
+    self.codeTopConstraint.constant = kIphone6Scale(69);
+    self.codeBottonConstraint.constant = kIphone6Scale(69);
+    self.navigationController.navigationBarHidden = YES;
+    _codeButton.layer.cornerRadius =  15;
+    _codeButton.layer.borderWidth = 0.5;
+    _codeButton.layer.borderColor =  HEX_UICOLOR(0x979797, 1).CGColor;
+    _nextStepButton.layer.cornerRadius = 24;
     
+}
+
+
+-(void)countDown{
+    __block int count = 120;
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(self.timer, dispatch_time(DISPATCH_TIME_NOW, 0*NSEC_PER_SEC), 1*NSEC_PER_SEC, 0);
+    dispatch_source_set_event_handler(self.timer, ^{
+        [self.codeButton setTitle:[NSString stringWithFormat:@"%@s",@(count)] forState:UIControlStateNormal];
+        if(count <=0){
+            [self.codeButton setTitle:[NSString stringWithFormat:@"获得验证码"] forState:UIControlStateNormal];
+            dispatch_cancel(self.timer);
+            self.timer = nil;
+        }
+        count--;
+    });
+    dispatch_resume(self.timer);
     
 }
 
@@ -42,13 +74,12 @@
             
         }
         else{
-            
+            [self countDown];
         }
     }];
     
 }
 - (IBAction)nextClick:(id)sender {
-
     if(_userNameTextField.text.length == 0 || _passwordTextField.text.length == 0 || _phoneTextField.text.length == 0  || _codeTextField.text.length == 0){
         [self showAlert:@"输入不能为空"];
         return;
@@ -66,8 +97,16 @@
             [self.navigationController pushViewController:registerNextVC animated:YES];
         }
     }];
+    
+    
+}
 
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,13 +115,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

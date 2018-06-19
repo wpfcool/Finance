@@ -14,5 +14,17 @@
 
 #import "API.h"
 #import "UIView+Toast.h"
+#define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
+#define RGBA_UICOLOR(r, g, b, a) [UIColor colorWithRed:(float)(r)/255. \
+green:(float)(g)/255. \
+blue:(float)(b)/255. \
+alpha:(float)(a)]
+#define HEX_UICOLOR(rgb, a)  RGBA_UICOLOR((0xFF & ((rgb)>>16)), \
+(0xFF & ((rgb)>>8)),  \
+(0xFF & (rgb)),       \
+(a))
 
+
+#define kIphone6Scale(x) ((x)*SCREEN_HEIGHT/667.0f) //以iphone6设计稿来计算适配其他屏幕的高度
 #endif /* PrefixHeader_pch */

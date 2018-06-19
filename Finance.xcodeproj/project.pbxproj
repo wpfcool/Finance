@@ -35,6 +35,10 @@
 		F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0220C7E6070000AE72 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */; };
 		F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */; };
+		F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */; };
+		F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */; };
+		F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */; };
+		F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +114,12 @@
 		F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeViewController.h; sourceTree = "<group>"; };
 		F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeViewController.m; sourceTree = "<group>"; };
 		F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeViewController.xib; sourceTree = "<group>"; };
+		F9545C3A20D8F22000531C66 /* FIRegisterSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRegisterSuccessViewController.h; sourceTree = "<group>"; };
+		F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRegisterSuccessViewController.m; sourceTree = "<group>"; };
+		F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIRegisterSuccessViewController.xib; sourceTree = "<group>"; };
+		F9545C3F20D8F47B00531C66 /* FIFindPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIFindPasswordViewController.h; sourceTree = "<group>"; };
+		F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIFindPasswordViewController.m; sourceTree = "<group>"; };
+		F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIFindPasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +280,12 @@
 				F93EBCF420C7D46D0000AE72 /* FIRegisterFinishViewController.h */,
 				F93EBCF520C7D46D0000AE72 /* FIRegisterFinishViewController.m */,
 				F93EBCF620C7D46D0000AE72 /* FIRegisterFinishViewController.xib */,
+				F9545C3A20D8F22000531C66 /* FIRegisterSuccessViewController.h */,
+				F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */,
+				F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */,
+				F9545C3F20D8F47B00531C66 /* FIFindPasswordViewController.h */,
+				F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */,
+				F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -424,11 +440,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */,
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
 				F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F93EBCF820C7D46D0000AE72 /* FIRegisterFinishViewController.xib in Resources */,
+				F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,11 +526,13 @@
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
 				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
+				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
 				F93EBD0120C7E53F0000AE72 /* SysUtils.m in Sources */,
 				F93EBCEC20C7BDAA0000AE72 /* FIBaseViewController.m in Sources */,
+				F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,

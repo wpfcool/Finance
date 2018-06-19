@@ -11,9 +11,13 @@
 #import "SysUtils.h"
 #import "FIUser.h"
 #import "AppDelegate.h"
-@interface FILoginViewController ()
+#import "FIFindPasswordViewController.h"
+@interface FILoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passworldTextField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topestConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *distanceConstraint;
 
 @end
 
@@ -22,10 +26,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationController.navigationBarHidden = YES;
+    self.loginButton.layer.cornerRadius = 24;
+    _topestConstraint.constant = kIphone6Scale(122);
+    _distanceConstraint.constant = kIphone6Scale(69);
+    _userNameTextField.delegate= self;
+    _passworldTextField.delegate = self;
+    
+    NSLog(@"%f",[UIScreen mainScreen].bounds.size.height);
 }
 - (IBAction)loginClick:(id)sender {
     
+    if(_userNameTextField.text.length == 0 || _passworldTextField.text.length == 0){
+        [self showAlert:@"输入不能为空"];
+        return;
+    }
+    
+    [_passworldTextField resignFirstResponder];
+    [_userNameTextField resignFirstResponder];
     
     NSDictionary * dic = @{@"username":_userNameTextField.text,@"password":_passworldTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     [self asyncSendRequestWithURL:Login_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
@@ -46,7 +64,20 @@
     FIRegisterViewController * registerVC = [[FIRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
+- (IBAction)fogetButtonClick:(id)sender {
+    FIFindPasswordViewController * findVC = [[FIFindPasswordViewController alloc]init];
+    [self.navigationController pushViewController:findVC animated:YES];
+}
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
