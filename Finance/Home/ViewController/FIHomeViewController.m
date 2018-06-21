@@ -11,7 +11,7 @@
 #import <Masonry/Masonry.h>
 #import "FIHomeHeaderView.h"
 #import "FIHomeManagerCell.h"
-#import "FIHomeOrderHeaderCell.h"
+#import "FISectionHeaderCell.h"
 #import "FIHomeOrderViewCell.h"
 #import "FIUser.h"
 #import "FIHomeData.h"
@@ -71,7 +71,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     
     
     [_tableView registerNib:[UINib nibWithNibName:@"FIHomeManagerCell" bundle:nil] forCellReuseIdentifier:managerIdeintifier];
-    [_tableView registerNib:[UINib nibWithNibName:@"FIHomeOrderHeaderCell" bundle:nil] forCellReuseIdentifier:orderHeaderIdeintifier];
+    [_tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:orderHeaderIdeintifier];
     [_tableView registerNib:[UINib nibWithNibName:@"FIHomeOrderViewCell" bundle:nil] forCellReuseIdentifier:orderIdeintifier];
     
     [self loadData];
@@ -119,7 +119,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
         return cell;
     }else{
         if(indexPath.row == 0){
-            FIHomeOrderHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:orderHeaderIdeintifier forIndexPath:indexPath];
+            FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:orderHeaderIdeintifier forIndexPath:indexPath];
             if(indexPath.section == 1){
                 cell.nameLabel.text = @"买入订单";
                 

@@ -9,11 +9,19 @@
 #import "FInanceCenterViewController.h"
 #import "FIHomeHeaderView.h"
 #import <Masonry/Masonry.h>
+#import "FICenterRecordCell.h"
+#import "FIPictureTableViewCell.h"
+#import "FISectionHeaderCell.h"
+#import "FICenterGainCell.h"
 @interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
 @end
 
+static NSString * recordIdentifer = @"recordIdentifer";
+static NSString * pictureIdentifer = @"pictureIdentifer";
+static NSString * sectionIdentifire = @"FISectionHeaderCell";
+static NSString * centerGainIdentifier = @"centerGainIdentifier";
 @implementation FInanceCenterViewController
 -(UITableView *)tableView{
     if(!_tableView){
@@ -55,7 +63,13 @@
     self.headerView.dreamMoneyLabel.text = self.homeData.dramSeed;
     self.headerView.bonusMoneyLabel.text = self.homeData.bonusSeed;
     self.headerView.thirdTitleLabel.text = @"激活码";
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FICenterRecordCell" bundle:nil] forCellReuseIdentifier:recordIdentifer];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FIPictureTableViewCell" bundle:nil] forCellReuseIdentifier:pictureIdentifer];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:sectionIdentifire];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FICenterGainCell" bundle:nil] forCellReuseIdentifier:centerGainIdentifier];
+
+
     
 }
 
@@ -63,31 +77,50 @@
     return 3;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(section == 0){
+    if(section == 0 || section == 1){
         return 1;
     }
     return 2;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return  175;
+        return  117;
+    }else if(indexPath.section == 1){
+        return 120;
     }else{
         if(indexPath.row == 0){
             return 50;
         }
-        return 92;
+        return 115;
     }
     
     return 0;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
- 
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    return cell;
-    
+    if(indexPath.section == 0){
+        FICenterRecordCell * cell = [tableView dequeueReusableCellWithIdentifier:recordIdentifer forIndexPath:indexPath];
+        return cell;
+    }else if(indexPath.section == 1){
+        FIPictureTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:pictureIdentifer forIndexPath:indexPath];
+        return cell;
+    }else if(indexPath.section == 2){
+        if(indexPath.row == 0){
+            FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:sectionIdentifire forIndexPath:indexPath];
+            cell.nameLabel.text = @"收益专区";
+            return cell;
+        }else{
+            FICenterGainCell * cell = [tableView dequeueReusableCellWithIdentifier:centerGainIdentifier forIndexPath:indexPath];
+            return cell;
+        }
+
+    }
+
+    return nil;
 }
 
-
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.01;
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

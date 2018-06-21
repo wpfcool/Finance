@@ -1,5 +1,5 @@
 //
-//  FIHomeOrderHeaderCell.h
+//  FICenterRecordCell.h
 //  Finance
 //
 //  Created by wenpeifang on 2018/6/21.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FIHomeOrderHeaderCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@interface FICenterRecordCell : UITableViewCell
 
 @end
