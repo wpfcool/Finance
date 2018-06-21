@@ -21,4 +21,8 @@
 
 //获取手机验证码
 #define SEND_IPHONE_CODE HOST "api/common/sendcode"
+
+//首页
+#define HOME_URL HOST "api/user/index"
+
 #endif /* API_h */

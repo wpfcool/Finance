@@ -19,8 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    if ([self.navigationController.viewControllers count] > 1 &&
+        !self.navigationItem.leftBarButtonItem && !self.navigationController.navigationBarHidden) {
+        UIImage *leftButtonIcon = [[UIImage imageNamed:@"white_back"]
+                                   imageWithRenderingMode:UIImageRenderingModeAutomatic];
+                UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:leftButtonIcon style:UIBarButtonItemStyleDone target:self action:@selector(clickBackButton:)];
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem;
+    }
 }
-
+-(void)clickBackButton:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -82,6 +94,16 @@
     }]];
     [self presentViewController:controller animated:YES completion:nil];
 }
+
+- (int)navBarBottom
+{
+    if ([WRNavigationBar isIphoneX]) {
+        return 88;
+    } else {
+        return 64;
+    }
+}
+
 /*
 #pragma mark - Navigation
 

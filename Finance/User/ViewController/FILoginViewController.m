@@ -33,7 +33,10 @@
     _userNameTextField.delegate= self;
     _passworldTextField.delegate = self;
     
-    NSLog(@"%f",[UIScreen mainScreen].bounds.size.height);
+    
+    _userNameTextField.text = @"wpfcool2008";
+    _passworldTextField.text = @"w8630417";
+
 }
 - (IBAction)loginClick:(id)sender {
     

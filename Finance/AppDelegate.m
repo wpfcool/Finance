@@ -11,6 +11,7 @@
 #import "UIImage+Color.h"
 #import "FIBaseNavigationViewController.h"
 #import "FIHomeViewController.h"
+#import <WRNavigationBar/WRNavigationBar.h>
 @interface AppDelegate ()
 
 @end
@@ -22,12 +23,16 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]
-                                      forBarPosition:UIBarPositionTopAttached
-                                          barMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTranslucent:YES];
+        
+    [WRNavigationBar wr_widely];
+    // 设置导航栏默认的背景颜色
+    [WRNavigationBar wr_setDefaultNavBarBarTintColor:[UIColor whiteColor]];
+    // 设置导航栏所有按钮的默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTintColor:[UIColor blackColor]];
+    // 设置导航栏标题默认颜色
+    [WRNavigationBar wr_setDefaultNavBarTitleColor:[UIColor blackColor]];
+    // 统一设置状态栏样式
+    [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:NO];
 
     [self loginRootViewController];
     [self.window makeKeyAndVisible];

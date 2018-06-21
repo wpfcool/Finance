@@ -39,6 +39,23 @@
 		F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */; };
 		F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */; };
 		F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */; };
+		F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C4620DB4F9400531C66 /* FIHomeHeaderView.m */; };
+		F9545C4920DB4FE600531C66 /* FIHomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C4820DB4FE600531C66 /* FIHomeHeaderView.xib */; };
+		F9545C4D20DB7CA900531C66 /* FIHomeManagerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C4B20DB7CA900531C66 /* FIHomeManagerCell.m */; };
+		F9545C4E20DB7CA900531C66 /* FIHomeManagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C4C20DB7CA900531C66 /* FIHomeManagerCell.xib */; };
+		F9545C5220DB8B0400531C66 /* FIHomeOrderHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C5020DB8B0400531C66 /* FIHomeOrderHeaderCell.m */; };
+		F9545C5320DB8B0400531C66 /* FIHomeOrderHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C5120DB8B0400531C66 /* FIHomeOrderHeaderCell.xib */; };
+		F9545C5720DB8D5600531C66 /* FIHomeOrderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C5520DB8D5600531C66 /* FIHomeOrderViewCell.m */; };
+		F9545C5820DB8D5600531C66 /* FIHomeOrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C5620DB8D5600531C66 /* FIHomeOrderViewCell.xib */; };
+		F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C5A20DB90C000531C66 /* FIBadgeView.m */; };
+		F9545C5F20DB98A200531C66 /* FIHomeData.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C5E20DB98A200531C66 /* FIHomeData.m */; };
+		F9545C6220DB9B0100531C66 /* FInanceCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C6120DB9B0100531C66 /* FInanceCenterViewController.m */; };
+		F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C6620DBA37300531C66 /* FIMyTeamViewController.m */; };
+		F9545C6920DBA37300531C66 /* FIMyTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C6720DBA37300531C66 /* FIMyTeamViewController.xib */; };
+		F9545C6D20DBACCE00531C66 /* FiActiveMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C6B20DBACCE00531C66 /* FiActiveMemberViewController.m */; };
+		F9545C6E20DBACCE00531C66 /* FiActiveMemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C6C20DBACCE00531C66 /* FiActiveMemberViewController.xib */; };
+		F9545C7220DBB59600531C66 /* FIMyMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C7020DBB59600531C66 /* FIMyMasterViewController.m */; };
+		F9545C7320DBB59600531C66 /* FIMyMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C7120DBB59600531C66 /* FIMyMasterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +137,33 @@
 		F9545C3F20D8F47B00531C66 /* FIFindPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIFindPasswordViewController.h; sourceTree = "<group>"; };
 		F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIFindPasswordViewController.m; sourceTree = "<group>"; };
 		F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIFindPasswordViewController.xib; sourceTree = "<group>"; };
+		F9545C4520DB4F9400531C66 /* FIHomeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeHeaderView.h; sourceTree = "<group>"; };
+		F9545C4620DB4F9400531C66 /* FIHomeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeHeaderView.m; sourceTree = "<group>"; };
+		F9545C4820DB4FE600531C66 /* FIHomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeHeaderView.xib; sourceTree = "<group>"; };
+		F9545C4A20DB7CA900531C66 /* FIHomeManagerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeManagerCell.h; sourceTree = "<group>"; };
+		F9545C4B20DB7CA900531C66 /* FIHomeManagerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeManagerCell.m; sourceTree = "<group>"; };
+		F9545C4C20DB7CA900531C66 /* FIHomeManagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeManagerCell.xib; sourceTree = "<group>"; };
+		F9545C4F20DB8B0400531C66 /* FIHomeOrderHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeOrderHeaderCell.h; sourceTree = "<group>"; };
+		F9545C5020DB8B0400531C66 /* FIHomeOrderHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeOrderHeaderCell.m; sourceTree = "<group>"; };
+		F9545C5120DB8B0400531C66 /* FIHomeOrderHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeOrderHeaderCell.xib; sourceTree = "<group>"; };
+		F9545C5420DB8D5600531C66 /* FIHomeOrderViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeOrderViewCell.h; sourceTree = "<group>"; };
+		F9545C5520DB8D5600531C66 /* FIHomeOrderViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeOrderViewCell.m; sourceTree = "<group>"; };
+		F9545C5620DB8D5600531C66 /* FIHomeOrderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeOrderViewCell.xib; sourceTree = "<group>"; };
+		F9545C5920DB90C000531C66 /* FIBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBadgeView.h; sourceTree = "<group>"; };
+		F9545C5A20DB90C000531C66 /* FIBadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBadgeView.m; sourceTree = "<group>"; };
+		F9545C5D20DB98A200531C66 /* FIHomeData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeData.h; sourceTree = "<group>"; };
+		F9545C5E20DB98A200531C66 /* FIHomeData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeData.m; sourceTree = "<group>"; };
+		F9545C6020DB9B0100531C66 /* FInanceCenterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FInanceCenterViewController.h; sourceTree = "<group>"; };
+		F9545C6120DB9B0100531C66 /* FInanceCenterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FInanceCenterViewController.m; sourceTree = "<group>"; };
+		F9545C6520DBA37300531C66 /* FIMyTeamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIMyTeamViewController.h; sourceTree = "<group>"; };
+		F9545C6620DBA37300531C66 /* FIMyTeamViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIMyTeamViewController.m; sourceTree = "<group>"; };
+		F9545C6720DBA37300531C66 /* FIMyTeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIMyTeamViewController.xib; sourceTree = "<group>"; };
+		F9545C6A20DBACCE00531C66 /* FiActiveMemberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FiActiveMemberViewController.h; sourceTree = "<group>"; };
+		F9545C6B20DBACCE00531C66 /* FiActiveMemberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiActiveMemberViewController.m; sourceTree = "<group>"; };
+		F9545C6C20DBACCE00531C66 /* FiActiveMemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiActiveMemberViewController.xib; sourceTree = "<group>"; };
+		F9545C6F20DBB59600531C66 /* FIMyMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIMyMasterViewController.h; sourceTree = "<group>"; };
+		F9545C7020DBB59600531C66 /* FIMyMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIMyMasterViewController.m; sourceTree = "<group>"; };
+		F9545C7120DBB59600531C66 /* FIMyMasterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIMyMasterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +234,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F9545C6320DBA35500531C66 /* Team */,
 				F93EBD0520C7F0230000AE72 /* Home */,
 				F93EBC8620C68D280000AE72 /* Request */,
 				F93EBCE920C7BD9A0000AE72 /* Base */,
@@ -320,6 +365,8 @@
 		F93EBD0520C7F0230000AE72 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F9545C5C20DB989100531C66 /* Model */,
+				F9545C4420DB4F7D00531C66 /* View */,
 				F93EBD0620C7F02B0000AE72 /* ViewController */,
 			);
 			path = Home;
@@ -331,6 +378,62 @@
 				F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */,
 				F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */,
 				F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */,
+				F9545C6020DB9B0100531C66 /* FInanceCenterViewController.h */,
+				F9545C6120DB9B0100531C66 /* FInanceCenterViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F9545C4420DB4F7D00531C66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9545C4520DB4F9400531C66 /* FIHomeHeaderView.h */,
+				F9545C4620DB4F9400531C66 /* FIHomeHeaderView.m */,
+				F9545C4820DB4FE600531C66 /* FIHomeHeaderView.xib */,
+				F9545C4A20DB7CA900531C66 /* FIHomeManagerCell.h */,
+				F9545C4B20DB7CA900531C66 /* FIHomeManagerCell.m */,
+				F9545C4C20DB7CA900531C66 /* FIHomeManagerCell.xib */,
+				F9545C4F20DB8B0400531C66 /* FIHomeOrderHeaderCell.h */,
+				F9545C5020DB8B0400531C66 /* FIHomeOrderHeaderCell.m */,
+				F9545C5120DB8B0400531C66 /* FIHomeOrderHeaderCell.xib */,
+				F9545C5420DB8D5600531C66 /* FIHomeOrderViewCell.h */,
+				F9545C5520DB8D5600531C66 /* FIHomeOrderViewCell.m */,
+				F9545C5620DB8D5600531C66 /* FIHomeOrderViewCell.xib */,
+				F9545C5920DB90C000531C66 /* FIBadgeView.h */,
+				F9545C5A20DB90C000531C66 /* FIBadgeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9545C5C20DB989100531C66 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9545C5D20DB98A200531C66 /* FIHomeData.h */,
+				F9545C5E20DB98A200531C66 /* FIHomeData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9545C6320DBA35500531C66 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				F9545C6420DBA35A00531C66 /* ViewController */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		F9545C6420DBA35A00531C66 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F9545C6520DBA37300531C66 /* FIMyTeamViewController.h */,
+				F9545C6620DBA37300531C66 /* FIMyTeamViewController.m */,
+				F9545C6720DBA37300531C66 /* FIMyTeamViewController.xib */,
+				F9545C6A20DBACCE00531C66 /* FiActiveMemberViewController.h */,
+				F9545C6B20DBACCE00531C66 /* FiActiveMemberViewController.m */,
+				F9545C6C20DBACCE00531C66 /* FiActiveMemberViewController.xib */,
+				F9545C6F20DBB59600531C66 /* FIMyMasterViewController.h */,
+				F9545C7020DBB59600531C66 /* FIMyMasterViewController.m */,
+				F9545C7120DBB59600531C66 /* FIMyMasterViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -440,13 +543,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9545C4920DB4FE600531C66 /* FIHomeHeaderView.xib in Resources */,
 				F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */,
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
+				F9545C5820DB8D5600531C66 /* FIHomeOrderViewCell.xib in Resources */,
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
 				F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
+				F9545C6920DBA37300531C66 /* FIMyTeamViewController.xib in Resources */,
 				F93EBCF820C7D46D0000AE72 /* FIRegisterFinishViewController.xib in Resources */,
+				F9545C5320DB8B0400531C66 /* FIHomeOrderHeaderCell.xib in Resources */,
+				F9545C7320DBB59600531C66 /* FIMyMasterViewController.xib in Resources */,
+				F9545C4E20DB7CA900531C66 /* FIHomeManagerCell.xib in Resources */,
 				F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */,
+				F9545C6E20DBACCE00531C66 /* FiActiveMemberViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,25 +635,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9545C6D20DBACCE00531C66 /* FiActiveMemberViewController.m in Sources */,
+				F9545C5220DB8B0400531C66 /* FIHomeOrderHeaderCell.m in Sources */,
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
+				F9545C4D20DB7CA900531C66 /* FIHomeManagerCell.m in Sources */,
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
 				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
+				F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */,
+				F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */,
 				F93EBD0120C7E53F0000AE72 /* SysUtils.m in Sources */,
 				F93EBCEC20C7BDAA0000AE72 /* FIBaseViewController.m in Sources */,
 				F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
+				F9545C5720DB8D5600531C66 /* FIHomeOrderViewCell.m in Sources */,
+				F9545C5F20DB98A200531C66 /* FIHomeData.m in Sources */,
+				F9545C6220DB9B0100531C66 /* FInanceCenterViewController.m in Sources */,
 				F93EBCF720C7D46D0000AE72 /* FIRegisterFinishViewController.m in Sources */,
 				F9159E7820C4E855002BFB1B /* main.m in Sources */,
 				F93EBCDA20C79CCE0000AE72 /* JSONUtils.m in Sources */,
 				F93EBC9520C69F330000AE72 /* WFEncrypt.m in Sources */,
 				F93EBCEF20C7C4A80000AE72 /* UIImage+Color.m in Sources */,
 				F93EBCE720C7BAF50000AE72 /* FIRegisterViewController.m in Sources */,
+				F9545C7220DBB59600531C66 /* FIMyMasterViewController.m in Sources */,
+				F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */,
 				F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

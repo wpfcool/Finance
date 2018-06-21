@@ -15,4 +15,6 @@ typedef NS_ENUM(NSInteger,RequestMethod) {
 - (void)asyncSendRequestWithURL:(NSString *)url param:(NSDictionary*)param RequestMethod:(RequestMethod)method showHUD:(BOOL)showHUD result:(void(^)(id dic,NSError*error))resultBlock;
 
 -(void)showAlert:(NSString *)message;
+
+- (int)navBarBottom;
 @end
