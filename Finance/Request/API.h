@@ -25,4 +25,19 @@
 //首页
 #define HOME_URL HOST "api/user/index"
 
+//  财务中心
+#define FINANCE_CENTER_URL HOST  "api/user/income"
+//我的团队
+#define MY_TEAM_URL HOST  "api/team/index"
+//我的领导
+#define MY_LEADER_URL HOST "api/user/myleader"
+
+//激活码个数
+#define ACTIVIE_NUM_URL HOST "api/code/getcode"
+//激活
+#define ACTIVIE_URL HOST "api/code/codeuser"
+//周期播种次数
+#define TIME_SEED_COUNT_URL HOST  "api/user/num"
+//买入种子
+#define BUY_SEED_URL HOST  "api/pay/buy"
 #endif /* API_h */

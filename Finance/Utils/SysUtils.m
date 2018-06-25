@@ -33,4 +33,12 @@
     NSString * uuid =[[UIDevice currentDevice] identifierForVendor].UUIDString;
     return uuid;
 }
+
++(NSString *)getTime:(NSString *)time{
+    NSInteger second = [time integerValue];
+    NSInteger hour = second / 3600;
+    NSInteger minute = (second - hour * 3600) / 60;
+    NSInteger secondN = (second - hour * 3600 - minute * 60);
+    return [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(long)hour,(long)minute,(long)secondN];
+}
 @end

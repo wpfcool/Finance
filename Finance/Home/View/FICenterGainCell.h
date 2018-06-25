@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface FICenterGainCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UILabel *buylabel;
+@property (weak, nonatomic) IBOutlet UILabel *selloutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *waitlabel;
 
 @end

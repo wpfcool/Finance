@@ -82,6 +82,9 @@
                     <constraint firstItem="k4F-9v-8Ww" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="evY-Vo-aJ4"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="aTt-Ul-yK9" id="zoC-nl-zUx"/>
+            </connections>
             <point key="canvasLocation" x="45" y="111"/>
         </tableViewCell>
     </objects>

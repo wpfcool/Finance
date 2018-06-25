@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiActiveMemberViewController">
             <connections>
                 <outlet property="activieButton" destination="tFC-um-Agj" id="FtP-qB-vI1"/>
-                <outlet property="countLabel" destination="uXD-Sz-Rop" id="TYg-0c-MD6"/>
+                <outlet property="countLabel" destination="Ahw-KZ-7vg" id="jOl-3v-aC8"/>
                 <outlet property="userNameField" destination="ozW-WF-uF6" id="wEK-KC-GFV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

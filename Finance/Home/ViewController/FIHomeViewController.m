@@ -13,13 +13,11 @@
 #import "FIHomeManagerCell.h"
 #import "FISectionHeaderCell.h"
 #import "FIHomeOrderViewCell.h"
-#import "FIUser.h"
 #import "FIHomeData.h"
-#import <YYModel/YYModel.h>
 #import "FIMyTeamViewController.h"
 #import "FInanceCenterViewController.h"
-
-
+#import "FIBuySeedViewController.h"
+#import "FISellSeedViewController.h"
 @interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -80,7 +78,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
 -(void)loadData{
     
     NSDictionary * dic = @{@"user_id":[FIUser shareInstance].user_id};
-    [self asyncSendRequestWithURL:HOME_URL param:dic RequestMethod:POST showHUD:NO result:^(NSDictionary * dic, NSError *error) {
+    [self asyncSendRequestWithURL:HOME_URL param:dic RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
             self.homeData = [FIHomeData yy_modelWithJSON:dic];
             self.headerView.totalMoneyLabel.text = self.homeData.sum;
@@ -159,9 +157,13 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [self.navigationController pushViewController:teamVC animated:YES];
 }
 -(void)buyClick{
+    FIBuySeedViewController * seedVC = [[FIBuySeedViewController alloc]init];
+    [self.navigationController pushViewController:seedVC animated:YES];
     
 }
 -(void)sellOutClick{
+    FISellSeedViewController * seedVC = [[FISellSeedViewController alloc]init];
+    [self.navigationController pushViewController:seedVC animated:YES];
     
 }
 

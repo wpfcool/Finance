@@ -60,13 +60,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="买入种子总数    3.000 pcs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRI-A7-RGI">
-                        <rect key="frame" x="138" y="27" width="171.5" height="15"/>
+                        <rect key="frame" x="138" y="28" width="171.5" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQw-vY-OwB">
-                        <rect key="frame" x="138" y="70" width="171.5" height="14.5"/>
+                        <rect key="frame" x="138" y="67.5" width="171.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -81,13 +81,19 @@
                     <constraint firstItem="9RL-uT-Tz3" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bRD-Oa-mSo"/>
                     <constraint firstItem="6rs-xe-13b" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cXu-va-qIW"/>
                     <constraint firstItem="6rs-xe-13b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="h4g-M9-rB6"/>
-                    <constraint firstItem="KQw-vY-OwB" firstAttribute="top" secondItem="9RL-uT-Tz3" secondAttribute="bottom" constant="7.5" id="hXI-sm-KMx"/>
+                    <constraint firstItem="KQw-vY-OwB" firstAttribute="top" secondItem="9RL-uT-Tz3" secondAttribute="bottom" constant="5" id="hXI-sm-KMx"/>
                     <constraint firstItem="9RL-uT-Tz3" firstAttribute="leading" secondItem="6mR-gI-Ac4" secondAttribute="trailing" constant="20" id="qdb-Ao-wNl"/>
-                    <constraint firstItem="9RL-uT-Tz3" firstAttribute="top" secondItem="hRI-A7-RGI" secondAttribute="bottom" constant="6.5" id="sWM-LM-X3t"/>
+                    <constraint firstItem="9RL-uT-Tz3" firstAttribute="top" secondItem="hRI-A7-RGI" secondAttribute="bottom" constant="5" id="sWM-LM-X3t"/>
                     <constraint firstAttribute="trailing" secondItem="9RL-uT-Tz3" secondAttribute="trailing" constant="10" id="vcl-WS-eBd"/>
                     <constraint firstItem="9RL-uT-Tz3" firstAttribute="width" secondItem="hRI-A7-RGI" secondAttribute="width" id="wwF-df-jKD"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="buylabel" destination="hRI-A7-RGI" id="QWb-CR-uXe"/>
+                <outlet property="selloutLabel" destination="9RL-uT-Tz3" id="0rF-zM-ITE"/>
+                <outlet property="totalLabel" destination="v3n-fk-GLx" id="WM6-9C-x6W"/>
+                <outlet property="waitlabel" destination="KQw-vY-OwB" id="sX1-ox-eoV"/>
+            </connections>
             <point key="canvasLocation" x="45" y="87"/>
         </tableViewCell>
     </objects>

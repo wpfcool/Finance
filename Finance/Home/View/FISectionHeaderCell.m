@@ -9,7 +9,15 @@
 #import "FISectionHeaderCell.h"
 
 @implementation FISectionHeaderCell
-
+-(void)hiddenMore:(BOOL)hidden{
+    
+    UIView * moreLabel = [self.contentView viewWithTag:100];
+    UIView * arrowLabel = [self.contentView viewWithTag:101];
+    moreLabel.hidden = hidden;
+    arrowLabel.hidden = hidden;
+    
+    
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5E5A4B827C14CB303E022C57 /* Pods_Finance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */; };
+		F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */; };
+		F90EC91520DF3BF1008CD05A /* FISeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91320DF3BF1008CD05A /* FISeedViewController.m */; };
+		F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */; };
+		F90EC91C20E0C4CD008CD05A /* FITextFieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90EC91A20E0C4CD008CD05A /* FITextFieldViewCell.xib */; };
+		F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91E20E0C97A008CD05A /* FIStatusTextField.m */; };
+		F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */; };
+		F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */; };
 		F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E6920C4E853002BFB1B /* AppDelegate.m */; };
 		F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E6C20C4E853002BFB1B /* ViewController.m */; };
 		F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9159E7120C4E855002BFB1B /* Assets.xcassets */; };
@@ -35,6 +42,8 @@
 		F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0220C7E6070000AE72 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */; };
 		F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */; };
+		F94F097D20DCA4740076A073 /* FICenterData.m in Sources */ = {isa = PBXBuildFile; fileRef = F94F097C20DCA4740076A073 /* FICenterData.m */; };
+		F94F098120DCAA140076A073 /* FITeam.m in Sources */ = {isa = PBXBuildFile; fileRef = F94F098020DCAA140076A073 /* FITeam.m */; };
 		F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */; };
 		F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */; };
 		F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */; };
@@ -85,6 +94,19 @@
 		0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F9666A782204736AB52D75 /* Pods-Finance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.release.xcconfig"; sourceTree = "<group>"; };
 		C18A6988405637BCB442F401 /* Pods-Finance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.debug.xcconfig"; sourceTree = "<group>"; };
+		F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBuySeedViewController.h; sourceTree = "<group>"; };
+		F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBuySeedViewController.m; sourceTree = "<group>"; };
+		F90EC91220DF3BF1008CD05A /* FISeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISeedViewController.h; sourceTree = "<group>"; };
+		F90EC91320DF3BF1008CD05A /* FISeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISeedViewController.m; sourceTree = "<group>"; };
+		F90EC91820E0C4CD008CD05A /* FITextFieldViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FITextFieldViewCell.h; sourceTree = "<group>"; };
+		F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FITextFieldViewCell.m; sourceTree = "<group>"; };
+		F90EC91A20E0C4CD008CD05A /* FITextFieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FITextFieldViewCell.xib; sourceTree = "<group>"; };
+		F90EC91D20E0C97A008CD05A /* FIStatusTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIStatusTextField.h; sourceTree = "<group>"; };
+		F90EC91E20E0C97A008CD05A /* FIStatusTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIStatusTextField.m; sourceTree = "<group>"; };
+		F90EC92120E0CADA008CD05A /* FIBusinessSeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBusinessSeed.h; sourceTree = "<group>"; };
+		F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBusinessSeed.m; sourceTree = "<group>"; };
+		F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISellSeedViewController.h; sourceTree = "<group>"; };
+		F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISellSeedViewController.m; sourceTree = "<group>"; };
 		F9159E6520C4E853002BFB1B /* Finance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9159E6820C4E853002BFB1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9159E6920C4E853002BFB1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -137,6 +159,10 @@
 		F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeViewController.h; sourceTree = "<group>"; };
 		F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeViewController.m; sourceTree = "<group>"; };
 		F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeViewController.xib; sourceTree = "<group>"; };
+		F94F097B20DCA4740076A073 /* FICenterData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FICenterData.h; sourceTree = "<group>"; };
+		F94F097C20DCA4740076A073 /* FICenterData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FICenterData.m; sourceTree = "<group>"; };
+		F94F097F20DCAA140076A073 /* FITeam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FITeam.h; sourceTree = "<group>"; };
+		F94F098020DCAA140076A073 /* FITeam.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FITeam.m; sourceTree = "<group>"; };
 		F9545C3A20D8F22000531C66 /* FIRegisterSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIRegisterSuccessViewController.h; sourceTree = "<group>"; };
 		F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIRegisterSuccessViewController.m; sourceTree = "<group>"; };
 		F9545C3C20D8F22000531C66 /* FIRegisterSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIRegisterSuccessViewController.xib; sourceTree = "<group>"; };
@@ -224,6 +250,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F90EC90B20DF3B44008CD05A /* Seed */ = {
+			isa = PBXGroup;
+			children = (
+				F90EC92020E0C980008CD05A /* Model */,
+				F90EC91720E0C45D008CD05A /* View */,
+				F90EC90C20DF3B48008CD05A /* ViewController */,
+			);
+			path = Seed;
+			sourceTree = "<group>";
+		};
+		F90EC90C20DF3B48008CD05A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */,
+				F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */,
+				F90EC91220DF3BF1008CD05A /* FISeedViewController.h */,
+				F90EC91320DF3BF1008CD05A /* FISeedViewController.m */,
+				F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */,
+				F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F90EC91720E0C45D008CD05A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F90EC91820E0C4CD008CD05A /* FITextFieldViewCell.h */,
+				F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */,
+				F90EC91A20E0C4CD008CD05A /* FITextFieldViewCell.xib */,
+				F90EC91D20E0C97A008CD05A /* FIStatusTextField.h */,
+				F90EC91E20E0C97A008CD05A /* FIStatusTextField.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F90EC92020E0C980008CD05A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F90EC92120E0CADA008CD05A /* FIBusinessSeed.h */,
+				F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F9159E5C20C4E853002BFB1B = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +319,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F90EC90B20DF3B44008CD05A /* Seed */,
 				F9545C6320DBA35500531C66 /* Team */,
 				F93EBD0520C7F0230000AE72 /* Home */,
 				F93EBC8620C68D280000AE72 /* Request */,
@@ -399,6 +470,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F94F097E20DCAA070076A073 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F94F097F20DCAA140076A073 /* FITeam.h */,
+				F94F098020DCAA140076A073 /* FITeam.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F9545C4420DB4F7D00531C66 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +514,8 @@
 			children = (
 				F9545C5D20DB98A200531C66 /* FIHomeData.h */,
 				F9545C5E20DB98A200531C66 /* FIHomeData.m */,
+				F94F097B20DCA4740076A073 /* FICenterData.h */,
+				F94F097C20DCA4740076A073 /* FICenterData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +523,7 @@
 		F9545C6320DBA35500531C66 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				F94F097E20DCAA070076A073 /* Model */,
 				F9545C6420DBA35A00531C66 /* ViewController */,
 			);
 			path = Team;
@@ -572,6 +655,7 @@
 				F9545C7F20DBC3B400531C66 /* FIPictureTableViewCell.xib in Resources */,
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
 				F9545C5820DB8D5600531C66 /* FIHomeOrderViewCell.xib in Resources */,
+				F90EC91C20E0C4CD008CD05A /* FITextFieldViewCell.xib in Resources */,
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
 				F9545C7520DBBC4400531C66 /* FISectionHeaderCell.xib in Resources */,
 				F9545C7A20DBBCC900531C66 /* FICenterRecordCell.xib in Resources */,
@@ -664,24 +748,31 @@
 			files = (
 				F9545C6D20DBACCE00531C66 /* FiActiveMemberViewController.m in Sources */,
 				F9545C7E20DBC3B400531C66 /* FIPictureTableViewCell.m in Sources */,
+				F90EC91520DF3BF1008CD05A /* FISeedViewController.m in Sources */,
 				F9545C5220DB8B0400531C66 /* FISectionHeaderCell.m in Sources */,
+				F94F097D20DCA4740076A073 /* FICenterData.m in Sources */,
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
 				F9545C4D20DB7CA900531C66 /* FIHomeManagerCell.m in Sources */,
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
 				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */,
+				F94F098120DCAA140076A073 /* FITeam.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
+				F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */,
 				F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */,
+				F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */,
 				F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */,
 				F9545C7920DBBCC900531C66 /* FICenterRecordCell.m in Sources */,
 				F93EBD0120C7E53F0000AE72 /* SysUtils.m in Sources */,
 				F93EBCEC20C7BDAA0000AE72 /* FIBaseViewController.m in Sources */,
 				F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */,
+				F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
+				F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
 				F9545C5720DB8D5600531C66 /* FIHomeOrderViewCell.m in Sources */,
 				F9545C5F20DB98A200531C66 /* FIHomeData.m in Sources */,
@@ -693,6 +784,7 @@
 				F93EBCEF20C7C4A80000AE72 /* UIImage+Color.m in Sources */,
 				F93EBCE720C7BAF50000AE72 /* FIRegisterViewController.m in Sources */,
 				F9545C7220DBB59600531C66 /* FIMyMasterViewController.m in Sources */,
+				F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */,
 				F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */,
 				F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */,
 			);

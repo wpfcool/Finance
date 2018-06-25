@@ -13,9 +13,12 @@
 #import "FIPictureTableViewCell.h"
 #import "FISectionHeaderCell.h"
 #import "FICenterGainCell.h"
+#import "FIUser.h"
+#import "FICenterData.h"
 @interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
+@property (nonatomic,strong)FICenterData * centerData;
 @end
 
 static NSString * recordIdentifer = @"recordIdentifer";
@@ -68,10 +71,22 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"FIPictureTableViewCell" bundle:nil] forCellReuseIdentifier:pictureIdentifer];
     [self.tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:sectionIdentifire];
     [self.tableView registerNib:[UINib nibWithNibName:@"FICenterGainCell" bundle:nil] forCellReuseIdentifier:centerGainIdentifier];
-
-
+    
+    [self loadData];
     
 }
+
+-(void)loadData{
+    [self asyncSendRequestWithURL:FINANCE_CENTER_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        if(!error){
+            self.centerData = [FICenterData yy_modelWithJSON:dic];
+            self.headerView.timeLabel.text = self.centerData.code;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
+
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;
@@ -102,19 +117,25 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         return cell;
     }else if(indexPath.section == 1){
         FIPictureTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:pictureIdentifer forIndexPath:indexPath];
+        cell.contentLabel.text = self.centerData.grand_seed;
         return cell;
     }else if(indexPath.section == 2){
         if(indexPath.row == 0){
             FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:sectionIdentifire forIndexPath:indexPath];
             cell.nameLabel.text = @"收益专区";
+            [cell hiddenMore:YES];
             return cell;
         }else{
             FICenterGainCell * cell = [tableView dequeueReusableCellWithIdentifier:centerGainIdentifier forIndexPath:indexPath];
+            cell.totalLabel.text = self.centerData.total_seed;
+            cell.buylabel.text = [NSString stringWithFormat:@"买入种子总数 %@pcs ",self.centerData.buy_seed];
+            cell.selloutLabel.text = [NSString stringWithFormat:@"已卖出种子数量 %@pcs ",self.centerData.sell_seed];
+            cell.waitlabel.text = [NSString stringWithFormat:@"待卖出种子数量   %@pcs ",self.centerData.wait_seed];
             return cell;
         }
-
+        
     }
-
+    
     return nil;
 }
 
@@ -149,13 +170,13 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

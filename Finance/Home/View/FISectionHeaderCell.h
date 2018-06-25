@@ -10,5 +10,5 @@
 
 @interface FISectionHeaderCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
+-(void)hiddenMore:(BOOL)hidden;
 @end

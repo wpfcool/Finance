@@ -11,7 +11,9 @@
 @interface FiActiveMemberViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UIButton *activieButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *countLabel;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 @end
 
@@ -23,10 +25,32 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"激活会员";
     self.activieButton.layer.cornerRadius = 24;
-//    您当前的激活码数量是：5/
+    [self getCodeNum];
 }
+
+-(void)getCodeNum{
+    [self asyncSendRequestWithURL:ACTIVIE_NUM_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        if(!error){
+            self.countLabel.text = [NSString stringWithFormat:@"您当前的激活码数量是：%@",dic];
+        }
+    }];
+}
+
 - (IBAction)activeClick:(id)sender {
     [self.userNameField resignFirstResponder];
+    
+    if(_userNameField.text.length == 0){
+        [self showAlert:@"输入不能为空"];
+        return;
+    }
+    
+    [self asyncSendRequestWithURL:ACTIVIE_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"username":_userNameField.text} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
+        if(!error){
+            self.userNameField.text = @"";
+            self.countLabel.text = [NSString stringWithFormat:@"您当前的激活码数量是：%@",dic[@"grade"]];
+        }
+    }];
+    
 
 }
 - (IBAction)howToActive:(id)sender {

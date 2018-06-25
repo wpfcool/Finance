@@ -9,9 +9,10 @@
 #import "FIMyTeamViewController.h"
 #import "FiActiveMemberViewController.h"
 #import "FIMyMasterViewController.h"
+#import "FITeam.h"
 @interface FIMyTeamViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic,strong)FITeam * team;
 @end
 
 @implementation FIMyTeamViewController
@@ -22,14 +23,19 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"我的团队";
     self.tableView.tableFooterView = [UIView new];
+    [self loadData];
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)loadData{
+    [self asyncSendRequestWithURL:MY_TEAM_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        if(!error){
+            self.team = [FITeam yy_modelWithJSON:dic];
+            [self.tableView reloadData];
+        }
+    }];
+    
 }
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -63,7 +69,7 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         }
         cell.textLabel.font = [UIFont systemFontOfSize:15];
-        cell.textLabel.backgroundColor = HEX_UICOLOR(0x1A1A1A, 1);
+        cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
         if(indexPath.row == 0){
             cell.textLabel.text = @"我的领导人";
         }
@@ -73,17 +79,14 @@
         cell.detailTextLabel.textColor = HEX_UICOLOR(0x999999, 1);
         cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
         if(indexPath.row == 0){
-            cell.detailTextLabel.text = @"我的领导人";
+            cell.detailTextLabel.text = self.team.leader;
         }
         else{
-            cell.detailTextLabel.text = @"我的团队总人数";
+            cell.detailTextLabel.text = self.team.teamNum;
         }
         cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"more"]];
         return cell;
     }
-    
-    
-
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
