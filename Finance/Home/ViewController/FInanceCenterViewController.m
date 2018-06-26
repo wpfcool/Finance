@@ -164,6 +164,11 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         self.title = @"";
     }
 }
+
+-(void)dealloc{
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

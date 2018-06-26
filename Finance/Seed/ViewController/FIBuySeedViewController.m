@@ -108,13 +108,17 @@
     if(indexPath.row == 0){
         cell.textField.status = TextFieldStatusNum;
         cell.textField.keyboardType = UIKeyboardTypeNumberPad;
+        cell.textField.text = self.seed.seedNum;
     }else if(indexPath.row == 1){
         cell.textField.status = TextFieldStatusMoney;
         cell.textField.enabled = NO;
         self.mondyTextField = cell.textField;
+        cell.textField.text = self.seed.seedPay;
+
 
     }else if(indexPath.row == 2){
         cell.textField.status = TextFieldStatusPassword;
+        cell.textField.text =self.seed.seedPassword;
     }
     
     return cell;
@@ -130,19 +134,21 @@
 
 -(void)textFieldDidChanged:(FIStatusTextField *)textField{
     if(textField.status == TextFieldStatusMoney){
+        
     }else if(textField.status == TextFieldStatusPassword){
 
         self.seed.seedPassword = textField.text;
         
     }else if(textField.status == TextFieldStatusNum){
         self.seed.seedNum = textField.text;
-        self.mondyTextField.text = [NSString stringWithFormat:@"%@",@([self.seed.seedNum floatValue] * 2000)] ;
+        self.seed.seedPay = [NSString stringWithFormat:@"%@",@([self.seed.seedNum floatValue] * 2000)] ;
+        self.mondyTextField.text = self.seed.seedPay;
         
     }
 }
 - (IBAction)submitClick:(id)sender {
     
-    if(self.seed.seedNum.length == 0 || self.seed.seedPassword.length == 0 || self.seed.seedPay.length == 0){
+    if(self.seed.seedNum.length == 0 || self.seed.seedPassword.length == 0 ){
         [self showAlert:@"输入不能为空"];
         return;
     }

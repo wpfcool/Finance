@@ -40,4 +40,7 @@
 #define TIME_SEED_COUNT_URL HOST  "api/user/num"
 //买入种子
 #define BUY_SEED_URL HOST  "api/pay/buy"
+//卖出种子
+#define SELL_SEED_URL HOST  "api/pay/sell"
+
 #endif /* API_h */
