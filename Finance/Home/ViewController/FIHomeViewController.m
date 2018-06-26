@@ -18,7 +18,8 @@
 #import "FInanceCenterViewController.h"
 #import "FIBuySeedViewController.h"
 #import "FISellSeedViewController.h"
-@interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate>
+#import "FIDBagViewController.h"
+@interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
 @property (nonatomic,strong)FIHomeData * homeData;
@@ -45,6 +46,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
 -(FIHomeHeaderView *)headerView{
     if(!_headerView){
         _headerView = [[NSBundle mainBundle] loadNibNamed:@"FIHomeHeaderView" owner:self options:nil][0];
+        _headerView.delegate = self;
         _headerView.frame = CGRectMake( 0, 0, SCREEN_WIDTH, 247);
     }
     return _headerView;
@@ -72,7 +74,12 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [_tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:orderHeaderIdeintifier];
     [_tableView registerNib:[UINib nibWithNibName:@"FIHomeOrderViewCell" bundle:nil] forCellReuseIdentifier:orderIdeintifier];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     [self loadData];
+
 }
 
 -(void)loadData{
@@ -88,6 +95,15 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
         }
     }];
     
+}
+-(void)headerOneClick{
+    FIBagViewController * VC = [[FIBagViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
+-(void)headerTwoClick{
+    FIBagViewController * VC = [[FIBagViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 3;

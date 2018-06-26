@@ -15,7 +15,8 @@
 #import "FICenterGainCell.h"
 #import "FIUser.h"
 #import "FICenterData.h"
-@interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "FIDBagViewController.h"
+@interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
 @property (nonatomic,strong)FICenterData * centerData;
@@ -61,12 +62,8 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
     [header addSubview:self.headerView];
     self.tableView.tableHeaderView =header;
     
-    
-    self.headerView.totalMoneyLabel.text = self.homeData.sum;
-    self.headerView.dreamMoneyLabel.text = self.homeData.dramSeed;
-    self.headerView.bonusMoneyLabel.text = self.homeData.bonusSeed;
     self.headerView.thirdTitleLabel.text = @"激活码";
-    
+    self.headerView.delegate = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"FICenterRecordCell" bundle:nil] forCellReuseIdentifier:recordIdentifer];
     [self.tableView registerNib:[UINib nibWithNibName:@"FIPictureTableViewCell" bundle:nil] forCellReuseIdentifier:pictureIdentifer];
     [self.tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:sectionIdentifire];
@@ -76,8 +73,19 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
     
 }
 
+
 -(void)loadData{
-    [self asyncSendRequestWithURL:FINANCE_CENTER_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+    
+    NSDictionary * dic = @{@"user_id":[FIUser shareInstance].user_id};
+    [self asyncSendRequestWithURL:HOME_URL param:dic RequestMethod:POST showHUD:NO result:^(NSDictionary * dic, NSError *error) {
+        if(!error){
+            self.homeData = [FIHomeData yy_modelWithJSON:dic];
+            self.headerView.totalMoneyLabel.text = self.homeData.sum;
+            self.headerView.dreamMoneyLabel.text = self.homeData.dramSeed;
+            self.headerView.bonusMoneyLabel.text = self.homeData.bonusSeed;
+        }
+    }];
+    [self asyncSendRequestWithURL:FINANCE_CENTER_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:NO result:^(id dic, NSError *error) {
         if(!error){
             self.centerData = [FICenterData yy_modelWithJSON:dic];
             self.headerView.timeLabel.text = self.centerData.code;
@@ -142,7 +150,15 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.01;
 }
-
+-(void)headerOneClick{
+    FIBagViewController * VC = [[FIBagViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
+-(void)headerTwoClick{
+    FIBagViewController * VC = [[FIBagViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y;

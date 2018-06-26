@@ -85,7 +85,7 @@
         [self wr_setNavBarTintColor:[UIColor whiteColor]];
         [self wr_setNavBarTitleColor:[UIColor whiteColor]];
         [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
-          self.title = [self getTitle];
+        self.title = [self getTitle];
     }
 }
 -(void)dealloc{

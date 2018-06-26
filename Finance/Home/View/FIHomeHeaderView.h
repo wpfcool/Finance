@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol FIHomeHeaderViewDelegate<NSObject>
+-(void)headerOneClick;
+-(void)headerTwoClick;
+-(void)headerThreeClick;
+
+@end;
+
 @interface FIHomeHeaderView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (weak, nonatomic) IBOutlet UILabel *totalMoneyLabel;
@@ -15,5 +23,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *bonusMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *thirdTitleLabel;
-
+@property (weak,nonatomic)id<FIHomeHeaderViewDelegate>delegate;
 @end

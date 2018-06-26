@@ -17,5 +17,20 @@
     // Drawing code
 }
 */
+- (IBAction)dreamClick:(id)sender {
+    if(_delegate && [_delegate respondsToSelector:@selector(headerOneClick)]){
+        [_delegate headerOneClick];
+    }
+}
+- (IBAction)priceClick:(id)sender {
+    if(_delegate && [_delegate respondsToSelector:@selector(headerTwoClick) ]){
+        [_delegate headerTwoClick];
+    }
+}
 
+- (IBAction)thirdClick:(id)sender {
+    if(_delegate && [_delegate respondsToSelector:@selector(headerThreeClick) ]){
+        [_delegate headerThreeClick];
+    }
+}
 @end

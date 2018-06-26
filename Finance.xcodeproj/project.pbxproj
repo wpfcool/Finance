@@ -42,6 +42,7 @@
 		F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0220C7E6070000AE72 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */; };
 		F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */; };
+		F943F3A720E21C060065640C /* FIBagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F943F3A620E21C060065640C /* FIBagViewController.m */; };
 		F94F097D20DCA4740076A073 /* FICenterData.m in Sources */ = {isa = PBXBuildFile; fileRef = F94F097C20DCA4740076A073 /* FICenterData.m */; };
 		F94F098120DCAA140076A073 /* FITeam.m in Sources */ = {isa = PBXBuildFile; fileRef = F94F098020DCAA140076A073 /* FITeam.m */; };
 		F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C3B20D8F22000531C66 /* FIRegisterSuccessViewController.m */; };
@@ -159,6 +160,8 @@
 		F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeViewController.h; sourceTree = "<group>"; };
 		F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeViewController.m; sourceTree = "<group>"; };
 		F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeViewController.xib; sourceTree = "<group>"; };
+		F943F3A520E21C060065640C /* FIDBagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIDBagViewController.h; sourceTree = "<group>"; };
+		F943F3A620E21C060065640C /* FIBagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBagViewController.m; sourceTree = "<group>"; };
 		F94F097B20DCA4740076A073 /* FICenterData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FICenterData.h; sourceTree = "<group>"; };
 		F94F097C20DCA4740076A073 /* FICenterData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FICenterData.m; sourceTree = "<group>"; };
 		F94F097F20DCAA140076A073 /* FITeam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FITeam.h; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 				F90EC91320DF3BF1008CD05A /* FISeedViewController.m */,
 				F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */,
 				F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */,
+				F943F3A520E21C060065640C /* FIDBagViewController.h */,
+				F943F3A620E21C060065640C /* FIBagViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */,
 				F94F098120DCAA140076A073 /* FITeam.m in Sources */,
+				F943F3A720E21C060065640C /* FIBagViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
