@@ -6,7 +6,7 @@
 //  Copyright © 2018年 wenpeifang. All rights reserved.
 //
 
-#import "FIDBagViewController.h"
+#import "FIBagViewController.h"
 #import <Masonry/Masonry.h>
 #import "FIHomeData.h"
 #import "FISellSeedViewController.h"

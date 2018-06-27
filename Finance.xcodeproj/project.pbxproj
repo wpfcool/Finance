@@ -72,6 +72,11 @@
 		F9545C7F20DBC3B400531C66 /* FIPictureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C7D20DBC3B400531C66 /* FIPictureTableViewCell.xib */; };
 		F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9545C8120DBC9AB00531C66 /* FICenterGainCell.m */; };
 		F9545C8420DBC9AB00531C66 /* FICenterGainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9545C8220DBC9AB00531C66 /* FICenterGainCell.xib */; };
+		F96940F220E386BC00968B27 /* FIUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F020E386BC00968B27 /* FIUserInfoViewController.m */; };
+		F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */; };
+		F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */; };
+		F96940FA20E38C0B00968B27 /* FIAccontSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96940F820E38C0B00968B27 /* FIAccontSettingViewController.xib */; };
+		F96940FD20E3A6F900968B27 /* FIUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940FC20E3A6F900968B27 /* FIUserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,7 +165,7 @@
 		F93EBD0720C7F04F0000AE72 /* FIHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHomeViewController.h; sourceTree = "<group>"; };
 		F93EBD0820C7F04F0000AE72 /* FIHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHomeViewController.m; sourceTree = "<group>"; };
 		F93EBD0920C7F04F0000AE72 /* FIHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHomeViewController.xib; sourceTree = "<group>"; };
-		F943F3A520E21C060065640C /* FIDBagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIDBagViewController.h; sourceTree = "<group>"; };
+		F943F3A520E21C060065640C /* FIBagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBagViewController.h; sourceTree = "<group>"; };
 		F943F3A620E21C060065640C /* FIBagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBagViewController.m; sourceTree = "<group>"; };
 		F94F097B20DCA4740076A073 /* FICenterData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FICenterData.h; sourceTree = "<group>"; };
 		F94F097C20DCA4740076A073 /* FICenterData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FICenterData.m; sourceTree = "<group>"; };
@@ -208,6 +213,14 @@
 		F9545C8020DBC9AB00531C66 /* FICenterGainCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FICenterGainCell.h; sourceTree = "<group>"; };
 		F9545C8120DBC9AB00531C66 /* FICenterGainCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FICenterGainCell.m; sourceTree = "<group>"; };
 		F9545C8220DBC9AB00531C66 /* FICenterGainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FICenterGainCell.xib; sourceTree = "<group>"; };
+		F96940EF20E386BC00968B27 /* FIUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIUserInfoViewController.h; sourceTree = "<group>"; };
+		F96940F020E386BC00968B27 /* FIUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIUserInfoViewController.m; sourceTree = "<group>"; };
+		F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIUserInfoViewController.xib; sourceTree = "<group>"; };
+		F96940F620E38C0B00968B27 /* FIAccontSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIAccontSettingViewController.h; sourceTree = "<group>"; };
+		F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIAccontSettingViewController.m; sourceTree = "<group>"; };
+		F96940F820E38C0B00968B27 /* FIAccontSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIAccontSettingViewController.xib; sourceTree = "<group>"; };
+		F96940FB20E3A6F900968B27 /* FIUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIUserInfo.h; sourceTree = "<group>"; };
+		F96940FC20E3A6F900968B27 /* FIUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIUserInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,7 +285,7 @@
 				F90EC91320DF3BF1008CD05A /* FISeedViewController.m */,
 				F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */,
 				F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */,
-				F943F3A520E21C060065640C /* FIDBagViewController.h */,
+				F943F3A520E21C060065640C /* FIBagViewController.h */,
 				F943F3A620E21C060065640C /* FIBagViewController.m */,
 			);
 			path = ViewController;
@@ -324,6 +337,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F96940F420E38BEB00968B27 /* Setting */,
 				F90EC90B20DF3B44008CD05A /* Seed */,
 				F9545C6320DBA35500531C66 /* Team */,
 				F93EBD0520C7F0230000AE72 /* Home */,
@@ -422,6 +436,9 @@
 				F9545C3F20D8F47B00531C66 /* FIFindPasswordViewController.h */,
 				F9545C4020D8F47B00531C66 /* FIFindPasswordViewController.m */,
 				F9545C4120D8F47B00531C66 /* FIFindPasswordViewController.xib */,
+				F96940EF20E386BC00968B27 /* FIUserInfoViewController.h */,
+				F96940F020E386BC00968B27 /* FIUserInfoViewController.m */,
+				F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -431,6 +448,8 @@
 			children = (
 				F93EBCF120C7D2000000AE72 /* FIUser.h */,
 				F93EBCF220C7D2000000AE72 /* FIUser.m */,
+				F96940FB20E3A6F900968B27 /* FIUserInfo.h */,
+				F96940FC20E3A6F900968B27 /* FIUserInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,6 +569,24 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F96940F420E38BEB00968B27 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F96940F520E38BEF00968B27 /* ViewController */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F96940F520E38BEF00968B27 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F96940F620E38C0B00968B27 /* FIAccontSettingViewController.h */,
+				F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */,
+				F96940F820E38C0B00968B27 /* FIAccontSettingViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -661,10 +698,12 @@
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
 				F9545C5820DB8D5600531C66 /* FIHomeOrderViewCell.xib in Resources */,
 				F90EC91C20E0C4CD008CD05A /* FITextFieldViewCell.xib in Resources */,
+				F96940FA20E38C0B00968B27 /* FIAccontSettingViewController.xib in Resources */,
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
 				F9545C7520DBBC4400531C66 /* FISectionHeaderCell.xib in Resources */,
 				F9545C7A20DBBCC900531C66 /* FICenterRecordCell.xib in Resources */,
 				F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */,
+				F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F9545C6920DBA37300531C66 /* FIMyTeamViewController.xib in Resources */,
 				F93EBCF820C7D46D0000AE72 /* FIRegisterFinishViewController.xib in Resources */,
@@ -777,6 +816,7 @@
 				F9545C3D20D8F22000531C66 /* FIRegisterSuccessViewController.m in Sources */,
 				F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
+				F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
@@ -788,11 +828,13 @@
 				F93EBCDA20C79CCE0000AE72 /* JSONUtils.m in Sources */,
 				F93EBC9520C69F330000AE72 /* WFEncrypt.m in Sources */,
 				F93EBCEF20C7C4A80000AE72 /* UIImage+Color.m in Sources */,
+				F96940F220E386BC00968B27 /* FIUserInfoViewController.m in Sources */,
 				F93EBCE720C7BAF50000AE72 /* FIRegisterViewController.m in Sources */,
 				F9545C7220DBB59600531C66 /* FIMyMasterViewController.m in Sources */,
 				F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */,
 				F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */,
 				F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */,
+				F96940FD20E3A6F900968B27 /* FIUserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

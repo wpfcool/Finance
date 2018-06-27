@@ -15,7 +15,7 @@
 #import "FICenterGainCell.h"
 #import "FIUser.h"
 #import "FICenterData.h"
-#import "FIDBagViewController.h"
+#import "FIBagViewController.h"
 @interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;

@@ -42,5 +42,6 @@
 #define BUY_SEED_URL HOST  "api/pay/buy"
 //卖出种子
 #define SELL_SEED_URL HOST  "api/pay/sell"
-
+//用户信息
+#define USER_INFO_URL HOST  "api/user/detail"
 #endif /* API_h */

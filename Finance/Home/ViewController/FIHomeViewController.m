@@ -18,7 +18,8 @@
 #import "FInanceCenterViewController.h"
 #import "FIBuySeedViewController.h"
 #import "FISellSeedViewController.h"
-#import "FIDBagViewController.h"
+#import "FIBagViewController.h"
+#import "FIUserInfoViewController.h"
 @interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -61,6 +62,15 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [self wr_setNavBarTintColor:[UIColor whiteColor]];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home_message"] style:UIBarButtonItemStyleDone target:self action:@selector(messageClick:)];
+    
+    
+    UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame = CGRectMake(0, 0, 20, 20);
+    leftButton.backgroundColor = [UIColor redColor];
+    [leftButton addTarget:self
+                   action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -201,6 +211,11 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     
 }
 
+-(void)leftButtonClick:(id)sender{
+    FIUserInfoViewController * VC = [[FIUserInfoViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+    
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetY = scrollView.contentOffset.y;
