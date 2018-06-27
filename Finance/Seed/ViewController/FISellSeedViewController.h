@@ -6,8 +6,8 @@
 //  Copyright © 2018年 wenpeifang. All rights reserved.
 //
 
-#import "FISeedViewController.h"
+#import "FISimpleHeaderTableViewController.h"
 
-@interface FISellSeedViewController : FISeedViewController
+@interface FISellSeedViewController : FISimpleHeaderTableViewController
 
 @end

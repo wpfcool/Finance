@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5E5A4B827C14CB303E022C57 /* Pods_Finance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */; };
+		D9AC53CF20E3D7B6002ED2F0 /* FIMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AC53CD20E3D7B6002ED2F0 /* FIMemberViewController.m */; };
 		F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */; };
-		F90EC91520DF3BF1008CD05A /* FISeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91320DF3BF1008CD05A /* FISeedViewController.m */; };
+		F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91320DF3BF1008CD05A /* FISimpleHeaderTableViewController.m */; };
 		F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */; };
 		F90EC91C20E0C4CD008CD05A /* FITextFieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90EC91A20E0C4CD008CD05A /* FITextFieldViewCell.xib */; };
 		F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91E20E0C97A008CD05A /* FIStatusTextField.m */; };
@@ -100,10 +101,12 @@
 		0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F9666A782204736AB52D75 /* Pods-Finance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.release.xcconfig"; sourceTree = "<group>"; };
 		C18A6988405637BCB442F401 /* Pods-Finance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.debug.xcconfig"; sourceTree = "<group>"; };
+		D9AC53CC20E3D7B6002ED2F0 /* FIMemberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIMemberViewController.h; sourceTree = "<group>"; };
+		D9AC53CD20E3D7B6002ED2F0 /* FIMemberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIMemberViewController.m; sourceTree = "<group>"; };
 		F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBuySeedViewController.h; sourceTree = "<group>"; };
 		F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBuySeedViewController.m; sourceTree = "<group>"; };
-		F90EC91220DF3BF1008CD05A /* FISeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISeedViewController.h; sourceTree = "<group>"; };
-		F90EC91320DF3BF1008CD05A /* FISeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISeedViewController.m; sourceTree = "<group>"; };
+		F90EC91220DF3BF1008CD05A /* FISimpleHeaderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISimpleHeaderTableViewController.h; sourceTree = "<group>"; };
+		F90EC91320DF3BF1008CD05A /* FISimpleHeaderTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISimpleHeaderTableViewController.m; sourceTree = "<group>"; };
 		F90EC91820E0C4CD008CD05A /* FITextFieldViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FITextFieldViewCell.h; sourceTree = "<group>"; };
 		F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FITextFieldViewCell.m; sourceTree = "<group>"; };
 		F90EC91A20E0C4CD008CD05A /* FITextFieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FITextFieldViewCell.xib; sourceTree = "<group>"; };
@@ -281,8 +284,8 @@
 			children = (
 				F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */,
 				F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */,
-				F90EC91220DF3BF1008CD05A /* FISeedViewController.h */,
-				F90EC91320DF3BF1008CD05A /* FISeedViewController.m */,
+				F90EC91220DF3BF1008CD05A /* FISimpleHeaderTableViewController.h */,
+				F90EC91320DF3BF1008CD05A /* FISimpleHeaderTableViewController.m */,
 				F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */,
 				F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */,
 				F943F3A520E21C060065640C /* FIBagViewController.h */,
@@ -583,6 +586,8 @@
 				F96940F620E38C0B00968B27 /* FIAccontSettingViewController.h */,
 				F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */,
 				F96940F820E38C0B00968B27 /* FIAccontSettingViewController.xib */,
+				D9AC53CC20E3D7B6002ED2F0 /* FIMemberViewController.h */,
+				D9AC53CD20E3D7B6002ED2F0 /* FIMemberViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -791,8 +796,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9545C6D20DBACCE00531C66 /* FiActiveMemberViewController.m in Sources */,
+				D9AC53CF20E3D7B6002ED2F0 /* FIMemberViewController.m in Sources */,
 				F9545C7E20DBC3B400531C66 /* FIPictureTableViewCell.m in Sources */,
-				F90EC91520DF3BF1008CD05A /* FISeedViewController.m in Sources */,
+				F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */,
 				F9545C5220DB8B0400531C66 /* FISectionHeaderCell.m in Sources */,
 				F94F097D20DCA4740076A073 /* FICenterData.m in Sources */,
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,

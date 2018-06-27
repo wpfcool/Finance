@@ -6,13 +6,13 @@
 //  Copyright © 2018年 wenpeifang. All rights reserved.
 //
 
-#import "FISeedViewController.h"
+#import "FISimpleHeaderTableViewController.h"
 #import <Masonry/Masonry.h>
-@interface FISeedViewController ()
+@interface FISimpleHeaderTableViewController ()
 
 @end
 
-@implementation FISeedViewController
+@implementation FISimpleHeaderTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,9 +53,9 @@
     [self wr_setNavBarTintColor:[UIColor whiteColor]];
     self.tableView.contentInset = UIEdgeInsetsMake(-[self navBarBottom], 0, 0, 0);
     _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 247)];
-    UIImageView * imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 247)];
-    imageView.image = [UIImage imageNamed:@"home_header_bg"];
-    [_headerView addSubview:imageView];
+    _headerBgImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 247)];
+    _headerBgImageView.image = [UIImage imageNamed:@"home_header_bg"];
+    [_headerView addSubview:_headerBgImageView];
     
     self.tableView.tableHeaderView = _headerView;
     
@@ -74,19 +74,37 @@
     {
         CGFloat alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / NAV_HEIGHT;
         [self wr_setNavBarBackgroundAlpha:alpha];
-        [self wr_setNavBarTintColor:[[UIColor blackColor] colorWithAlphaComponent:alpha]];
-        [self wr_setNavBarTitleColor:[[UIColor blackColor] colorWithAlphaComponent:alpha]];
-        [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
+        [self wr_setNavBarTintColor:[[self scrollNavigationBarColor] colorWithAlphaComponent:alpha]];
+        [self wr_setNavBarTitleColor:[[self  scrollNavigationBarColor] colorWithAlphaComponent:alpha]];
+//        [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
+        [self scrollStatusBarStyle];
         self.title = [self getTitle];
     }
     else
     {
         [self wr_setNavBarBackgroundAlpha:0];
-        [self wr_setNavBarTintColor:[UIColor whiteColor]];
-        [self wr_setNavBarTitleColor:[UIColor whiteColor]];
-        [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
+        [self wr_setNavBarTintColor:[self  normalNavigationBarColor]];
+        [self wr_setNavBarTitleColor:[self  normalNavigationBarColor]];
+//        [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
+        [self normalStatusBarStyle];
         self.title = [self getTitle];
     }
+}
+
+-(void)scrollStatusBarStyle{
+    
+    [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
+}
+-(void)normalStatusBarStyle{
+    [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+-(UIColor *)scrollNavigationBarColor{
+
+    return [UIColor blackColor];
+}
+-(UIColor *)normalNavigationBarColor{
+    return [UIColor whiteColor];
 }
 -(void)dealloc{
     self.tableView.delegate = nil;

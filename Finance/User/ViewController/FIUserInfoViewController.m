@@ -9,7 +9,9 @@
 #import "FIUserInfoViewController.h"
 #import "FIUserInfo.h"
 #import "FIAccontSettingViewController.h"
+#import "FIMemberViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "FIBagViewController.h"
 @interface FIUserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)FIUserInfo * userInfo;
@@ -45,13 +47,13 @@ static NSString * headerIdentifer = @"headerIdentifer";
 
 -(NSString *)memeber:(NSInteger)me{
     switch (me) {
-        case 0:
+        case 1:
             return @"青铜";
             break;
-        case 1:
+        case 2:
             return @"黄金";
             break;
-        case 2:
+        case 3:
             return @"白金";
             break;
             
@@ -161,6 +163,38 @@ static NSString * headerIdentifer = @"headerIdentifer";
     if(indexPath.section == 0){
         FIAccontSettingViewController * vc = [[FIAccontSettingViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        switch (indexPath.row) {
+            case 0:
+                {
+                    FIMemberViewController * vc = [[FIMemberViewController alloc]init];
+                    vc.type = 3;
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                break;
+            case 1:
+            {
+               
+            }
+                break;
+            case 2:
+            {
+                FIBagViewController  *vc = [[FIBagViewController alloc]init];
+                vc.type = 1;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+            case 3:
+            {
+                FIBagViewController  *vc = [[FIBagViewController alloc]init];
+                vc.type = 2;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
     }
 }
 - (void)didReceiveMemoryWarning {

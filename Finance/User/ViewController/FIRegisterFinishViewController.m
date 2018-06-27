@@ -7,7 +7,7 @@
 //
 
 #import "FIRegisterFinishViewController.h"
-#import <YYText/YYText.h>
+//#import <YYText/YYText.h>
 #import "FIRegisterSuccessViewController.h"
 @interface FIRegisterFinishViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *realNameField;
@@ -39,9 +39,9 @@
     _passwordTopConstraint.constant = kIphone6Scale(60);
 
     NSMutableAttributedString * attar = [[NSMutableAttributedString alloc]initWithString:@"我已阅读并同意《用户协议》"];
-    attar.yy_font = [UIFont systemFontOfSize:13];
-    attar.yy_color = HEX_UICOLOR(0x999999, 1);
-    [attar yy_setColor:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7, 6)];
+//    attar.yy_font = [UIFont systemFontOfSize:13];
+//    attar.yy_color = HEX_UICOLOR(0x999999, 1);
+//    [attar yy_setColor:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7, 6)];
     self.agreeLabel.attributedText = attar;
     
     self.agreeLabel.userInteractionEnabled = YES;

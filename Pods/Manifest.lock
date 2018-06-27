@@ -32,7 +32,7 @@ DEPENDENCIES:
   - SDWebImage (= 4.1.0)
   - WRNavigationBar (~> 1.2.0)
   - YYModel
-  - YYText (= 1.0.7)
+  - YYText
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,6 +55,6 @@ SPEC CHECKSUMS:
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: f4850d082d72f87798cbd2dbc42b3d8ba3123a30
+PODFILE CHECKSUM: f7576c8b2622bff2a9da72d05340bf42537845fa
 
 COCOAPODS: 1.5.3
