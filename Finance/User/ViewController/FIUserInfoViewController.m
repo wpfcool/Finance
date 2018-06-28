@@ -12,6 +12,7 @@
 #import "FIMemberViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FIBagViewController.h"
+#import "FIPropListViewController.h"
 @interface FIUserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)FIUserInfo * userInfo;
@@ -162,6 +163,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0){
         FIAccontSettingViewController * vc = [[FIAccontSettingViewController alloc] init];
+        vc.userInfo = self.userInfo;
         [self.navigationController pushViewController:vc animated:YES];
     }else{
         switch (indexPath.row) {
@@ -188,6 +190,13 @@ static NSString * headerIdentifer = @"headerIdentifer";
             {
                 FIBagViewController  *vc = [[FIBagViewController alloc]init];
                 vc.type = 2;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            case 6:
+            {
+                FIPropListViewController  *vc = [[FIPropListViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
             }
                 break;

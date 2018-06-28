@@ -7,7 +7,7 @@
 //
 
 #import "FIBaseViewController.h"
-
+#import "FIUserInfo.h"
 @interface FIAccontSettingViewController : FIBaseViewController
-
+@property (nonatomic,strong)FIUserInfo * userInfo;
 @end

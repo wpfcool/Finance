@@ -8,9 +8,12 @@
 
 #import "FIMemberViewController.h"
 #import <Masonry/Masonry.h>
+#import "FIMemberTableViewCell.h"
+#import "FIMyTeamViewController.h"
 @interface FIMemberViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (nonatomic,strong)UIView * headerView;
+@property (nonatomic,strong)NSArray * titleArr;
 @end
 
 @implementation FIMemberViewController
@@ -18,14 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    [self wr_setNavBarBackgroundAlpha:1];
-//    [self wr_setNavBarTintColor:[UIColor blackColor]];
-//    [self wr_setNavBarTitleColor:[UIColor blackColor]];
-//    [self wr_setStatusBarStyle:UIStatusBarStyleDefault];
-//
-    
     self.navigationItem.title = @"会员等级";
-
+    _titleArr = @[@"查看我的团队",@"会员级别政策",@"常见问题"];
     _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.tableFooterView = [UIView new];
     [self.view addSubview:_tableView];
@@ -35,10 +32,6 @@
         make.edges.equalTo(self.view);
 
     }];
-    
-    //750 / 653 = w/h
-    
-    
     _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *653/750.0)];
     UIImageView * _headerBgImageView = [[UIImageView alloc]initWithFrame:_headerView.bounds];
     [_headerView addSubview:_headerBgImageView];
@@ -59,6 +52,8 @@
 
             break;
     }
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FIMemberTableViewCell" bundle:nil] forCellReuseIdentifier:@"FIMemberTableViewCell"];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -69,16 +64,25 @@
     return 3;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    static NSString * otherlIdentifier = @"otherlIdentifier";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:otherlIdentifier];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:otherlIdentifier];
+    if(indexPath.section == 0){
+        
+        FIMemberTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIMemberTableViewCell" forIndexPath:indexPath];
+        return cell;
+    }else{
+        static NSString * otherlIdentifier = @"otherlIdentifier";
+        UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:otherlIdentifier];
+        if(cell == nil){
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:otherlIdentifier];
+        }
+        cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        
+        cell.textLabel.text = _titleArr[indexPath.row];
+        
+        return cell;
     }
-    cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
-    
-    return cell;
+    return  nil;
+
     
 }
 
@@ -90,7 +94,14 @@
     return 50;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section == 1){
+        if(indexPath.row == 0){
+            FIMyTeamViewController * team = [[FIMyTeamViewController alloc] init];
+            [self.navigationController pushViewController:team animated:YES];
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

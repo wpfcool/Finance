@@ -44,4 +44,13 @@
 #define SELL_SEED_URL HOST  "api/pay/sell"
 //用户信息
 #define USER_INFO_URL HOST  "api/user/detail"
+//查询道具数量
+#define PROP_NUM_URL HOST  "api/user/queryprop"
+
+//修改手机号接口
+#define ALTERPHONE_URL HOST "api/user/rephone"
+//获得道具列表
+#define PROPList_URL HOST "api/shop/index"
+//购买道具
+#define BUY_PROP_URL HOST "api/shop/buyprop"
 #endif /* API_h */
