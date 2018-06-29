@@ -103,7 +103,7 @@
         case 2:{
             FIAlterInfoWithMoneyViewController * realVC = [[FIAlterInfoWithMoneyViewController alloc] init];
             realVC.userInfo = self.userInfo;
-            realVC.alterType = 1;
+            realVC.alterType = 2;
             [self.navigationController pushViewController:realVC animated:YES];
         }
             break;
@@ -111,7 +111,7 @@
         {
             FIAlterInfoWithMoneyViewController * realVC = [[FIAlterInfoWithMoneyViewController alloc] init];
             realVC.userInfo = self.userInfo;
-            realVC.alterType = 2;
+            realVC.alterType = 3;
             [self.navigationController pushViewController:realVC animated:YES];
         }
             break;
