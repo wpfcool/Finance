@@ -9,6 +9,8 @@
 #import "FIPropListViewController.h"
 #import "FIPropData.h"
 #import <YYModel/YYModel.h>
+#import "FIPropDetailViewController.h"
+#import "FIPropListCell.h"
 @interface FIPropListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray * propList;
@@ -25,6 +27,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title  =@"道具商城";
+    self.tableView.tableFooterView = [UIView new];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FIPropListCell" bundle:nil] forCellReuseIdentifier:@"FIPropListCell"];
     [self getPropList];
 }
 
@@ -38,7 +42,7 @@
             }
             
         
-            
+            [self.tableView reloadData];
         }
     }];
 }
@@ -46,28 +50,42 @@
     return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(section == 0)
-        return 1;
-    return 3;
+
+    return [self.propList count];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString * cellIdentifier = @"otherlIdentifier";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(cell == nil){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+
+    FIPropListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIPropListCell" forIndexPath:indexPath];
+    FIPropData * item = self.propList[indexPath.row];
+    switch (item.propId.integerValue) {
+        case PropTypePhone:
+            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_phone"];
+            break;
+        case PropTypeRealName:
+            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_realname"];
+
+            break;
+        case PropTypeBank:
+            cell.bgImageView.image = [UIImage imageNamed:@""];
+
+            break;
+            
+        default:
+            break;
     }
-    cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
-    
-    
+    cell.priceLabel.text = [NSString stringWithFormat:@"%@ pcs",item.price];
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return 65;
+        return 155;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FIPropData * item = self.propList[indexPath.row];
+    FIPropDetailViewController * detailVC = [[FIPropDetailViewController alloc]init];
+    detailVC.alterType =  item.propId.integerValue;
+    [self.navigationController pushViewController:detailVC animated:YES];
 
 }
 - (void)didReceiveMemoryWarning {

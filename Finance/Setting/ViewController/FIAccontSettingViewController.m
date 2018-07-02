@@ -10,6 +10,7 @@
 #import "FIAlterInfoWithMoneyViewController.h"
 #import "FIMemberViewController.h"
 #import "FINickNameViewController.h"
+#import "FIBankListViewController.h"
 @interface FIAccontSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSArray * titleArr;
@@ -25,6 +26,23 @@
     self.tableView.tableFooterView = [UIView new];
     _titleArr = @[@"头像",@"用户名",@"真实姓名",@"手机号码",@"会员级别",@"昵称",@"我的银行账户",@"支付宝账户",@"密码管理"];
     _imageArr=@[@"setting_avator",@"setting_username",@"seting_realname",@"setting_phone",@"setting_member_grade",@"setting_nickname",@"setting_bank",@"setting_alipay",@"setting_password"];
+}
+-(NSString *)memeber:(NSInteger)me{
+    switch (me) {
+        case 1:
+            return @"青铜";
+            break;
+        case 2:
+            return @"黄金";
+            break;
+        case 3:
+            return @"白金";
+            break;
+            
+        default:
+            break;
+    }
+    return @"青铜";
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -75,7 +93,7 @@
             cell.detailTextLabel.text = self.userInfo.phone;
             break;
         case 4:
-            cell.detailTextLabel.text = self.userInfo.memberGrade;
+            cell.detailTextLabel.text =[self memeber:self.userInfo.memberGrade.integerValue] ;
             break;
         case 5:
             cell.detailTextLabel.text = self.userInfo.nickname;
@@ -103,7 +121,7 @@
         case 2:{
             FIAlterInfoWithMoneyViewController * realVC = [[FIAlterInfoWithMoneyViewController alloc] init];
             realVC.userInfo = self.userInfo;
-            realVC.alterType = 2;
+            realVC.alterType = PropTypeRealName; //真实姓名
             [self.navigationController pushViewController:realVC animated:YES];
         }
             break;
@@ -111,7 +129,7 @@
         {
             FIAlterInfoWithMoneyViewController * realVC = [[FIAlterInfoWithMoneyViewController alloc] init];
             realVC.userInfo = self.userInfo;
-            realVC.alterType = 3;
+            realVC.alterType = PropTypePhone;//手机号
             [self.navigationController pushViewController:realVC animated:YES];
         }
             break;
@@ -131,7 +149,11 @@
             
             break;
         case 6:
-            
+        {
+            FIBankListViewController * vc = [[FIBankListViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+
+        }
             break;
         case 7:
             

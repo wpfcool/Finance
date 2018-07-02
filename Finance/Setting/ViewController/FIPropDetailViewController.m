@@ -55,7 +55,7 @@
                 [self.navigationController popViewControllerAnimated:YES];
             }else{
                            //设置tableview
-                self.priceLabel.text = self.propItem.propId;
+                self.priceLabel.text = self.propItem.price;
                 [self.tableView reloadData];
             }
  

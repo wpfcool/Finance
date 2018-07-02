@@ -53,4 +53,8 @@
 #define PROPList_URL HOST "api/shop/index"
 //购买道具
 #define BUY_PROP_URL HOST "api/shop/buyprop"
+//修改真实姓名
+#define ALTER_REALNAME_URL HOST "api/user/rename"
+//获得银行卡列表
+#define BANKLIST_URL HOST "api/user/getBank"
 #endif /* API_h */

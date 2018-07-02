@@ -33,4 +33,13 @@ alpha:(float)(a)]
 #define IMAGE_HEIGHT 220
 #define NAV_HEIGHT 64
 #define kIphone6Scale(x) ((x)*SCREEN_HEIGHT/667.0f) //以iphone6设计稿来计算适配其他屏幕的高度
+
+
+typedef NS_ENUM(NSInteger,PropType){
+    PropTypeBank =1,
+    PropTypeRealName = 2,
+    PropTypePhone = 3
+};
+
+
 #endif /* PrefixHeader_pch */
