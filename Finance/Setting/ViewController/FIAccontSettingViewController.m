@@ -10,6 +10,7 @@
 #import "FIAlterInfoWithMoneyViewController.h"
 #import "FIMemberViewController.h"
 #import "FINickNameViewController.h"
+#import "FIAliyPayViewController.h"
 @interface FIAccontSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSArray * titleArr;
@@ -25,6 +26,10 @@
     self.tableView.tableFooterView = [UIView new];
     _titleArr = @[@"头像",@"用户名",@"真实姓名",@"手机号码",@"会员级别",@"昵称",@"我的银行账户",@"支付宝账户",@"密码管理"];
     _imageArr=@[@"setting_avator",@"setting_username",@"seting_realname",@"setting_phone",@"setting_member_grade",@"setting_nickname",@"setting_bank",@"setting_alipay",@"setting_password"];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -134,6 +139,10 @@
             
             break;
         case 7:
+        {
+            FIAliyPayViewController * vc = [[FIAliyPayViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             
             break;
         case 8:

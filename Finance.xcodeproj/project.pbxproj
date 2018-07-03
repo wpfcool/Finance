@@ -16,6 +16,10 @@
 		F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91E20E0C97A008CD05A /* FIStatusTextField.m */; };
 		F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */; };
 		F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */; };
+		F915534F20EB282800E29FC1 /* FIAliyPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F915534D20EB282800E29FC1 /* FIAliyPayViewController.m */; };
+		F915535020EB282800E29FC1 /* FIAliyPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F915534E20EB282800E29FC1 /* FIAliyPayViewController.xib */; };
+		F915535420EB4EDE00E29FC1 /* FIAddAliPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F915535220EB4EDE00E29FC1 /* FIAddAliPayViewController.m */; };
+		F915535520EB4EDE00E29FC1 /* FIAddAliPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F915535320EB4EDE00E29FC1 /* FIAddAliPayViewController.xib */; };
 		F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E6920C4E853002BFB1B /* AppDelegate.m */; };
 		F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E6C20C4E853002BFB1B /* ViewController.m */; };
 		F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9159E7120C4E855002BFB1B /* Assets.xcassets */; };
@@ -129,6 +133,12 @@
 		F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBusinessSeed.m; sourceTree = "<group>"; };
 		F90EC92420E0FB61008CD05A /* FISellSeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISellSeedViewController.h; sourceTree = "<group>"; };
 		F90EC92520E0FB61008CD05A /* FISellSeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISellSeedViewController.m; sourceTree = "<group>"; };
+		F915534C20EB282800E29FC1 /* FIAliyPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIAliyPayViewController.h; sourceTree = "<group>"; };
+		F915534D20EB282800E29FC1 /* FIAliyPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIAliyPayViewController.m; sourceTree = "<group>"; };
+		F915534E20EB282800E29FC1 /* FIAliyPayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIAliyPayViewController.xib; sourceTree = "<group>"; };
+		F915535120EB4EDE00E29FC1 /* FIAddAliPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIAddAliPayViewController.h; sourceTree = "<group>"; };
+		F915535220EB4EDE00E29FC1 /* FIAddAliPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIAddAliPayViewController.m; sourceTree = "<group>"; };
+		F915535320EB4EDE00E29FC1 /* FIAddAliPayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIAddAliPayViewController.xib; sourceTree = "<group>"; };
 		F9159E6520C4E853002BFB1B /* Finance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9159E6820C4E853002BFB1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9159E6920C4E853002BFB1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -635,6 +645,12 @@
 				F9DE266D20E4F94D007C6D0C /* FINickNameViewController.h */,
 				F9DE266E20E4F94D007C6D0C /* FINickNameViewController.m */,
 				F9DE266F20E4F94D007C6D0C /* FINickNameViewController.xib */,
+				F915534C20EB282800E29FC1 /* FIAliyPayViewController.h */,
+				F915534D20EB282800E29FC1 /* FIAliyPayViewController.m */,
+				F915534E20EB282800E29FC1 /* FIAliyPayViewController.xib */,
+				F915535120EB4EDE00E29FC1 /* FIAddAliPayViewController.h */,
+				F915535220EB4EDE00E29FC1 /* FIAddAliPayViewController.m */,
+				F915535320EB4EDE00E29FC1 /* FIAddAliPayViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -768,6 +784,7 @@
 			files = (
 				F9545C4920DB4FE600531C66 /* FIHomeHeaderView.xib in Resources */,
 				F9545C3E20D8F22000531C66 /* FIRegisterSuccessViewController.xib in Resources */,
+				F915535520EB4EDE00E29FC1 /* FIAddAliPayViewController.xib in Resources */,
 				F9545C7F20DBC3B400531C66 /* FIPictureTableViewCell.xib in Resources */,
 				F93EBCE820C7BAF50000AE72 /* FIRegisterViewController.xib in Resources */,
 				F9DE266320E4DAF3007C6D0C /* FIPropListViewController.xib in Resources */,
@@ -785,6 +802,7 @@
 				F9DE266820E4DB02007C6D0C /* FIPropDetailViewController.xib in Resources */,
 				F9DE265920E4C441007C6D0C /* FIAlterInfoWithMoneyViewController.xib in Resources */,
 				F9545C6920DBA37300531C66 /* FIMyTeamViewController.xib in Resources */,
+				F915535020EB282800E29FC1 /* FIAliyPayViewController.xib in Resources */,
 				F93EBCF820C7D46D0000AE72 /* FIRegisterFinishViewController.xib in Resources */,
 				F9545C7320DBB59600531C66 /* FIMyMasterViewController.xib in Resources */,
 				F9545C4E20DB7CA900531C66 /* FIHomeManagerCell.xib in Resources */,
@@ -888,6 +906,7 @@
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */,
 				F94F098120DCAA140076A073 /* FITeam.m in Sources */,
+				F915535420EB4EDE00E29FC1 /* FIAddAliPayViewController.m in Sources */,
 				F9DE266C20E4DE26007C6D0C /* FIPropData.m in Sources */,
 				F943F3A720E21C060065640C /* FIBagViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
@@ -923,6 +942,7 @@
 				F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */,
 				F9159E6A20C4E853002BFB1B /* AppDelegate.m in Sources */,
 				F96940FD20E3A6F900968B27 /* FIUserInfo.m in Sources */,
+				F915534F20EB282800E29FC1 /* FIAliyPayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

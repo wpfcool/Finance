@@ -53,4 +53,8 @@
 #define PROPList_URL HOST "api/shop/index"
 //购买道具
 #define BUY_PROP_URL HOST "api/shop/buyprop"
+// 修改昵称
+#define ALTER_NICKNAME_URL HOST "api/user/renickname"
+//获得支付宝账号
+#define GET_ALIYPAY_URL HOST "api/user/getalipay"
 #endif /* API_h */

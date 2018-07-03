@@ -34,7 +34,10 @@ static NSString * headerIdentifer = @"headerIdentifer";
     _imageArr = @[@"setting_huiyuan",@"setting_pingfen",@"setting_dream",@"setting_jiangjin",@"setting_code",@"setting_life",@"setting_shop"];
     [self loadData];
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 -(void)loadData{
     [self asyncSendRequestWithURL:USER_INFO_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
