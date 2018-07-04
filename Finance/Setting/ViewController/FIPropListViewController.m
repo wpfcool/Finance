@@ -66,7 +66,7 @@
 
             break;
         case PropTypeBank:
-            cell.bgImageView.image = [UIImage imageNamed:@""];
+            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_bank"];
 
             break;
             
@@ -78,7 +78,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return 155;
+    return (SCREEN_WIDTH - 28) * 350 / 730.0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -7,7 +7,7 @@
 //
 
 #import "FIBaseViewController.h"
-
+#import "FIAliPayData.h"
 @interface FIAddAliPayViewController : FIBaseViewController
-
+@property (nonatomic,strong) FIAliPayData * payData;
 @end

@@ -15,6 +15,8 @@
 		D91481BE20EA5BDF0045C5E6 /* FIBankListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91481BB20EA5BDF0045C5E6 /* FIBankListViewCell.xib */; };
 		D91481BF20EA5BDF0045C5E6 /* FIBankListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91481BD20EA5BDF0045C5E6 /* FIBankListViewCell.m */; };
 		D9AC53CF20E3D7B6002ED2F0 /* FIMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AC53CD20E3D7B6002ED2F0 /* FIMemberViewController.m */; };
+		F90B426820ED045800759679 /* FIAccountCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = F90B426720ED045800759679 /* FIAccountCardView.m */; };
+		F90B426B20ED09D200759679 /* FIAliPayData.m in Sources */ = {isa = PBXBuildFile; fileRef = F90B426A20ED09D200759679 /* FIAliPayData.m */; };
 		F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */; };
 		F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91320DF3BF1008CD05A /* FISimpleHeaderTableViewController.m */; };
 		F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */; };
@@ -135,6 +137,10 @@
 		D91481BD20EA5BDF0045C5E6 /* FIBankListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBankListViewCell.m; sourceTree = "<group>"; };
 		D9AC53CC20E3D7B6002ED2F0 /* FIMemberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIMemberViewController.h; sourceTree = "<group>"; };
 		D9AC53CD20E3D7B6002ED2F0 /* FIMemberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIMemberViewController.m; sourceTree = "<group>"; };
+		F90B426620ED045800759679 /* FIAccountCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIAccountCardView.h; sourceTree = "<group>"; };
+		F90B426720ED045800759679 /* FIAccountCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIAccountCardView.m; sourceTree = "<group>"; };
+		F90B426920ED09D200759679 /* FIAliPayData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIAliPayData.h; sourceTree = "<group>"; };
+		F90B426A20ED09D200759679 /* FIAliPayData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIAliPayData.m; sourceTree = "<group>"; };
 		F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBuySeedViewController.h; sourceTree = "<group>"; };
 		F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBuySeedViewController.m; sourceTree = "<group>"; };
 		F90EC91220DF3BF1008CD05A /* FISimpleHeaderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISimpleHeaderTableViewController.h; sourceTree = "<group>"; };
@@ -688,6 +694,8 @@
 				D91481BB20EA5BDF0045C5E6 /* FIBankListViewCell.xib */,
 				D91481BC20EA5BDF0045C5E6 /* FIBankListViewCell.h */,
 				D91481BD20EA5BDF0045C5E6 /* FIBankListViewCell.m */,
+				F90B426620ED045800759679 /* FIAccountCardView.h */,
+				F90B426720ED045800759679 /* FIAccountCardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -697,6 +705,8 @@
 			children = (
 				F9DE266A20E4DE26007C6D0C /* FIPropData.h */,
 				F9DE266B20E4DE26007C6D0C /* FIPropData.m */,
+				F90B426920ED09D200759679 /* FIAliPayData.h */,
+				F90B426A20ED09D200759679 /* FIAliPayData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -921,6 +931,7 @@
 				F9545C7E20DBC3B400531C66 /* FIPictureTableViewCell.m in Sources */,
 				F9DE266720E4DB02007C6D0C /* FIPropDetailViewController.m in Sources */,
 				F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */,
+				F90B426820ED045800759679 /* FIAccountCardView.m in Sources */,
 				F9545C5220DB8B0400531C66 /* FISectionHeaderCell.m in Sources */,
 				F94F097D20DCA4740076A073 /* FICenterData.m in Sources */,
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
@@ -936,6 +947,7 @@
 				F915535420EB4EDE00E29FC1 /* FIAddAliPayViewController.m in Sources */,
 				F9DE266C20E4DE26007C6D0C /* FIPropData.m in Sources */,
 				D91481BA20EA5A7F0045C5E6 /* FIBankListViewController.m in Sources */,
+				F90B426B20ED09D200759679 /* FIAliPayData.m in Sources */,
 				F943F3A720E21C060065640C /* FIBagViewController.m in Sources */,
 				F93EBCF320C7D2000000AE72 /* FIUser.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,

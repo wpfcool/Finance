@@ -21,8 +21,7 @@
     self.navigationItem.title = @"银行账户";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(addClick:)];
     [self.tableView registerNib:[UINib nibWithNibName:@"FIBankListViewCell" bundle:nil] forCellReuseIdentifier:@"FIBankListViewCell"];
-    
-    
+    self.tableView.tableFooterView = [UIView new];
     [self bankListRequest];
 }
 -(void)addClick:(id)sender{

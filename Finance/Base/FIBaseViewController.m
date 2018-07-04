@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor =  [UIColor colorWithRed:242/255.0 green:244/255.0  blue:244/255.0 alpha:1];
     [self.view addSubview:self.emptyView];
     if ([self.navigationController.viewControllers count] > 1 &&
         !self.navigationItem.leftBarButtonItem && !self.navigationController.navigationBarHidden) {
@@ -46,8 +46,9 @@
 }
 -(UIView *)emptyView{
     if(!_emptyView){
-        _emptyView = [[UIView alloc]initWithFrame:self.view.bounds];
+        _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
         _emptyView.hidden = YES;
+        _emptyView.backgroundColor = [UIColor whiteColor];
         [_emptyView addSubview:self.emptyImageView];
         [_emptyView addSubview:self.emptyLabel];
         _emptyImageView.frame = CGRectMake((SCREEN_WIDTH -90)/2.0 ,(self.view.frame.size.height-98)/2.0 - 20 , 90, 98);

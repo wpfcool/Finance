@@ -56,9 +56,12 @@
 //修改真实姓名
 #define ALTER_REALNAME_URL HOST "api/user/rename"
 //获得银行卡列表
-#define BANKLIST_URL HOST "api/user/getBank"
+#define BANKLIST_URL HOST "api/user/getbank"
 // 修改昵称
 #define ALTER_NICKNAME_URL HOST "api/user/renickname"
 //获得支付宝账号
 #define GET_ALIYPAY_URL HOST "api/user/getalipay"
+
+//add支付宝账号
+#define ADD_ALIYPAY_URL HOST "api/user/addpay"
 #endif /* API_h */
