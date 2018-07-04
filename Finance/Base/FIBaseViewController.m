@@ -11,7 +11,7 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 @interface FIBaseViewController ()
 @property (nonatomic,strong)MBProgressHUD * hud;
-
+@property (nonatomic,strong)UIView * emptyView;
 @end
 
 @implementation FIBaseViewController
@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self.view addSubview:self.emptyView];
     if ([self.navigationController.viewControllers count] > 1 &&
         !self.navigationItem.leftBarButtonItem && !self.navigationController.navigationBarHidden) {
         UIImage *leftButtonIcon = [[UIImage imageNamed:@"white_back"]
@@ -28,6 +28,35 @@
                 UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:leftButtonIcon style:UIBarButtonItemStyleDone target:self action:@selector(clickBackButton:)];
         self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     }
+}
+-(UILabel *)emptyLabel{
+    if(!_emptyLabel){
+        _emptyLabel = [[UILabel alloc]init];
+        _emptyLabel.textAlignment = NSTextAlignmentCenter;
+        _emptyLabel.font = [UIFont systemFontOfSize:15];
+        _emptyLabel.textColor = HEX_UICOLOR(0x999999, 1);
+    }
+    return _emptyLabel;
+}
+-(UIImageView *)emptyImageView{
+    if(!_emptyImageView){
+        _emptyImageView = [[UIImageView alloc]init];
+    }
+    return _emptyImageView;
+}
+-(UIView *)emptyView{
+    if(!_emptyView){
+        _emptyView = [[UIView alloc]initWithFrame:self.view.bounds];
+        _emptyView.hidden = YES;
+        [_emptyView addSubview:self.emptyImageView];
+        [_emptyView addSubview:self.emptyLabel];
+        _emptyImageView.frame = CGRectMake((SCREEN_WIDTH -90)/2.0 ,(self.view.frame.size.height-98)/2.0 - 20 , 90, 98);
+        _emptyLabel.frame = CGRectMake(0, CGRectGetMaxY(_emptyImageView.frame)+10, SCREEN_WIDTH, 20);
+    }
+    
+
+
+    return _emptyView;
 }
 -(void)clickBackButton:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];
@@ -104,6 +133,16 @@
     }
 }
 
+
+-(void)emptyViewShow{
+    self.emptyView.hidden = NO;
+    [self.view bringSubviewToFront:self.emptyView];
+    
+}
+-(void)emptyViewHidden{
+    self.emptyView.hidden = YES;
+
+}
 /*
 #pragma mark - Navigation
 

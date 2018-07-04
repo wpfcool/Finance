@@ -12,9 +12,18 @@ typedef NS_ENUM(NSInteger,RequestMethod) {
     POST
 };
 @interface FIBaseViewController : UIViewController
+
+@property (nonatomic,strong)UIImageView * emptyImageView;
+@property (nonatomic,strong)UILabel * emptyLabel;
+
+
 - (void)asyncSendRequestWithURL:(NSString *)url param:(NSDictionary*)param RequestMethod:(RequestMethod)method showHUD:(BOOL)showHUD result:(void(^)(id dic,NSError*error))resultBlock;
 
 -(void)showAlert:(NSString *)message;
 
 - (int)navBarBottom;
+
+-(void)emptyViewShow;
+-(void)emptyViewHidden;
+
 @end

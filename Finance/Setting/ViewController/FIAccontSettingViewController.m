@@ -11,6 +11,7 @@
 #import "FIMemberViewController.h"
 #import "FINickNameViewController.h"
 #import "FIBankListViewController.h"
+#import "FIAliyPayViewController.h"
 @interface FIAccontSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSArray * titleArr;
@@ -43,6 +44,10 @@
             break;
     }
     return @"青铜";
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -156,6 +161,10 @@
         }
             break;
         case 7:
+        {
+            FIAliyPayViewController * vc = [[FIAliyPayViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             
             break;
         case 8:
