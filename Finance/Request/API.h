@@ -63,5 +63,7 @@
 #define GET_ALIYPAY_URL HOST "api/user/getalipay"
 
 //add支付宝账号
-#define ADD_ALIYPAY_URL HOST "api/user/addpay"
+#define ADD_ALIYPAY_URL HOST "api/user/realipay"
+//银行账号修改
+#define ADD_BANK_URL HOST  "api/user/bankuser"
 #endif /* API_h */

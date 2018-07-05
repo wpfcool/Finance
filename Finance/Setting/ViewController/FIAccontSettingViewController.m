@@ -156,6 +156,7 @@
         case 6:
         {
             FIBankListViewController * vc = [[FIBankListViewController alloc]init];
+            vc.realName = self.userInfo.trueName;
             [self.navigationController pushViewController:vc animated:YES];
 
         }

@@ -157,14 +157,12 @@
     
     UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(14, 0, SCREEN_WIDTH-28, 30)];
     if(self.alterType == PropTypeRealName){
-        label.text = @"*如需更改手机号，请先到道具商城购买改手机号卡。";
+        label.attributedText = [SysUtils attributeStringWithRedX:@"*如需更改手机号，请先到道具商城购买改手机号卡。"];
 
     }else if(self.alterType == PropTypePhone){
-        label.text = @"*如需更改账号姓名，请先到道具商城购买改姓名卡。";
+        label.attributedText = [SysUtils attributeStringWithRedX:@"*如需更改账号姓名，请先到道具商城购买改姓名卡。"];
 
     }
-    label.textColor = HEX_UICOLOR(0x3f3f3f, 1);
-    label.font = [UIFont systemFontOfSize:12];
     [view addSubview:label];
     return view;
 }

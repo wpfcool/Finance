@@ -28,7 +28,8 @@
         self.userNameTextField.text = self.payData.alipayName;
         self.aliPayTextField.text = self.payData.alipayNum;
     }else{
-           self.navigationItem.title = @"添加账户";
+        self.navigationItem.title = @"添加账户";
+        self.payData = [[FIAliPayData alloc]init];
     }
  
     

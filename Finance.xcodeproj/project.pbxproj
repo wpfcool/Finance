@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5E5A4B827C14CB303E022C57 /* Pods_Finance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */; };
+		D9116E6E20EE595200F978F0 /* FIBankData.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E6D20EE595200F978F0 /* FIBankData.m */; };
+		D9116E7220EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9116E6F20EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib */; };
+		D9116E7320EE5BB400F978F0 /* FIHorizontalTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E7120EE5BB400F978F0 /* FIHorizontalTextFieldCell.m */; };
+		D9116E7820EE5E0100F978F0 /* FIBankInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */; };
+		D9116E7920EE5E0100F978F0 /* FIBankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */; };
 		D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91481B120E9F2280045C5E6 /* FIPropListCell.xib */; };
 		D91481B520E9F2280045C5E6 /* FIPropListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91481B320E9F2280045C5E6 /* FIPropListCell.m */; };
 		D91481B920EA5A7F0045C5E6 /* FIBankListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91481B620EA5A7F0045C5E6 /* FIBankListViewController.xib */; };
@@ -126,6 +131,15 @@
 		0E7D77160E28A22A7CBE80CE /* Pods_Finance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F9666A782204736AB52D75 /* Pods-Finance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.release.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.release.xcconfig"; sourceTree = "<group>"; };
 		C18A6988405637BCB442F401 /* Pods-Finance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Finance/Pods-Finance.debug.xcconfig"; sourceTree = "<group>"; };
+		D9116E6C20EE595200F978F0 /* FIBankData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBankData.h; sourceTree = "<group>"; };
+		D9116E6D20EE595200F978F0 /* FIBankData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBankData.m; sourceTree = "<group>"; };
+		D9116E6F20EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIHorizontalTextFieldCell.xib; sourceTree = "<group>"; };
+		D9116E7020EE5BB400F978F0 /* FIHorizontalTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIHorizontalTextFieldCell.h; sourceTree = "<group>"; };
+		D9116E7120EE5BB400F978F0 /* FIHorizontalTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIHorizontalTextFieldCell.m; sourceTree = "<group>"; };
+		D9116E7420EE5D9B00F978F0 /* FITextFieldViewCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FITextFieldViewCellDelegate.h; sourceTree = "<group>"; };
+		D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIBankInfoViewController.xib; sourceTree = "<group>"; };
+		D9116E7620EE5E0000F978F0 /* FIBankInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBankInfoViewController.h; sourceTree = "<group>"; };
+		D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBankInfoViewController.m; sourceTree = "<group>"; };
 		D91481B120E9F2280045C5E6 /* FIPropListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIPropListCell.xib; sourceTree = "<group>"; };
 		D91481B220E9F2280045C5E6 /* FIPropListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIPropListCell.h; sourceTree = "<group>"; };
 		D91481B320E9F2280045C5E6 /* FIPropListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIPropListCell.m; sourceTree = "<group>"; };
@@ -375,6 +389,7 @@
 			children = (
 				F90EC92120E0CADA008CD05A /* FIBusinessSeed.h */,
 				F90EC92220E0CADA008CD05A /* FIBusinessSeed.m */,
+				D9116E7420EE5D9B00F978F0 /* FITextFieldViewCellDelegate.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -675,6 +690,9 @@
 				F915535120EB4EDE00E29FC1 /* FIAddAliPayViewController.h */,
 				F915535220EB4EDE00E29FC1 /* FIAddAliPayViewController.m */,
 				F915535320EB4EDE00E29FC1 /* FIAddAliPayViewController.xib */,
+				D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */,
+				D9116E7620EE5E0000F978F0 /* FIBankInfoViewController.h */,
+				D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -696,6 +714,9 @@
 				D91481BD20EA5BDF0045C5E6 /* FIBankListViewCell.m */,
 				F90B426620ED045800759679 /* FIAccountCardView.h */,
 				F90B426720ED045800759679 /* FIAccountCardView.m */,
+				D9116E6F20EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib */,
+				D9116E7020EE5BB400F978F0 /* FIHorizontalTextFieldCell.h */,
+				D9116E7120EE5BB400F978F0 /* FIHorizontalTextFieldCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -707,6 +728,8 @@
 				F9DE266B20E4DE26007C6D0C /* FIPropData.m */,
 				F90B426920ED09D200759679 /* FIAliPayData.h */,
 				F90B426A20ED09D200759679 /* FIAliPayData.m */,
+				D9116E6C20EE595200F978F0 /* FIBankData.h */,
+				D9116E6D20EE595200F978F0 /* FIBankData.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -828,8 +851,10 @@
 				F9159E7520C4E855002BFB1B /* LaunchScreen.storyboard in Resources */,
 				F9DE265420E4B773007C6D0C /* FIMemberTableViewCell.xib in Resources */,
 				F9DE267120E4F94D007C6D0C /* FINickNameViewController.xib in Resources */,
+				D9116E7220EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib in Resources */,
 				F9545C7520DBBC4400531C66 /* FISectionHeaderCell.xib in Resources */,
 				F9545C7A20DBBCC900531C66 /* FICenterRecordCell.xib in Resources */,
+				D9116E7820EE5E0100F978F0 /* FIBankInfoViewController.xib in Resources */,
 				F93EBD0B20C7F04F0000AE72 /* FIHomeViewController.xib in Resources */,
 				F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */,
 				D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */,
@@ -927,6 +952,8 @@
 			files = (
 				F9545C6D20DBACCE00531C66 /* FiActiveMemberViewController.m in Sources */,
 				F9DE265D20E4C864007C6D0C /* FIAlterInfoWithMoneyCell.m in Sources */,
+				D9116E7320EE5BB400F978F0 /* FIHorizontalTextFieldCell.m in Sources */,
+				D9116E6E20EE595200F978F0 /* FIBankData.m in Sources */,
 				D9AC53CF20E3D7B6002ED2F0 /* FIMemberViewController.m in Sources */,
 				F9545C7E20DBC3B400531C66 /* FIPictureTableViewCell.m in Sources */,
 				F9DE266720E4DB02007C6D0C /* FIPropDetailViewController.m in Sources */,
@@ -968,6 +995,7 @@
 				F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */,
 				F9DE265320E4B773007C6D0C /* FIMemberTableViewCell.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
+				D9116E7920EE5E0100F978F0 /* FIBankInfoViewController.m in Sources */,
 				F9545C5720DB8D5600531C66 /* FIHomeOrderViewCell.m in Sources */,
 				F9545C5F20DB98A200531C66 /* FIHomeData.m in Sources */,
 				F9545C6220DB9B0100531C66 /* FInanceCenterViewController.m in Sources */,

@@ -10,4 +10,6 @@
 #import "FIAliPayData.h"
 @interface FIAddAliPayViewController : FIBaseViewController
 @property (nonatomic,strong) FIAliPayData * payData;
+@property (nonatomic,assign)NSInteger type;//1为添加2为修改
+
 @end

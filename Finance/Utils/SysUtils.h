@@ -15,4 +15,6 @@
 +(NSString *)uuid;
 //根据剩余秒数生成hh:MM:ss
 +(NSString *)getTime:(NSString *)time;
+
++(NSMutableAttributedString *)attributeStringWithRedX:(NSString *)str;
 @end

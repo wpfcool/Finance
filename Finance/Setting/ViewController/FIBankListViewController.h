@@ -7,7 +7,7 @@
 //
 
 #import "FIBaseViewController.h"
-
+#import "FIUserInfo.h"
 @interface FIBankListViewController : FIBaseViewController
-
+@property (nonatomic,strong)NSString * realName;
 @end

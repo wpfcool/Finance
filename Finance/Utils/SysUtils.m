@@ -41,4 +41,12 @@
     NSInteger secondN = (second - hour * 3600 - minute * 60);
     return [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(long)hour,(long)minute,(long)secondN];
 }
++(NSMutableAttributedString *)attributeStringWithRedX:(NSString *)str{
+    NSMutableAttributedString * string = [[NSMutableAttributedString alloc]initWithString:str];
+    [string addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x3F3F3F, 1) range:NSMakeRange(0, str.length)];
+    [string addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, 1)];
+    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:13] range:NSMakeRange(0, str.length)];
+    
+    return string;
+}
 @end
