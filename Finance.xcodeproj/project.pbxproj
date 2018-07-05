@@ -13,6 +13,10 @@
 		D9116E7320EE5BB400F978F0 /* FIHorizontalTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E7120EE5BB400F978F0 /* FIHorizontalTextFieldCell.m */; };
 		D9116E7820EE5E0100F978F0 /* FIBankInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */; };
 		D9116E7920EE5E0100F978F0 /* FIBankInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */; };
+		D9116E7D20EE75F100F978F0 /* FIPassWordManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9116E7A20EE75F100F978F0 /* FIPassWordManagerViewController.xib */; };
+		D9116E7E20EE75F100F978F0 /* FIPassWordManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E7C20EE75F100F978F0 /* FIPassWordManagerViewController.m */; };
+		D9116E8C20EE794100F978F0 /* FIPassworldAlterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9116E8920EE794000F978F0 /* FIPassworldAlterViewController.xib */; };
+		D9116E8D20EE794100F978F0 /* FIPassworldAlterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9116E8B20EE794100F978F0 /* FIPassworldAlterViewController.m */; };
 		D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91481B120E9F2280045C5E6 /* FIPropListCell.xib */; };
 		D91481B520E9F2280045C5E6 /* FIPropListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D91481B320E9F2280045C5E6 /* FIPropListCell.m */; };
 		D91481B920EA5A7F0045C5E6 /* FIBankListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D91481B620EA5A7F0045C5E6 /* FIBankListViewController.xib */; };
@@ -140,6 +144,12 @@
 		D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIBankInfoViewController.xib; sourceTree = "<group>"; };
 		D9116E7620EE5E0000F978F0 /* FIBankInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBankInfoViewController.h; sourceTree = "<group>"; };
 		D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBankInfoViewController.m; sourceTree = "<group>"; };
+		D9116E7A20EE75F100F978F0 /* FIPassWordManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIPassWordManagerViewController.xib; sourceTree = "<group>"; };
+		D9116E7B20EE75F100F978F0 /* FIPassWordManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIPassWordManagerViewController.h; sourceTree = "<group>"; };
+		D9116E7C20EE75F100F978F0 /* FIPassWordManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIPassWordManagerViewController.m; sourceTree = "<group>"; };
+		D9116E8920EE794000F978F0 /* FIPassworldAlterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIPassworldAlterViewController.xib; sourceTree = "<group>"; };
+		D9116E8A20EE794100F978F0 /* FIPassworldAlterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIPassworldAlterViewController.h; sourceTree = "<group>"; };
+		D9116E8B20EE794100F978F0 /* FIPassworldAlterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIPassworldAlterViewController.m; sourceTree = "<group>"; };
 		D91481B120E9F2280045C5E6 /* FIPropListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIPropListCell.xib; sourceTree = "<group>"; };
 		D91481B220E9F2280045C5E6 /* FIPropListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIPropListCell.h; sourceTree = "<group>"; };
 		D91481B320E9F2280045C5E6 /* FIPropListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIPropListCell.m; sourceTree = "<group>"; };
@@ -693,6 +703,12 @@
 				D9116E7520EE5E0000F978F0 /* FIBankInfoViewController.xib */,
 				D9116E7620EE5E0000F978F0 /* FIBankInfoViewController.h */,
 				D9116E7720EE5E0100F978F0 /* FIBankInfoViewController.m */,
+				D9116E7A20EE75F100F978F0 /* FIPassWordManagerViewController.xib */,
+				D9116E7B20EE75F100F978F0 /* FIPassWordManagerViewController.h */,
+				D9116E7C20EE75F100F978F0 /* FIPassWordManagerViewController.m */,
+				D9116E8920EE794000F978F0 /* FIPassworldAlterViewController.xib */,
+				D9116E8A20EE794100F978F0 /* FIPassworldAlterViewController.h */,
+				D9116E8B20EE794100F978F0 /* FIPassworldAlterViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -861,6 +877,7 @@
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F9DE266820E4DB02007C6D0C /* FIPropDetailViewController.xib in Resources */,
 				D91481B920EA5A7F0045C5E6 /* FIBankListViewController.xib in Resources */,
+				D9116E7D20EE75F100F978F0 /* FIPassWordManagerViewController.xib in Resources */,
 				F9DE265920E4C441007C6D0C /* FIAlterInfoWithMoneyViewController.xib in Resources */,
 				F9545C6920DBA37300531C66 /* FIMyTeamViewController.xib in Resources */,
 				F915535020EB282800E29FC1 /* FIAliyPayViewController.xib in Resources */,
@@ -870,6 +887,7 @@
 				F9545C8420DBC9AB00531C66 /* FICenterGainCell.xib in Resources */,
 				D91481BE20EA5BDF0045C5E6 /* FIBankListViewCell.xib in Resources */,
 				F9DE265E20E4C864007C6D0C /* FIAlterInfoWithMoneyCell.xib in Resources */,
+				D9116E8C20EE794100F978F0 /* FIPassworldAlterViewController.xib in Resources */,
 				F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */,
 				F9545C6E20DBACCE00531C66 /* FiActiveMemberViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
@@ -980,6 +998,7 @@
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
 				F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */,
+				D9116E8D20EE794100F978F0 /* FIPassworldAlterViewController.m in Sources */,
 				F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */,
 				F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */,
 				F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */,
@@ -990,6 +1009,7 @@
 				F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
 				F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */,
+				D9116E7E20EE75F100F978F0 /* FIPassWordManagerViewController.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				D91481B520E9F2280045C5E6 /* FIPropListCell.m in Sources */,
 				F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */,

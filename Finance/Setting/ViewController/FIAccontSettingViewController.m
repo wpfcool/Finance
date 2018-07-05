@@ -12,6 +12,7 @@
 #import "FINickNameViewController.h"
 #import "FIBankListViewController.h"
 #import "FIAliyPayViewController.h"
+#import "FIPassWordManagerViewController.h"
 @interface FIAccontSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSArray * titleArr;
@@ -169,7 +170,10 @@
             
             break;
         case 8:
-            
+        {
+            FIPassWordManagerViewController * vc = [[FIPassWordManagerViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         case 9:
             
