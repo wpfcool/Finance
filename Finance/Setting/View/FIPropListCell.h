@@ -11,5 +11,6 @@
 @interface FIPropListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @end

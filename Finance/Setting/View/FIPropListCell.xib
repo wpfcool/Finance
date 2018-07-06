@@ -36,6 +36,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-Em-otk">
+                                <rect key="frame" x="149.5" y="78.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -43,6 +49,8 @@
                             <constraint firstItem="jbS-2m-tRJ" firstAttribute="leading" secondItem="edz-mg-dhL" secondAttribute="leading" id="5Ot-SW-2Qz"/>
                             <constraint firstAttribute="bottom" secondItem="l18-Xk-6cz" secondAttribute="bottom" constant="15" id="CV1-ax-VqJ"/>
                             <constraint firstItem="l18-Xk-6cz" firstAttribute="leading" secondItem="edz-mg-dhL" secondAttribute="leading" constant="17.5" id="OPB-mU-lC7"/>
+                            <constraint firstItem="Dsz-Em-otk" firstAttribute="centerX" secondItem="edz-mg-dhL" secondAttribute="centerX" id="aXO-02-Lvb"/>
+                            <constraint firstItem="Dsz-Em-otk" firstAttribute="centerY" secondItem="edz-mg-dhL" secondAttribute="centerY" constant="10" id="bkm-Yy-Djo"/>
                             <constraint firstItem="jbS-2m-tRJ" firstAttribute="top" secondItem="edz-mg-dhL" secondAttribute="top" id="ieN-bI-UEk"/>
                             <constraint firstAttribute="bottom" secondItem="jbS-2m-tRJ" secondAttribute="bottom" id="jjK-rd-oWZ"/>
                             <constraint firstItem="nOs-T6-9oH" firstAttribute="centerY" secondItem="l18-Xk-6cz" secondAttribute="centerY" id="ljB-EG-PEJ"/>
@@ -59,6 +67,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bgImageView" destination="jbS-2m-tRJ" id="p8a-eQ-nVC"/>
+                <outlet property="nameLabel" destination="Dsz-Em-otk" id="zvf-1H-80y"/>
                 <outlet property="priceLabel" destination="nOs-T6-9oH" id="JyL-QR-Wl1"/>
             </connections>
             <point key="canvasLocation" x="39" y="143.5"/>

@@ -13,6 +13,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "FIBagViewController.h"
 #import "FIPropListViewController.h"
+#import "FIScoreViewController.h"
 @interface FIUserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)FIUserInfo * userInfo;
@@ -163,7 +164,8 @@ static NSString * headerIdentifer = @"headerIdentifer";
                 break;
             case 1:
             {
-               
+                FIScoreViewController * vc = [[FIScoreViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
             case 2:

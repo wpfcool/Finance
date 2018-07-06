@@ -71,5 +71,6 @@
 
 //修改安全密码
 #define ALTER_SAFEPASS_URL HOST "api/user/resafe"
-
+//评分列表
+#define SCORELIST_URL HOST  "api/credit/index"
 #endif /* API_h */

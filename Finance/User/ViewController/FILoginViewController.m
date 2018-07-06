@@ -48,7 +48,7 @@
     [_passworldTextField resignFirstResponder];
     [_userNameTextField resignFirstResponder];
     
-    NSDictionary * dic = @{@"username":_userNameTextField.text,@"password":_passworldTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
+    NSDictionary * dic = @{@"userName":_userNameTextField.text,@"password":_passworldTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     [self asyncSendRequestWithURL:Login_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(dic){
             FIUser *user =[FIUser shareInstance];

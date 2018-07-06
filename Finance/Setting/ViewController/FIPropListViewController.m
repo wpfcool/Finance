@@ -11,6 +11,7 @@
 #import <YYModel/YYModel.h>
 #import "FIPropDetailViewController.h"
 #import "FIPropListCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface FIPropListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray * propList;
@@ -57,22 +58,8 @@
 
     FIPropListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIPropListCell" forIndexPath:indexPath];
     FIPropData * item = self.propList[indexPath.row];
-    switch (item.propId.integerValue) {
-        case PropTypePhone:
-            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_phone"];
-            break;
-        case PropTypeRealName:
-            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_realname"];
-
-            break;
-        case PropTypeBank:
-            cell.bgImageView.image = [UIImage imageNamed:@"set_alter_bank"];
-
-            break;
-            
-        default:
-            break;
-    }
+    cell.nameLabel.text = item.name;
+    [cell.bgImageView sd_setImageWithURL:[NSURL URLWithString:item.img]];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ pcs",item.price];
     return cell;
 }
