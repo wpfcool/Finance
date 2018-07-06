@@ -10,4 +10,5 @@
 
 @interface FIPassworldAlterViewController : FIBaseViewController
 @property (nonatomic,assign)NSInteger type;//1登录密码2安全密码
+@property (nonatomic,copy)NSString *phone;
 @end

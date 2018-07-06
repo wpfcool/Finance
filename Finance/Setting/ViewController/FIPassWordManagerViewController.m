@@ -51,6 +51,7 @@
         {
             FIPassworldAlterViewController * vc = [[FIPassworldAlterViewController alloc] init];
             vc.type = 1;
+            vc.phone = self.phone;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -58,6 +59,7 @@
         {
             FIPassworldAlterViewController * vc = [[FIPassworldAlterViewController alloc] init];
             vc.type = 2;
+            vc.phone = self.phone;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

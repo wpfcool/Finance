@@ -66,4 +66,10 @@
 #define ADD_ALIYPAY_URL HOST "api/user/realipay"
 //银行账号修改
 #define ADD_BANK_URL HOST  "api/user/bankuser"
+//修改登录密码
+ #define ALTER_LOGINPASS_URL HOST "api/user/repassword"
+
+//修改安全密码
+#define ALTER_SAFEPASS_URL HOST "api/user/resafe"
+
 #endif /* API_h */

@@ -49,23 +49,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
     
 }
 
--(NSString *)memeber:(NSInteger)me{
-    switch (me) {
-        case 1:
-            return @"青铜";
-            break;
-        case 2:
-            return @"黄金";
-            break;
-        case 3:
-            return @"白金";
-            break;
-            
-        default:
-            break;
-    }
-    return @"青铜";
-}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
@@ -122,7 +106,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
         
         switch (indexPath.row) {
             case 0:
-                cell.detailTextLabel.text =  [self memeber:self.userInfo.memberGrade.integerValue];
+                cell.detailTextLabel.text = self.userInfo.memberGrade;
                 break;
             case 1:
                 cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",self.userInfo.creditScore] ;
@@ -173,7 +157,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
             case 0:
                 {
                     FIMemberViewController * vc = [[FIMemberViewController alloc]init];
-                    vc.type = 3;
+                    vc.member = self.userInfo.memberGrade;;
                     [self.navigationController pushViewController:vc animated:YES];
                 }
                 break;

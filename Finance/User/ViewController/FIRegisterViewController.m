@@ -54,6 +54,8 @@
             [self.codeButton setTitle:[NSString stringWithFormat:@"获得验证码"] forState:UIControlStateNormal];
             dispatch_cancel(self.timer);
             self.timer = nil;
+            self.codeButton.userInteractionEnabled = YES;
+
         }
         count--;
     });
@@ -75,6 +77,7 @@
         }
         else{
             [self countDown];
+            self.codeButton.userInteractionEnabled = NO;
         }
     }];
     

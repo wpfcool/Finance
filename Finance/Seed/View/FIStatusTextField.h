@@ -16,7 +16,12 @@ typedef  NS_ENUM(NSInteger,TextFieldStatustype){
     TextFieldStatusTypeName,
     TextFieldStatusTypeBankName,
     TextFieldStatusTypeBankCard,
-    TextFieldStatusTypeBankOpen
+    TextFieldStatusTypeBankOpen,
+    
+    TextFieldStatusTypePasswordOld,
+    TextFieldStatusTypePasswordNew,
+    TextFieldStatusTypePasswordNew2,
+    TextFieldStatusTypePasswordYanzhengMa
 };
 
 @interface FIStatusTextField : UITextField

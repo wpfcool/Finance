@@ -9,5 +9,5 @@
 #import "FIBaseViewController.h"
 
 @interface FIPassWordManagerViewController : FIBaseViewController
-
+@property (nonatomic,copy)NSString *phone;
 @end

@@ -8,5 +8,5 @@
 
 #import "FIBaseViewController.h"
 @interface FIMemberViewController : FIBaseViewController
-@property (nonatomic,assign)NSInteger type;
+@property (nonatomic,copy)NSString * member;
 @end

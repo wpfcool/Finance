@@ -172,6 +172,7 @@
         case 8:
         {
             FIPassWordManagerViewController * vc = [[FIPassWordManagerViewController alloc]init];
+            vc.phone =self.userInfo.phone;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor =  [UIColor colorWithRed:242/255.0 green:244/255.0  blue:244/255.0 alpha:1];
+//    self.view.backgroundColor =  [UIColor colorWithRed:242/255.0 green:244/255.0  blue:244/255.0 alpha:1];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.emptyView];
     if ([self.navigationController.viewControllers count] > 1 &&
         !self.navigationItem.leftBarButtonItem && !self.navigationController.navigationBarHidden) {

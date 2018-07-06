@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FIPassworldAlterViewController">
             <connections>
+                <outlet property="submitButton" destination="264-N1-NBl" id="X5n-yY-kzJ"/>
+                <outlet property="tableView" destination="62c-hK-pjl" id="98v-qQ-cp2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,7 +20,40 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="62c-hK-pjl">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="571"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rZa-Kv-8ON"/>
+                        <outlet property="delegate" destination="-1" id="Hom-8h-5hd"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="264-N1-NBl">
+                    <rect key="frame" x="24" y="595" width="327" height="48"/>
+                    <color key="backgroundColor" red="0.24313725489999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="oGk-a8-WcI"/>
+                    </constraints>
+                    <state key="normal" title="确认">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="submitClick:" destination="-1" eventType="touchUpInside" id="6ZS-2H-kd1"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="264-N1-NBl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="DxD-Hv-EiY"/>
+                <constraint firstItem="264-N1-NBl" firstAttribute="top" secondItem="62c-hK-pjl" secondAttribute="bottom" constant="24" id="ISs-Gr-Otc"/>
+                <constraint firstItem="62c-hK-pjl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ORr-6e-whz"/>
+                <constraint firstItem="62c-hK-pjl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fsq-OF-UcD"/>
+                <constraint firstAttribute="trailing" secondItem="62c-hK-pjl" secondAttribute="trailing" id="jNj-dX-qre"/>
+                <constraint firstAttribute="trailing" secondItem="264-N1-NBl" secondAttribute="trailing" constant="24" id="ozm-L2-s04"/>
+                <constraint firstAttribute="bottom" secondItem="264-N1-NBl" secondAttribute="bottom" constant="24" id="p5Y-uf-SRL"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="102.5"/>
         </view>
     </objects>
 </document>

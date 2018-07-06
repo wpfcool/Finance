@@ -36,23 +36,14 @@
     UIImageView * _headerBgImageView = [[UIImageView alloc]initWithFrame:_headerView.bounds];
     [_headerView addSubview:_headerBgImageView];
     self.tableView.tableHeaderView = _headerView;
-    switch (self.type) {
-        case 1:
-            _headerBgImageView.image = [UIImage imageNamed:@"member_qingtong"];
-            break;
-        case 2:
-            _headerBgImageView.image = [UIImage imageNamed:@"member_huangjin"];
-            break;
-        case 3:
-            _headerBgImageView.image = [UIImage imageNamed:@"member_baijin"];
-            break;
-            
-        default:
-            _headerBgImageView.image = [UIImage imageNamed:@"member_qingtong"];
+    if([self.member isEqualToString:@"青铜"]){
+        _headerBgImageView.image = [UIImage imageNamed:@"member_qingtong"];
+    }else if([self.member isEqualToString:@"黄金"]){
+        _headerBgImageView.image = [UIImage imageNamed:@"member_huangjin"];
 
-            break;
+    }else if([self.member isEqualToString:@"白金"]){
+        _headerBgImageView.image = [UIImage imageNamed:@"member_baijin"];
     }
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"FIMemberTableViewCell" bundle:nil] forCellReuseIdentifier:@"FIMemberTableViewCell"];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
