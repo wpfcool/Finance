@@ -16,6 +16,7 @@
 #import "FIUser.h"
 #import "FICenterData.h"
 #import "FIBagViewController.h"
+#import "FIActivityCoceViewController.h"
 @interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -158,6 +159,11 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
 -(void)headerTwoClick{
     FIBagViewController * VC = [[FIBagViewController alloc]init];
     [self.navigationController pushViewController:VC animated:YES];
+}
+-(void)headerThreeClick{
+    FIActivityCoceViewController  *vc = [[FIActivityCoceViewController alloc]init];
+    vc.countString = self.centerData.code;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

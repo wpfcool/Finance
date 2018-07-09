@@ -14,6 +14,7 @@
 #import "FIBagViewController.h"
 #import "FIPropListViewController.h"
 #import "FIScoreViewController.h"
+#import "FIActivityCoceViewController.h"
 @interface FIUserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)FIUserInfo * userInfo;
@@ -165,6 +166,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
             case 1:
             {
                 FIScoreViewController * vc = [[FIScoreViewController alloc]init];
+                vc.score = self.userInfo.creditScore;
                 [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
@@ -179,6 +181,13 @@ static NSString * headerIdentifer = @"headerIdentifer";
             {
                 FIBagViewController  *vc = [[FIBagViewController alloc]init];
                 vc.type = 2;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+            case 4:
+            {
+                FIActivityCoceViewController  *vc = [[FIActivityCoceViewController alloc]init];
+                vc.countString = self.userInfo.code;
                 [self.navigationController pushViewController:vc animated:YES];
             }
                 break;

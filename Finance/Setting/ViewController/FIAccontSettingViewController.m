@@ -29,23 +29,7 @@
     _titleArr = @[@"头像",@"用户名",@"真实姓名",@"手机号码",@"会员级别",@"昵称",@"我的银行账户",@"支付宝账户",@"密码管理"];
     _imageArr=@[@"setting_avator",@"setting_username",@"seting_realname",@"setting_phone",@"setting_member_grade",@"setting_nickname",@"setting_bank",@"setting_alipay",@"setting_password"];
 }
--(NSString *)memeber:(NSInteger)me{
-    switch (me) {
-        case 1:
-            return @"青铜";
-            break;
-        case 2:
-            return @"黄金";
-            break;
-        case 3:
-            return @"白金";
-            break;
-            
-        default:
-            break;
-    }
-    return @"青铜";
-}
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -99,7 +83,7 @@
             cell.detailTextLabel.text = self.userInfo.phone;
             break;
         case 4:
-            cell.detailTextLabel.text =[self memeber:self.userInfo.memberGrade.integerValue] ;
+            cell.detailTextLabel.text =self.userInfo.memberGrade ;
             break;
         case 5:
             cell.detailTextLabel.text = self.userInfo.nickname;
@@ -142,6 +126,7 @@
         case 4:
         {
             FIMemberViewController * vc = [[FIMemberViewController alloc]init];
+            vc.member = self.userInfo.memberGrade;
             [self.navigationController pushViewController:vc animated:YES];
 
         }

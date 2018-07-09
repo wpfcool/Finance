@@ -73,4 +73,6 @@
 #define ALTER_SAFEPASS_URL HOST "api/user/resafe"
 //评分列表
 #define SCORELIST_URL HOST  "api/credit/index"
+//转赠激活码
+#define GAVECODE_URL HOST  "api/code/gift"
 #endif /* API_h */

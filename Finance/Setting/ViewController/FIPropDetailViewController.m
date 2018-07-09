@@ -9,17 +9,55 @@
 #import "FIPropDetailViewController.h"
 #import "FIPropData.h"
 #import <Masonry/Masonry.h>
-@interface FIPropDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "FIPasswordView.h"
+@interface FIPropDetailViewController ()<UITableViewDelegate,UITableViewDataSource,FIPasswordViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (nonatomic,strong)FIPropData * propItem;;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
+@property (nonatomic,strong)FIPasswordView * safePasswordView;;
+@property (nonatomic,strong)UIView * alertBgView;;
+
+
 @end
 
 @implementation FIPropDetailViewController
 - (IBAction)submitClick:(id)sender {
     
-    [self asyncSendRequestWithURL:BUY_PROP_URL param:@{@"prop_id":self.propItem.propId,@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+    [self showPassWordView];
+    
+
+}
+
+
+-(void)showPassWordView{
+    self.safePasswordView = [[NSBundle mainBundle] loadNibNamed:@"FIPasswordView" owner:nil options:nil][0];
+    self.safePasswordView.frame = CGRectMake((SCREEN_WIDTH-300)/2.0 ,(SCREEN_HEIGHT -215)/2.0-100, 300, 215);
+    UIWindow * window = [UIApplication sharedApplication].delegate.window;
+    
+    _alertBgView = [[UIView alloc]initWithFrame:window.bounds];
+    _alertBgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+    [window addSubview:_alertBgView];;
+    
+    [self.alertBgView addSubview:self.safePasswordView];
+    self.safePasswordView.delegate = self;
+    [self.safePasswordView.hiddenTextField becomeFirstResponder];
+}
+-(void)hiddenPasswordView{
+    [self.alertBgView removeFromSuperview];
+    [self.safePasswordView removeFromSuperview];
+    self.alertBgView = nil;
+    self.safePasswordView = nil;
+}
+-(void)safePassword:(NSString *)password{
+    
+    if(password.length <6){
+        [self showAlert:@"密码不能小于6位"];
+        return;
+    }
+    [self hiddenPasswordView];
+    [self asyncSendRequestWithURL:BUY_PROP_URL param:@{@"prop_id":self.propItem.propId,@"user_id":[FIUser shareInstance].user_id,@"password":password} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"购买成功" duration:2.0];
         }
@@ -31,6 +69,10 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"确认购买";
 //    self.tableView.estimatedSectionFooterHeight =UITableViewAutomaticDimension;
+    
+
+    
+    
     self.tableView.sectionFooterHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 100;;
     if(self.propItem==nil){

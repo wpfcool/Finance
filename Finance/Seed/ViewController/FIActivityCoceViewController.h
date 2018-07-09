@@ -1,5 +1,5 @@
 //
-//  FIScoreViewController.h
+//  FIActivityCoceViewController.h
 //  Finance
 //
 //  Created by wenpeifang on 2018/7/9.
@@ -8,6 +8,6 @@
 
 #import "FISimpleHeaderTableViewController.h"
 
-@interface FIScoreViewController : FISimpleHeaderTableViewController
-@property (nonatomic,strong)NSString * score;
+@interface FIActivityCoceViewController : FISimpleHeaderTableViewController
+@property (nonatomic,strong)NSString * countString;
 @end
