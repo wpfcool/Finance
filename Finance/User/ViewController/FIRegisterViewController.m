@@ -88,20 +88,12 @@
         return;
     }
     
-    NSDictionary * dic = @{@"username":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
+    NSDictionary * dic = @{@"userName":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     
-    [self asyncSendRequestWithURL:REGISTER_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
-        if(error){
-            
-        }
-        else{
-            FIRegisterFinishViewController * registerNextVC = [[FIRegisterFinishViewController alloc]init];
-            registerNextVC.userId = [NSString stringWithFormat:@"%@",dic[@"user_id"]];;
-            [self.navigationController pushViewController:registerNextVC animated:YES];
-        }
-    }];
-    
-    
+    FIRegisterFinishViewController * registerNextVC = [[FIRegisterFinishViewController alloc]init];
+    registerNextVC.preDic = dic;
+    [self.navigationController pushViewController:registerNextVC animated:YES];
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{

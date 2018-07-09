@@ -99,9 +99,9 @@
         if(!error){
             FIHomeData * home = [FIHomeData yy_modelWithJSON:dic];
             if(self.type == 1){
-                self.numLabel.text = home.dramSeed;
+                self.numLabel.text = [NSString stringWithFormat:@"%.2f",home.dramSeed.doubleValue] ;
             }else{
-                self.numLabel.text = home.bonusSeed;
+                self.numLabel.text = [NSString stringWithFormat:@"%.2f",home.bonusSeed.doubleValue];
             }
         }
     }];

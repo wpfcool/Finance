@@ -16,9 +16,10 @@
 //注册接口
 #define REGISTER_URL HOST "api/login/register"
 //完善个人信息接口
-#define INFO_URL HOST "api/login/info"
+//#define INFO_URL HOST "api/login/info"
 
-
+#define FORGETPASS_URL HOST "api/login/forgetpwd"
+#define RESETPASS_URL HOST  "api/login/resetpwd"
 //获取手机验证码
 #define SEND_IPHONE_CODE HOST "api/common/sendcode"
 

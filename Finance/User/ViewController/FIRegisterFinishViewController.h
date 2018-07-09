@@ -9,5 +9,6 @@
 #import "FIBaseViewController.h"
 
 @interface FIRegisterFinishViewController : FIBaseViewController
-@property (nonatomic,copy)NSString * userId;
+//@property (nonatomic,copy)NSString * userId;
+@property (nonatomic,strong)NSDictionary * preDic;//上个页面传入的值
 @end

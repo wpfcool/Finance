@@ -7,7 +7,7 @@
 //
 
 #import "FIFindPasswordViewController.h"
-
+#import "FIResetPassViewController.h"
 @interface FIFindPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
@@ -75,11 +75,23 @@
     
 }
 - (IBAction)nextButtonClick:(id)sender {
-    if(_phoneField.text.length == 0 || _phoneField.text.length == 0 || _codeField.text.length == 0){
+    if(_userNameField.text.length == 0 || _phoneField.text.length == 0 || _codeField.text.length == 0){
         [self showAlert:@"输入不能为空"];
         return;
     }
     
+    
+    NSDictionary * dic = @{@"userName":_userNameField.text,@"code":_codeField.text,@"phone":_phoneField.text};;
+    
+    [self asyncSendRequestWithURL:FORGETPASS_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        if(!error){
+            
+            FIResetPassViewController * pass = [[FIResetPassViewController alloc]init];
+            pass.username = self.userNameField.text;
+            [self.navigationController pushViewController:pass animated:YES];
+            
+        }
+    }];
     
 }
 

@@ -114,10 +114,10 @@ static NSString * headerIdentifer = @"headerIdentifer";
                 cell.detailTextLabel.text = [NSString stringWithFormat:@"%@分",self.userInfo.creditScore] ;
                 break;
             case 2:
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@PCS",self.userInfo.dramSeed] ;
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f PCS",self.userInfo.dramSeed.doubleValue] ;
                 break;
             case 3:
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@PCS",self.userInfo.bonusSeed] ;
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f PCS",self.userInfo.bonusSeed.doubleValue] ;
                 break;
             case 4:
                 cell.detailTextLabel.text = [NSString stringWithFormat:@"%@个",self.userInfo.code] ;

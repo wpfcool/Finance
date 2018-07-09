@@ -24,6 +24,7 @@
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
 @property (nonatomic,strong)FIHomeData * homeData;
+@property (nonatomic,strong)  UIButton * leftButton ;
 @end
 static NSString * managerIdeintifier = @"managerCellIdeintifier";
 static NSString * orderHeaderIdeintifier = @"orederHeaderIdeintifier";
@@ -61,15 +62,16 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [self wr_setNavBarBackgroundAlpha:0];
     [self wr_setNavBarTintColor:[UIColor whiteColor]];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home_message"] style:UIBarButtonItemStyleDone target:self action:@selector(messageClick:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home_message"] style:UIBarButtonItemStyleDone target:self action:@selector(messageClick:)];
     
     
-    UIButton * leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.frame = CGRectMake(0, 0, 20, 20);
-    leftButton.backgroundColor = [UIColor redColor];
-    [leftButton addTarget:self
+    self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.leftButton .frame = CGRectMake(0, 0, 20, 20);
+    [self.leftButton setBackgroundImage:[UIImage imageNamed:@"setting_avator"] forState:UIControlStateNormal];
+//     self.leftButton .backgroundColor = [UIColor redColor];
+    [self.leftButton  addTarget:self
                    action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton ];
     
     
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,8 +101,8 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
         if(!error){
             self.homeData = [FIHomeData yy_modelWithJSON:dic];
             self.headerView.totalMoneyLabel.text = self.homeData.sum;
-            self.headerView.dreamMoneyLabel.text = self.homeData.dramSeed;
-            self.headerView.bonusMoneyLabel.text = self.homeData.bonusSeed;
+            self.headerView.dreamMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.dramSeed.doubleValue]  ;
+            self.headerView.bonusMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.bonusSeed.doubleValue]  ;
             self.headerView.timeLabel.text = self.homeData.time;
         }
     }];
@@ -108,11 +110,13 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
 }
 -(void)headerOneClick{
     FIBagViewController * VC = [[FIBagViewController alloc]init];
+    VC.type = 1;
     [self.navigationController pushViewController:VC animated:YES];
     
 }
 -(void)headerTwoClick{
     FIBagViewController * VC = [[FIBagViewController alloc]init];
+    VC.type = 2;
     [self.navigationController pushViewController:VC animated:YES];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

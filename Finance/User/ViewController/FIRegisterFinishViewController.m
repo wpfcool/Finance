@@ -59,9 +59,10 @@
         [self showAlert:@"输入不能为空"];
         return;
     }
-    NSDictionary * dic = @{@"user_id":self.userId,@"nickname":_nickNameField.text,@"real_name":_realNameField.text,@"bankname":_bankField.text,@"bankcard":_bankNoField.text,@"tranpwd":_passwordField.text};
     
-    [self asyncSendRequestWithURL:INFO_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+    NSMutableDictionary * dic = @{@"nickname":_nickNameField.text,@"real_name":_realNameField.text,@"bankname":_bankField.text,@"bankcard":_bankNoField.text,@"tranpwd":_passwordField.text}.mutableCopy;
+    [dic addEntriesFromDictionary:self.preDic];
+    [self asyncSendRequestWithURL:REGISTER_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(error){
             
         }

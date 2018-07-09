@@ -35,7 +35,7 @@
     
     
     _userNameTextField.text = @"wpfcool2008";
-    _passworldTextField.text = @"w8630417";
+    _passworldTextField.text = @"123456";
 
 }
 - (IBAction)loginClick:(id)sender {

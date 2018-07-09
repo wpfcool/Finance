@@ -100,6 +100,8 @@
 		F95671F620F3051A00DB825A /* FIActivityCoceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95671F520F3051A00DB825A /* FIActivityCoceViewController.m */; };
 		F95671F920F30AF500DB825A /* FIPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = F95671F820F30AF500DB825A /* FIPasswordView.m */; };
 		F95671FB20F30B0600DB825A /* FIPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95671FA20F30B0600DB825A /* FIPasswordView.xib */; };
+		F95671FF20F325BF00DB825A /* FIResetPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95671FD20F325BF00DB825A /* FIResetPassViewController.m */; };
+		F956720020F325BF00DB825A /* FIResetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95671FE20F325BF00DB825A /* FIResetPassViewController.xib */; };
 		F96940F220E386BC00968B27 /* FIUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F020E386BC00968B27 /* FIUserInfoViewController.m */; };
 		F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */; };
 		F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */; };
@@ -305,6 +307,9 @@
 		F95671F720F30AF500DB825A /* FIPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIPasswordView.h; sourceTree = "<group>"; };
 		F95671F820F30AF500DB825A /* FIPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIPasswordView.m; sourceTree = "<group>"; };
 		F95671FA20F30B0600DB825A /* FIPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIPasswordView.xib; sourceTree = "<group>"; };
+		F95671FC20F325BF00DB825A /* FIResetPassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIResetPassViewController.h; sourceTree = "<group>"; };
+		F95671FD20F325BF00DB825A /* FIResetPassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIResetPassViewController.m; sourceTree = "<group>"; };
+		F95671FE20F325BF00DB825A /* FIResetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIResetPassViewController.xib; sourceTree = "<group>"; };
 		F96940EF20E386BC00968B27 /* FIUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIUserInfoViewController.h; sourceTree = "<group>"; };
 		F96940F020E386BC00968B27 /* FIUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIUserInfoViewController.m; sourceTree = "<group>"; };
 		F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIUserInfoViewController.xib; sourceTree = "<group>"; };
@@ -562,6 +567,9 @@
 				F96940EF20E386BC00968B27 /* FIUserInfoViewController.h */,
 				F96940F020E386BC00968B27 /* FIUserInfoViewController.m */,
 				F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */,
+				F95671FC20F325BF00DB825A /* FIResetPassViewController.h */,
+				F95671FD20F325BF00DB825A /* FIResetPassViewController.m */,
+				F95671FE20F325BF00DB825A /* FIResetPassViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -926,6 +934,7 @@
 				D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F9DE266820E4DB02007C6D0C /* FIPropDetailViewController.xib in Resources */,
+				F956720020F325BF00DB825A /* FIResetPassViewController.xib in Resources */,
 				F90B428820EF4BE600759679 /* FISettingPasswordCodeCell.xib in Resources */,
 				D91481B920EA5A7F0045C5E6 /* FIBankListViewController.xib in Resources */,
 				D9116E7D20EE75F100F978F0 /* FIPassWordManagerViewController.xib in Resources */,
@@ -1027,6 +1036,7 @@
 				F9545C7E20DBC3B400531C66 /* FIPictureTableViewCell.m in Sources */,
 				F9DE266720E4DB02007C6D0C /* FIPropDetailViewController.m in Sources */,
 				F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */,
+				F95671FF20F325BF00DB825A /* FIResetPassViewController.m in Sources */,
 				F90B426820ED045800759679 /* FIAccountCardView.m in Sources */,
 				F9545C5220DB8B0400531C66 /* FISectionHeaderCell.m in Sources */,
 				F94F097D20DCA4740076A073 /* FICenterData.m in Sources */,
