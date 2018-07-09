@@ -71,17 +71,15 @@
         if(!error){
             if(arr.count != 20){
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
-            }else{
-             
-                if(self.currentPage == 1){
-                    [self.dataList removeAllObjects];
-                }
-                for (NSDictionary * dic in arr) {
-                    FIScoreData * data = [FIScoreData yy_modelWithJSON:dic];
-                    [self.dataList addObject:data];
-                }
-                [self.tableView reloadData];
             }
+            if(self.currentPage == 1){
+                [self.dataList removeAllObjects];
+            }
+            for (NSDictionary * dic in arr) {
+                FIScoreData * data = [FIScoreData yy_modelWithJSON:dic];
+                [self.dataList addObject:data];
+            }
+            [self.tableView reloadData];
         }
     }];
     

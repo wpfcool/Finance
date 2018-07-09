@@ -102,6 +102,16 @@
 		F95671FB20F30B0600DB825A /* FIPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95671FA20F30B0600DB825A /* FIPasswordView.xib */; };
 		F95671FF20F325BF00DB825A /* FIResetPassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F95671FD20F325BF00DB825A /* FIResetPassViewController.m */; };
 		F956720020F325BF00DB825A /* FIResetPassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95671FE20F325BF00DB825A /* FIResetPassViewController.xib */; };
+		F956720620F3459D00DB825A /* FIOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F956720420F3459D00DB825A /* FIOrderListViewController.m */; };
+		F956720720F3459D00DB825A /* FIOrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956720520F3459D00DB825A /* FIOrderListViewController.xib */; };
+		F956720B20F345C500DB825A /* FIOrderPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F956720A20F345C500DB825A /* FIOrderPageViewController.m */; };
+		F956720E20F34AE500DB825A /* FIOrderTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = F956720D20F34AE500DB825A /* FIOrderTabView.m */; };
+		F956721020F34AF100DB825A /* FIOrderTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956720F20F34AF100DB825A /* FIOrderTabView.xib */; };
+		F956721420F372F900DB825A /* FIOrderData.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721320F372F900DB825A /* FIOrderData.m */; };
+		F956721820F3765D00DB825A /* FIOrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721620F3765D00DB825A /* FIOrderListCell.m */; };
+		F956721920F3765D00DB825A /* FIOrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956721720F3765D00DB825A /* FIOrderListCell.xib */; };
+		F956721E20F398D800DB825A /* FIOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721C20F398D800DB825A /* FIOrderDetailViewController.m */; };
+		F956721F20F398D800DB825A /* FIOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */; };
 		F96940F220E386BC00968B27 /* FIUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F020E386BC00968B27 /* FIUserInfoViewController.m */; };
 		F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */; };
 		F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96940F720E38C0B00968B27 /* FIAccontSettingViewController.m */; };
@@ -310,6 +320,22 @@
 		F95671FC20F325BF00DB825A /* FIResetPassViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIResetPassViewController.h; sourceTree = "<group>"; };
 		F95671FD20F325BF00DB825A /* FIResetPassViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIResetPassViewController.m; sourceTree = "<group>"; };
 		F95671FE20F325BF00DB825A /* FIResetPassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIResetPassViewController.xib; sourceTree = "<group>"; };
+		F956720320F3459D00DB825A /* FIOrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderListViewController.h; sourceTree = "<group>"; };
+		F956720420F3459D00DB825A /* FIOrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderListViewController.m; sourceTree = "<group>"; };
+		F956720520F3459D00DB825A /* FIOrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderListViewController.xib; sourceTree = "<group>"; };
+		F956720920F345C500DB825A /* FIOrderPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderPageViewController.h; sourceTree = "<group>"; };
+		F956720A20F345C500DB825A /* FIOrderPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderPageViewController.m; sourceTree = "<group>"; };
+		F956720C20F34AE500DB825A /* FIOrderTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderTabView.h; sourceTree = "<group>"; };
+		F956720D20F34AE500DB825A /* FIOrderTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderTabView.m; sourceTree = "<group>"; };
+		F956720F20F34AF100DB825A /* FIOrderTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderTabView.xib; sourceTree = "<group>"; };
+		F956721220F372F900DB825A /* FIOrderData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderData.h; sourceTree = "<group>"; };
+		F956721320F372F900DB825A /* FIOrderData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderData.m; sourceTree = "<group>"; };
+		F956721520F3765C00DB825A /* FIOrderListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderListCell.h; sourceTree = "<group>"; };
+		F956721620F3765D00DB825A /* FIOrderListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderListCell.m; sourceTree = "<group>"; };
+		F956721720F3765D00DB825A /* FIOrderListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderListCell.xib; sourceTree = "<group>"; };
+		F956721B20F398D800DB825A /* FIOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderDetailViewController.h; sourceTree = "<group>"; };
+		F956721C20F398D800DB825A /* FIOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderDetailViewController.m; sourceTree = "<group>"; };
+		F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderDetailViewController.xib; sourceTree = "<group>"; };
 		F96940EF20E386BC00968B27 /* FIUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIUserInfoViewController.h; sourceTree = "<group>"; };
 		F96940F020E386BC00968B27 /* FIUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIUserInfoViewController.m; sourceTree = "<group>"; };
 		F96940F120E386BC00968B27 /* FIUserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIUserInfoViewController.xib; sourceTree = "<group>"; };
@@ -465,6 +491,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F956720120F3458000DB825A /* Order */,
 				F96940F420E38BEB00968B27 /* Setting */,
 				F90EC90B20DF3B44008CD05A /* Seed */,
 				F9545C6320DBA35500531C66 /* Team */,
@@ -700,6 +727,53 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F956720120F3458000DB825A /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				F956721120F372E700DB825A /* Model */,
+				F956720820F345AF00DB825A /* View */,
+				F956720220F3458800DB825A /* ViewController */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		F956720220F3458800DB825A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F956720320F3459D00DB825A /* FIOrderListViewController.h */,
+				F956720420F3459D00DB825A /* FIOrderListViewController.m */,
+				F956720520F3459D00DB825A /* FIOrderListViewController.xib */,
+				F956720920F345C500DB825A /* FIOrderPageViewController.h */,
+				F956720A20F345C500DB825A /* FIOrderPageViewController.m */,
+				F956721B20F398D800DB825A /* FIOrderDetailViewController.h */,
+				F956721C20F398D800DB825A /* FIOrderDetailViewController.m */,
+				F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F956720820F345AF00DB825A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F956720C20F34AE500DB825A /* FIOrderTabView.h */,
+				F956720D20F34AE500DB825A /* FIOrderTabView.m */,
+				F956720F20F34AF100DB825A /* FIOrderTabView.xib */,
+				F956721520F3765C00DB825A /* FIOrderListCell.h */,
+				F956721620F3765D00DB825A /* FIOrderListCell.m */,
+				F956721720F3765D00DB825A /* FIOrderListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F956721120F372E700DB825A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F956721220F372F900DB825A /* FIOrderData.h */,
+				F956721320F372F900DB825A /* FIOrderData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F96940F420E38BEB00968B27 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -933,6 +1007,7 @@
 				F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */,
 				D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
+				F956721920F3765D00DB825A /* FIOrderListCell.xib in Resources */,
 				F9DE266820E4DB02007C6D0C /* FIPropDetailViewController.xib in Resources */,
 				F956720020F325BF00DB825A /* FIResetPassViewController.xib in Resources */,
 				F90B428820EF4BE600759679 /* FISettingPasswordCodeCell.xib in Resources */,
@@ -945,12 +1020,15 @@
 				F9545C7320DBB59600531C66 /* FIMyMasterViewController.xib in Resources */,
 				F9545C4E20DB7CA900531C66 /* FIHomeManagerCell.xib in Resources */,
 				F9545C8420DBC9AB00531C66 /* FICenterGainCell.xib in Resources */,
+				F956721020F34AF100DB825A /* FIOrderTabView.xib in Resources */,
 				D91481BE20EA5BDF0045C5E6 /* FIBankListViewCell.xib in Resources */,
+				F956720720F3459D00DB825A /* FIOrderListViewController.xib in Resources */,
 				F9DE265E20E4C864007C6D0C /* FIAlterInfoWithMoneyCell.xib in Resources */,
 				D9116E8C20EE794100F978F0 /* FIPassworldAlterViewController.xib in Resources */,
 				F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */,
 				F9545C6E20DBACCE00531C66 /* FiActiveMemberViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
+				F956721F20F398D800DB825A /* FIOrderDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1046,6 +1124,7 @@
 				F9DE265820E4C441007C6D0C /* FIAlterInfoWithMoneyViewController.m in Sources */,
 				F90B428720EF4BE600759679 /* FISettingPasswordCodeCell.m in Sources */,
 				F9159E6D20C4E853002BFB1B /* ViewController.m in Sources */,
+				F956720620F3459D00DB825A /* FIOrderListViewController.m in Sources */,
 				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
 				F9DE266220E4DAF3007C6D0C /* FIPropListViewController.m in Sources */,
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
@@ -1064,9 +1143,11 @@
 				F95671F920F30AF500DB825A /* FIPasswordView.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F95671F620F3051A00DB825A /* FIActivityCoceViewController.m in Sources */,
+				F956721E20F398D800DB825A /* FIOrderDetailViewController.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
 				F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */,
 				D9116E8D20EE794100F978F0 /* FIPassworldAlterViewController.m in Sources */,
+				F956721420F372F900DB825A /* FIOrderData.m in Sources */,
 				F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */,
 				F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */,
 				F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */,
@@ -1081,11 +1162,13 @@
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				D91481B520E9F2280045C5E6 /* FIPropListCell.m in Sources */,
 				F90EC92620E0FB61008CD05A /* FISellSeedViewController.m in Sources */,
+				F956720B20F345C500DB825A /* FIOrderPageViewController.m in Sources */,
 				F9DE265320E4B773007C6D0C /* FIMemberTableViewCell.m in Sources */,
 				F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */,
 				D9116E7920EE5E0100F978F0 /* FIBankInfoViewController.m in Sources */,
 				F9545C5720DB8D5600531C66 /* FIHomeOrderViewCell.m in Sources */,
 				F9545C5F20DB98A200531C66 /* FIHomeData.m in Sources */,
+				F956720E20F34AE500DB825A /* FIOrderTabView.m in Sources */,
 				F9545C6220DB9B0100531C66 /* FInanceCenterViewController.m in Sources */,
 				F93EBCF720C7D46D0000AE72 /* FIRegisterFinishViewController.m in Sources */,
 				F9159E7820C4E855002BFB1B /* main.m in Sources */,
@@ -1095,6 +1178,7 @@
 				F96940F220E386BC00968B27 /* FIUserInfoViewController.m in Sources */,
 				D91481BF20EA5BDF0045C5E6 /* FIBankListViewCell.m in Sources */,
 				F93EBCE720C7BAF50000AE72 /* FIRegisterViewController.m in Sources */,
+				F956721820F3765D00DB825A /* FIOrderListCell.m in Sources */,
 				F9545C7220DBB59600531C66 /* FIMyMasterViewController.m in Sources */,
 				F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */,
 				F9545C4720DB4F9400531C66 /* FIHomeHeaderView.m in Sources */,

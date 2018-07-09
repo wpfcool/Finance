@@ -20,6 +20,7 @@
 #import "FISellSeedViewController.h"
 #import "FIBagViewController.h"
 #import "FIUserInfoViewController.h"
+#import "FIOrderPageViewController.h"
 @interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -175,6 +176,18 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     return 10;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.section ==1){
+        if(indexPath.row == 0){
+            [self jumpOrderListViewControllerWithCataory:1 index:0];
+        }
+    }else if(indexPath.section == 2){
+        if(indexPath.row == 0){
+            [self jumpOrderListViewControllerWithCataory:2 index:0];
+        }
+    }
+}
+
 
 -(void)financeCenterClick{
     FInanceCenterViewController * center = [[FInanceCenterViewController alloc]init];
@@ -198,19 +211,51 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
 }
 
 -(void)waitingAppraise:(FIHomeOrderViewCell *)cell{
-    
+    NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
+    if(indexpath.section == 1){
+        [self jumpOrderListViewControllerWithCataory:1 index:3];
+    }else{
+        [self jumpOrderListViewControllerWithCataory:2 index:3];
+
+    }
 }
 -(void)waitingConfirmClick:(FIHomeOrderViewCell *)cell{
-    
+    NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
+    if(indexpath.section == 1){
+        [self jumpOrderListViewControllerWithCataory:1 index:2];
+    }else{
+        [self jumpOrderListViewControllerWithCataory:2 index:2];
+        
+    }
+
 }
 -(void)waitingPayClick:(FIHomeOrderViewCell *)cell{
-    
+    NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
+    if(indexpath.section == 1){
+        [self jumpOrderListViewControllerWithCataory:1 index:1];
+    }else{
+        [self jumpOrderListViewControllerWithCataory:2 index:1];
+        
+    }
+
 }
 -(void)waitingMatchClick:(FIHomeOrderViewCell *)cell{
-    
+    NSIndexPath *indexpath = [self.tableView indexPathForCell:cell];
+    if(indexpath.section == 1){
+        [self jumpOrderListViewControllerWithCataory:1 index:0];
+    }else{
+        [self jumpOrderListViewControllerWithCataory:2 index:0];
+        
+    }
+
 }
 
-
+-(void)jumpOrderListViewControllerWithCataory:(NSInteger)type index:(NSInteger)inedex{
+    FIOrderPageViewController * page = [[FIOrderPageViewController alloc]init];
+    page.index = inedex;////0位待匹配1为待付款 2 待确认 3待评价
+    page.orderCataory = type;//1买入2卖出
+    [self.navigationController pushViewController:page animated:YES];
+}
 -(void)messageClick:(id)sender{
     
 }

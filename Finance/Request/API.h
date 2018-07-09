@@ -76,4 +76,6 @@
 #define SCORELIST_URL HOST  "api/credit/index"
 //转赠激活码
 #define GAVECODE_URL HOST  "api/code/gift"
+//订单列表
+#define ORDERLIST_URL HOST  "api/order/orderlist"
 #endif /* API_h */

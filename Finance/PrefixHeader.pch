@@ -42,4 +42,16 @@ typedef NS_ENUM(NSInteger,PropType){
 };
 
 
+typedef NS_ENUM(NSInteger,OrderType){
+    OrderTypeNone = 0, //
+    OrderTypeBuy = 1,//买入订单
+    OrderTypeSell = 1<<1,//卖出发票
+    OrderTypeWaitingMatch = 1 << 2,//待匹配
+    OrderTypeWaitingPay = 1<< 3,//代付款
+    OrderTypeWaitingConfirm = 1<< 4,//代确认
+    OrderTypeWaitingPingjia = 1<< 5//代确认
+
+};
+
+
 #endif /* PrefixHeader_pch */
