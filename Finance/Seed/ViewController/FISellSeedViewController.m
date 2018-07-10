@@ -31,8 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _seed = [[FIBusinessSeed alloc]init];
-    _titleArr = @[@"卖出种子",@"卖出种子数量",@"对应支付金额",@"输入安全密码"];
-    _placeHolderTitleArr = @[@"请选择背包类型",@"请输入种子数量",@"1000",@"请输入安全密码"];
+    _titleArr = @[@"卖出云矿机",@"卖出云矿机数量",@"对应支付金额",@"输入安全密码"];
+    _placeHolderTitleArr = @[@"请选择背包类型",@"请输入云矿机数量",@"1000",@"请输入安全密码"];
 
     UILabel * tmpDreamBag = [[UILabel alloc]init];
     tmpDreamBag.text = @"梦想背包(PCS)";
@@ -196,7 +196,7 @@
     
 }
 -(NSString *)getTitle{
-    return @"卖出种子";
+    return @"卖出云矿机";
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

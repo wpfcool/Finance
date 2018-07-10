@@ -14,8 +14,8 @@
 
 @property (nonatomic,copy)NSString *orderNo;//订单号
 @property (nonatomic,copy)NSString *price;
-@property (nonatomic,copy)NSString *overNumber;//剩余种子匹配数量
-@property (nonatomic,copy)NSString *number;//一共需要匹配种子数量
+@property (nonatomic,copy)NSString *overNumber;//剩余云矿机匹配数量
+@property (nonatomic,copy)NSString *number;//一共需要匹配云矿机数量
 @property (nonatomic,copy)NSString *add_time;//申请时间
 @property (nonatomic,copy)NSString *app_time;//匹配成功时间
 

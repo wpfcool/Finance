@@ -34,7 +34,7 @@
     
     
     UILabel * tmpLabel = [[UILabel alloc]init];
-    tmpLabel.text = @"背包种子数量(PCS)";
+    tmpLabel.text = @"背包云矿机数量(PCS)";
     tmpLabel.font = [UIFont systemFontOfSize:11];
     tmpLabel.textColor = [UIColor whiteColor];
     [_headerView addSubview:tmpLabel];
@@ -75,7 +75,7 @@
     }];
     
     UIButton * sellButton  =[UIButton buttonWithType:UIButtonTypeCustom];
-    [sellButton setTitle:@"卖出种子" forState:UIControlStateNormal];
+    [sellButton setTitle:@"卖出云矿机" forState:UIControlStateNormal];
     [sellButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     sellButton.backgroundColor =HEX_UICOLOR(0x3E83FF, 1);
     sellButton.layer.cornerRadius = 24;

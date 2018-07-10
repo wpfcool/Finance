@@ -39,9 +39,9 @@
 #define ACTIVIE_URL HOST "api/code/codeuser"
 //周期播种次数
 #define TIME_SEED_COUNT_URL HOST  "api/user/num"
-//买入种子
+//买入云矿机
 #define BUY_SEED_URL HOST  "api/pay/buy"
-//卖出种子
+//卖出云矿机
 #define SELL_SEED_URL HOST  "api/pay/sell"
 //用户信息
 #define USER_INFO_URL HOST  "api/user/detail"

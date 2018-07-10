@@ -151,7 +151,7 @@
     
     UIView * view = [[UIView alloc]init];
     UILabel * label = [[UILabel alloc]init];
-    NSString * str  = @"*使用说明\n 1.只是适用于本账号\n 2.账号如果有待匹配或未完成的卖出订单时，不能使用；\n 3.使用后，银行账号和支付宝会被清空，需要完善后才可以卖出种子。";
+    NSString * str  = @"*使用说明\n 1.只是适用于本账号\n 2.账号如果有待匹配或未完成的卖出订单时，不能使用；\n 3.使用后，银行账号和支付宝会被清空，需要完善后才可以卖出云矿机。";
     label.attributedText = [SysUtils attributeStringWithRedX:str];
     label.numberOfLines = 0;
     [view addSubview:label];

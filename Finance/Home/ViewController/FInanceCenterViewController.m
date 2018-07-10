@@ -137,9 +137,9 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         }else{
             FICenterGainCell * cell = [tableView dequeueReusableCellWithIdentifier:centerGainIdentifier forIndexPath:indexPath];
             cell.totalLabel.text = self.centerData.total_seed;
-            cell.buylabel.text = [NSString stringWithFormat:@"买入种子总数 %@pcs ",self.centerData.buy_seed];
-            cell.selloutLabel.text = [NSString stringWithFormat:@"已卖出种子数量 %@pcs ",self.centerData.sell_seed];
-            cell.waitlabel.text = [NSString stringWithFormat:@"待卖出种子数量   %@pcs ",self.centerData.wait_seed];
+            cell.buylabel.text = [NSString stringWithFormat:@"买入云矿机总数 %@pcs ",self.centerData.buy_seed];
+            cell.selloutLabel.text = [NSString stringWithFormat:@"已卖出云矿机数量 %@pcs ",self.centerData.sell_seed];
+            cell.waitlabel.text = [NSString stringWithFormat:@"待卖出云矿机数量   %@pcs ",self.centerData.wait_seed];
             return cell;
         }
         

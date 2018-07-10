@@ -27,8 +27,8 @@
     // Do any additional setup after loading the view from its nib.
 
     _seed = [[FIBusinessSeed alloc]init];
-    _titleArr = @[@"购买种子数量",@"对应支付金额",@"输入安全密码"];
-    _placeHolderTitleArr = @[@"当前等级可购买1-20颗种子",@"5000",@"请输入安全密码"];
+    _titleArr = @[@"购买云矿机数量",@"对应支付金额",@"输入安全密码"];
+    _placeHolderTitleArr = @[@"当前等级可购买1-20颗云矿机",@"5000",@"请输入安全密码"];
 
     UILabel * timeTmp = [[UILabel alloc]init];
     timeTmp.font = [UIFont systemFontOfSize:11];
@@ -129,7 +129,7 @@
     return 65;
 }
 -(NSString *)getTitle{
-    return @"买入种子";
+    return @"买入云矿机";
 }
 
 -(void)textFieldDidChanged:(FIStatusTextField *)textField{
