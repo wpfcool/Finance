@@ -128,7 +128,10 @@
     }
     
     [self asyncSendRequestWithURL:ALTER_REALNAME_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"username":realName} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
-        
+        if(!error){
+            self.userInfo.trueName = realName;
+            [self.view makeToast:@"修改成功" duration:2.0];
+        }
     }];
 }
 -(void)alertPhone:(NSString *)phone{
@@ -144,6 +147,7 @@
          
     [self asyncSendRequestWithURL:ALTERPHONE_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"phone":phone} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
+            self.userInfo.phone = phone;
             [self.view makeToast:dic[@"msg"] duration:2.0];
         }
     }];
