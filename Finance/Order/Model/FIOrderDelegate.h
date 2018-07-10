@@ -16,5 +16,5 @@
 -(void)confirmPay:(NSString *)orderId;
 -(void)complain:(FIOrderData *)orderData orderType:(OrderType)type;
 -(void)pingjia:(NSString *)orderId orderType:(OrderType)type;
--(void)getPingzheng:(NSString *)orderId;//获得凭证
+-(void)getPingzheng:(NSString *)image;//获得凭证
 @end

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FIOrderData.h"
+#import "FIOrderDelegate.h"
 @interface FIOrderDetailOrderCell : UITableViewCell
 @property (nonatomic,strong)FIOrderData * orderData;
 @property (nonatomic,assign)OrderType orderType;
+@property (nonatomic,weak)id<FIOrderDelegate>delegate;
 @end

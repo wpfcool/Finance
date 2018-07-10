@@ -9,14 +9,19 @@
 #import "FIOrderDetail1ViewController.h"
 #import "FIOrderDetailTimeViewCell.h"
 #import "FIOrderDetailOrderCell.h"
-@interface FIOrderDetail1ViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "HttpRequest.h"
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+@interface FIOrderDetail1ViewController ()<UITableViewDataSource,UITableViewDelegate,FIOrderDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableVIew;
 @property (weak, nonatomic) IBOutlet UIButton *complainButton;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
-
+@property (nonatomic,strong)UIView * bgView ;//凭证弹窗
 @end
+
 
 @implementation FIOrderDetail1ViewController
 
@@ -41,8 +46,40 @@
 
 }
 - (IBAction)complainClick:(id)sender {
+    NSString * comType = @"1";
+    if(self.orderType & OrderTypeBuy){
+        comType = @"2";
+    }else if(self.orderType & OrderTypeSell){
+        comType = @"1";
+        
+    }
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:@"确认未收到款，要投诉" message:@"银行转账正常到账时间为24小时之内，因各银行处理系统略有不同，可能会出现延迟，您可与匹配方先沟通处理。如12小时后确实未收到款，系统会要求购买会员在12小时之后提交付款凭证视频，如恶投" preferredStyle:UIAlertControllerStyleAlert];
+    [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self asyncSendRequestWithURL:COMPLAIN_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"order_id":self.orderData.order_id,@"type":comType} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+            if(!error){
+                [self.view makeToast:@"投诉成功" duration:2.0];
+                self.orderData.is_lodge  =@"2";
+            }
+        }];
+    }]];
+    
+    [controller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 - (IBAction)confirmClick:(id)sender {
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:nil message:@"确认已经收到这笔款" preferredStyle:UIAlertControllerStyleAlert];
+    [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self asyncSendRequestWithURL:CONFIRMPAY_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"order_id":self.orderData.order_id} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+            if(!error){
+                
+            }
+        }];
+    }]];
+    
+    [controller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
@@ -59,6 +96,7 @@
     }else if(indexPath.section == 1){
         
         FIOrderDetailOrderCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIOrderDetailOrderCellidentifer" forIndexPath:indexPath];
+        cell.delegate = self;
         cell.orderType = self.orderType;
         cell.orderData = self.orderData;
         return cell;
@@ -66,6 +104,79 @@
     
     return nil;
 
+}
+
+-(void)uploadPingzheng:(NSString *)orderId{
+    UIImagePickerController * pick = [[UIImagePickerController alloc]init];
+    pick.delegate = self;
+    pick.allowsEditing = YES;
+    UIAlertController * controller = [UIAlertController alertControllerWithTitle:@"选择照片" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [controller addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        pick.sourceType  = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:pick animated:YES completion:nil];
+        
+    }]];
+    
+    [controller addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        pick.sourceType  = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:pick animated:YES completion:nil];
+    }]];
+    [controller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:controller animated:YES completion:nil];
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage]; //原始图片
+    NSData * data =UIImageJPEGRepresentation(image, 0.1);
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    //上传凭证
+    [self showHUD];
+    [HttpRequest upLoadWithURL:UPLOADPINGZHENGURL upData:data name:@"file" fileName:@"image.jpg" mimeType:@"mage/jpg" params:@{@"user_id":[FIUser shareInstance].user_id,@"order_id":self.orderData.order_id} result:^(id dic, NSError *error) {
+        [self hiddenHUD];
+        if(!error){
+            [self.view makeToast:@"上传成功" duration:2.0];
+        }
+        
+    }];
+    
+    
+}
+
+-(void)getPingzheng:(NSString *)image{
+    if(self.orderData.image.length == 0){
+        [self showAlert:@"无转账凭证"];
+        return;
+    }
+    
+    UIWindow * window = [UIApplication sharedApplication].delegate.window;
+
+    self.bgView= [[UIView alloc]initWithFrame:window.bounds];
+    self.bgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    [window addSubview:self.bgView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
+    tap.numberOfTapsRequired =1;
+    [self.bgView addGestureRecognizer:tap];
+    
+    UIImageView * imageView = [[UIImageView alloc] init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.bgView addSubview:imageView];
+    
+    [imageView sd_setImageWithURL:[NSURL URLWithString:self.orderData.image]];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.centerY.equalTo(bgView);
+        make.edges.equalTo(self.bgView);
+    }];
+}
+-(void)tapClick:(id)sender{
+    [self.bgView removeFromSuperview];
+    self.bgView = nil;
 }
 -(NSString *)getTime:(NSString *)time{
     
@@ -75,22 +186,8 @@
     return [fommate stringFromDate:date];
 }
 
--(void)confirmPay:(NSString *)orderId{
-    
-    UIAlertController * controller = [UIAlertController alertControllerWithTitle:nil message:@"确认已经收到这笔款" preferredStyle:UIAlertControllerStyleAlert];
-    [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self asyncSendRequestWithURL:CONFIRMPAY_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"order_id":orderId} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
-            if(!error){
-                
-            }
-        }];
-    }]];
-    
-    [controller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    }]];
-    [self presentViewController:controller animated:YES completion:nil];
-    
-}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

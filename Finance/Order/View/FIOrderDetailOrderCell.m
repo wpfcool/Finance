@@ -41,10 +41,11 @@
         if(_orderType & OrderTypeWaitingPay){
             _bottomButton.hidden = NO;
             [_bottomButton setTitle:@"上传付款凭证" forState:UIControlStateNormal];
+
         }
         else if(_orderType & OrderTypeWaitingConfirm){
             _bottomButton.hidden = NO;
-            [_bottomButton setTitle:@"催付款" forState:UIControlStateNormal];
+            [_bottomButton setTitle:@"催确认" forState:UIControlStateNormal];
         }
         
         
@@ -64,16 +65,18 @@
     if(_orderType & OrderTypeBuy){
 
         if(_orderType & OrderTypeWaitingPay){
-            [_bottomButton setTitle:@"上传付款凭证" forState:UIControlStateNormal];
+            [_delegate uploadPingzheng:self.orderData.order_id];
+            
+
         }
         else if(_orderType & OrderTypeWaitingConfirm){
-            [_bottomButton setTitle:@"催付款" forState:UIControlStateNormal];
+            [_delegate cuiConfirm:self.orderData.order_id];
         }
         
         
     }else if(_orderType & OrderTypeSell){
         if(_orderType & OrderTypeWaitingConfirm){
-            [_bottomButton setTitle:@"查看付款凭证" forState:UIControlStateNormal];
+            [_delegate getPingzheng:self.orderData.image];
         }
         
     }
