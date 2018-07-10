@@ -25,5 +25,6 @@ typedef NS_ENUM(NSInteger,RequestMethod) {
 
 -(void)emptyViewShow;
 -(void)emptyViewHidden;
-
+-(void)showHUD;
+-(void)hiddenHUD;
 @end

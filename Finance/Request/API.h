@@ -78,4 +78,15 @@
 #define GAVECODE_URL HOST  "api/code/gift"
 //订单列表
 #define ORDERLIST_URL HOST  "api/order/orderlist"
+//确认付款
+#define CONFIRMPAY_URL HOST  "api/order/confirm"
+//获得订单手机号
+#define ORDERPHONE_URL HOST  "api/order/getorderphone"
+//投诉
+#define COMPLAIN_URL HOST  "api/order/lodge"
+//
+//评价
+#define PingjaURL HOST  "api/order/score"
+//上传凭证
+#define UPLOADPINGZHENGURL HOST "api/order/payment"
 #endif /* API_h */

@@ -82,6 +82,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
+                        <outlet property="dataSource" destination="-1" id="nlL-2w-jmR"/>
                         <outlet property="delegate" destination="-1" id="xyf-4t-Hta"/>
                     </connections>
                 </tableView>

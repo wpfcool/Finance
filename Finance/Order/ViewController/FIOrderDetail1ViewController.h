@@ -1,0 +1,15 @@
+//
+//  FIOrderDetail1ViewController.h
+//  Finance
+//
+//  Created by wenpeifang on 2018/7/10.
+//  Copyright © 2018年 wenpeifang. All rights reserved.
+//
+
+#import "FIBaseViewController.h"
+#import "FIOrderData.h"
+
+@interface FIOrderDetail1ViewController : FIBaseViewController
+@property (nonatomic,strong)FIOrderData * orderData;
+@property (nonatomic,assign)OrderType orderType;
+@end

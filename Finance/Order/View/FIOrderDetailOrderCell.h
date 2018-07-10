@@ -1,5 +1,5 @@
 //
-//  FIOrderListCell.h
+//  FIOrderDetailOrderCell.h
 //  Finance
 //
 //  Created by wenpeifang on 2018/7/9.
@@ -8,15 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FIOrderData.h"
-#import "FIOrderDelegate.h"
-
-@interface FIOrderListCell : UITableViewCell
+@interface FIOrderDetailOrderCell : UITableViewCell
 @property (nonatomic,strong)FIOrderData * orderData;
 @property (nonatomic,assign)OrderType orderType;
-@property (nonatomic,weak)id<FIOrderDelegate>delegate;
 @end
-
-
-
-
-

@@ -81,6 +81,7 @@
             self.middLabelHeightConstraint.constant = 0;
             self.topLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.app_time]];
             self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.buy_name];
+            
             //  添加联系会员及催确认按钮
             [self addMemberAndTuikuanButton];
         }else if(orderType & OrderTypeSell){
@@ -88,9 +89,9 @@
             self.middLabelHeightConstraint.constant = 15;
             self.topLabel.text = [NSString stringWithFormat:@"申请时间:%@",[self getDate:self.orderData.app_time]];
             self.middLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.app_time]];
-            self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.buy_name];
+            self.bottomLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
             
-            //  添加联系会员按钮 我要投诉 确认收款
+            //  添加联系会员按钮 投我要诉 确认收款
             [self addMemberTouSuConfirmButton];
         }
     }else if(orderType&OrderTypeWaitingPingjia){
@@ -162,9 +163,15 @@
     }];
     
     UIButton * toushu = [self grayButton];
-    [toushu setTitle:@"我要投诉" forState:UIControlStateNormal];
-    [toushu addTarget:self
-                  action:@selector(tousuClick:) forControlEvents:UIControlEventTouchUpInside];
+    if([self.orderData.is_lodge integerValue] == 1){
+        [toushu setTitle:@"我要投诉" forState:UIControlStateNormal];
+        [toushu addTarget:self
+                   action:@selector(tousuClick:) forControlEvents:UIControlEventTouchUpInside];
+    }else{
+        [toushu setTitle:@"已投诉" forState:UIControlStateNormal];
+    }
+    
+
     [self.buttonView addSubview:toushu];
 
     [toushu mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -281,22 +288,29 @@
 
 -(void)pingzhengClick:(id)sender{
     //上传凭证
+    [_delegate uploadPingzheng:self.orderData.order_id];
 }
 -(void)contactMember:(id)sender{
     //联系会员
+    [_delegate contactMemeber:self.orderData.order_id orderType:self.orderType];
 }
 
 -(void)cuiConfirmClick:(id)sender{
     //催确认
+    [_delegate cuiConfirm:self.orderData.order_id];
 }
 -(void)confirmClick:(id)sender{
     //确认收款
+    [_delegate confirmPay:self.orderData.order_id];
 }
 -(void)tousuClick:(id)sender{
     //投诉
+//    [_delegate complain:self.orderData rderType:self.orderType];
+    [_delegate complain:self.orderData orderType:self.orderType];
 }
 -(void)pingjiaClick:(id)sender{
     //评价
+    [_delegate pingjia:self.orderData.order_id orderType:self.orderType];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

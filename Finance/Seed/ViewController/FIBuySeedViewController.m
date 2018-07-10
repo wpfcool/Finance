@@ -155,7 +155,7 @@
     
     [self asyncSendRequestWithURL:BUY_SEED_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"password":self.seed.seedPassword,@"num":self.seed.seedNum} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
-            [self showAlert:dic[@"msg"]];
+            [self.view makeToast:dic[@"msg"] duration:2.0];
         }
     }];
     

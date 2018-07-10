@@ -14,6 +14,8 @@
 
 +(void)postWithUrlString:(NSString *)urlString parameters:(NSDictionary*)parameters result:(void(^)(id dic,NSError*error))resultBlock;
 
++ (void)upLoadWithURL:(NSString *)urlString upData:(NSData *)data name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)type params:(NSDictionary *)params  result:(void(^)(id dic,NSError*error))resultBlock;
+
 //获取错误描述
 +(NSString *)errorDesc:(NSError *)error;
 @end
