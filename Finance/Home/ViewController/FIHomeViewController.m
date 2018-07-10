@@ -68,7 +68,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.leftButton .frame = CGRectMake(0, 0, 20, 20);
-    [self.leftButton setBackgroundImage:[UIImage imageNamed:@"setting_avator"] forState:UIControlStateNormal];
+    [self.leftButton setBackgroundImage:[UIImage imageNamed:@"home_avator_default"] forState:UIControlStateNormal];
 //     self.leftButton .backgroundColor = [UIColor redColor];
     [self.leftButton  addTarget:self
                    action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
