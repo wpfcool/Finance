@@ -9,5 +9,12 @@
 #import "FIHomeData.h"
 
 @implementation FIHomeData
-
+-(void)setDramSeed:(NSString *)dramSeed{
+    NSString * tmp = [NSString stringWithFormat:@"%.2f",dramSeed.doubleValue];
+    _dramSeed = tmp;
+}
+-(void)setBonusSeed:(NSString *)bonusSeed{
+    NSString * tmp = [NSString stringWithFormat:@"%.2f",bonusSeed.doubleValue];
+    _bonusSeed = tmp;
+}
 @end

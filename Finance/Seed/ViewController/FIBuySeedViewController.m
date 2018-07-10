@@ -88,7 +88,7 @@
 -(void)getCOunt{
     [self asyncSendRequestWithURL:TIME_SEED_COUNT_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
-            self.timeLabel.text = [NSString stringWithFormat:@"%@",dic[@"time"]];
+            self.timeLabel.text =[SysUtils getTime: [NSString stringWithFormat:@"%@",dic[@"time"]] ];
             self.countLabel.text = [NSString stringWithFormat:@"%@",dic[@"num"]];
         }
     }];

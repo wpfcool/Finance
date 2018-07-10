@@ -104,7 +104,8 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
             self.headerView.totalMoneyLabel.text = self.homeData.sum;
             self.headerView.dreamMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.dramSeed.doubleValue]  ;
             self.headerView.bonusMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.bonusSeed.doubleValue]  ;
-            self.headerView.timeLabel.text = self.homeData.time;
+//            self.headerView.timeLabel.text = self.homeData.time;
+            self.headerView.timeLabel.text = [SysUtils getTime:self.homeData.time];
         }
     }];
     
