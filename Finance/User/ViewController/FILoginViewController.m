@@ -32,10 +32,7 @@
     _distanceConstraint.constant = kIphone6Scale(69);
     _userNameTextField.delegate= self;
     _passworldTextField.delegate = self;
-    
-    
-    _userNameTextField.text = @"wpfcool2008";
-    _passworldTextField.text = @"123456";
+     
 
 }
 - (IBAction)loginClick:(id)sender {

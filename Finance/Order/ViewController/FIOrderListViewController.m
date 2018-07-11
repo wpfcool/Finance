@@ -10,7 +10,6 @@
 #import <MJRefresh/MJRefresh.h>
 #import "FIOrderListCell.h"
 #import "FIOrderData.h"
-#import "FIOrderDetailViewController.h"
 #import "FIOrderDetail1ViewController.h"
 #import "FIPingjiaViewController.h"
 #import "HttpRequest.h"

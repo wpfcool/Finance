@@ -110,8 +110,6 @@
 		F956721420F372F900DB825A /* FIOrderData.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721320F372F900DB825A /* FIOrderData.m */; };
 		F956721820F3765D00DB825A /* FIOrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721620F3765D00DB825A /* FIOrderListCell.m */; };
 		F956721920F3765D00DB825A /* FIOrderListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956721720F3765D00DB825A /* FIOrderListCell.xib */; };
-		F956721E20F398D800DB825A /* FIOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F956721C20F398D800DB825A /* FIOrderDetailViewController.m */; };
-		F956721F20F398D800DB825A /* FIOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */; };
 		F956722320F39D0400DB825A /* FIOrderDetailTimeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F956722120F39D0400DB825A /* FIOrderDetailTimeViewCell.m */; };
 		F956722420F39D0400DB825A /* FIOrderDetailTimeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F956722220F39D0400DB825A /* FIOrderDetailTimeViewCell.xib */; };
 		F956722820F39D2000DB825A /* FIOrderDetailOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F956722620F39D2000DB825A /* FIOrderDetailOrderCell.m */; };
@@ -343,9 +341,6 @@
 		F956721520F3765C00DB825A /* FIOrderListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderListCell.h; sourceTree = "<group>"; };
 		F956721620F3765D00DB825A /* FIOrderListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderListCell.m; sourceTree = "<group>"; };
 		F956721720F3765D00DB825A /* FIOrderListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderListCell.xib; sourceTree = "<group>"; };
-		F956721B20F398D800DB825A /* FIOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderDetailViewController.h; sourceTree = "<group>"; };
-		F956721C20F398D800DB825A /* FIOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderDetailViewController.m; sourceTree = "<group>"; };
-		F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderDetailViewController.xib; sourceTree = "<group>"; };
 		F956722020F39D0400DB825A /* FIOrderDetailTimeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderDetailTimeViewCell.h; sourceTree = "<group>"; };
 		F956722120F39D0400DB825A /* FIOrderDetailTimeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderDetailTimeViewCell.m; sourceTree = "<group>"; };
 		F956722220F39D0400DB825A /* FIOrderDetailTimeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderDetailTimeViewCell.xib; sourceTree = "<group>"; };
@@ -771,9 +766,6 @@
 				F956720520F3459D00DB825A /* FIOrderListViewController.xib */,
 				F956720920F345C500DB825A /* FIOrderPageViewController.h */,
 				F956720A20F345C500DB825A /* FIOrderPageViewController.m */,
-				F956721B20F398D800DB825A /* FIOrderDetailViewController.h */,
-				F956721C20F398D800DB825A /* FIOrderDetailViewController.m */,
-				F956721D20F398D800DB825A /* FIOrderDetailViewController.xib */,
 				F956722A20F452C900DB825A /* FIOrderDetail1ViewController.h */,
 				F956722B20F452C900DB825A /* FIOrderDetail1ViewController.m */,
 				F956722C20F452C900DB825A /* FIOrderDetail1ViewController.xib */,
@@ -1075,7 +1067,6 @@
 				F9545C4320D8F47B00531C66 /* FIFindPasswordViewController.xib in Resources */,
 				F9545C6E20DBACCE00531C66 /* FiActiveMemberViewController.xib in Resources */,
 				F9159E7220C4E855002BFB1B /* Assets.xcassets in Resources */,
-				F956721F20F398D800DB825A /* FIOrderDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1194,7 +1185,6 @@
 				F95671F920F30AF500DB825A /* FIPasswordView.m in Sources */,
 				F93EBCFE20C7E0240000AE72 /* UIView+Toast.m in Sources */,
 				F95671F620F3051A00DB825A /* FIActivityCoceViewController.m in Sources */,
-				F956721E20F398D800DB825A /* FIOrderDetailViewController.m in Sources */,
 				F93EBCE220C7B6DD0000AE72 /* FILoginViewController.m in Sources */,
 				F90EC92320E0CADA008CD05A /* FIBusinessSeed.m in Sources */,
 				D9116E8D20EE794100F978F0 /* FIPassworldAlterViewController.m in Sources */,
@@ -1400,7 +1390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPZY6FRDDL;
+				DEVELOPMENT_TEAM = 355A2TSX74;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Finance/PrefixHeader.pch";
 				INFOPLIST_FILE = Finance/Info.plist;
@@ -1409,7 +1399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.cpc.Finance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcloud.b2c.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1421,7 +1411,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QPZY6FRDDL;
+				DEVELOPMENT_TEAM = 355A2TSX74;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Finance/PrefixHeader.pch";
 				INFOPLIST_FILE = Finance/Info.plist;
@@ -1430,7 +1420,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wpf.cpc.Finance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jcloud.b2c.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

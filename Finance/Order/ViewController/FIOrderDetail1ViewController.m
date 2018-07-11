@@ -45,6 +45,9 @@
     [self.tableVIew registerNib:[UINib nibWithNibName:@"FIOrderDetailOrderCell" bundle:nil] forCellReuseIdentifier:@"FIOrderDetailOrderCellidentifer"];
 
 }
+-(void)cuiConfirm:(NSString *)orderId{
+    
+}
 - (IBAction)complainClick:(id)sender {
     NSString * comType = @"1";
     if(self.orderType & OrderTypeBuy){
