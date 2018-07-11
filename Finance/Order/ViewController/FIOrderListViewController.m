@@ -70,7 +70,7 @@
         index = @"7";
     }
     
-    [self asyncSendRequestWithURL:ORDERLIST_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"buyType":@(self.orderCataory),@"type":index,@"pageNo":@(self.currentPage),@"pageSize":@20} RequestMethod:POST showHUD:NO result:^(NSArray * arr, NSError *error) {
+    [self asyncSendRequestWithURL:ORDERLIST_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"buyType":@(self.orderCataory),@"type":index,@"pageNo":@(self.currentPage),@"pageSize":@20} RequestMethod:POST showHUD:YES result:^(NSArray * arr, NSError *error) {
         if(!error){
             if(arr.count != 20){
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];

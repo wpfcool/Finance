@@ -18,7 +18,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self addChildViewController:tvc];
+    [tvc.view setFrame:self.view.frame];
+    _tableView= tvc.tableView;
+//    _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.tableFooterView = [UIView new];
     [self.view addSubview:_tableView];
     

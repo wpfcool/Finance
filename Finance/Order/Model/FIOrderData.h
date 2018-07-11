@@ -18,7 +18,7 @@
 @property (nonatomic,copy)NSString *number;//一共需要匹配云矿机数量
 @property (nonatomic,copy)NSString *add_time;//申请时间
 @property (nonatomic,copy)NSString *app_time;//匹配成功时间
-
+@property (nonatomic,copy)NSString * seller_name;
 
 @property (nonatomic,copy)NSString *buy_name;//购买会员
 @property (nonatomic,copy)NSString *pay_time;//支付时间

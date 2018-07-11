@@ -83,7 +83,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"FITextFieldViewCell" bundle:nil] forCellReuseIdentifier:@"FITextFieldViewCel1l"];
-    
+    self.tableView.keyboardDismissMode =UIScrollViewKeyboardDismissModeOnDrag;
+
     [self loadData];
 }
 
@@ -110,13 +111,15 @@
     FITextFieldViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FITextFieldViewCel1l" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.delegate = self;
-    
+    cell.textField.secureTextEntry = NO;
+
     if(indexPath.row == 0){
         cell.textField.status = TextFieldStatusType;
         cell.textField.enabled = NO;
         self.typeTextField = cell.textField;
     }else if(indexPath.row == 1){
         cell.textField.status = TextFieldStatusNum;
+        cell.textField.keyboardType = UIKeyboardTypeDecimalPad;
 
     }else if(indexPath.row == 2){
         cell.textField.status = TextFieldStatusMoney;
@@ -125,6 +128,8 @@
     }
     else if(indexPath.row == 3){
         cell.textField.status = TextFieldStatusPassword;
+        cell.textField.secureTextEntry = YES;
+
     }
 
     cell.titleLabel.text = _titleArr[indexPath.row];

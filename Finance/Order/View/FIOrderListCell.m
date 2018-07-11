@@ -60,13 +60,15 @@
         self.topLabel.hidden = NO;
         self.bottomLabel.hidden = NO;
         self.topLabel.text = [NSString stringWithFormat:@"匹配时间:%@",[self getDate:self.orderData.app_time]];
-        self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.buy_name];
         if(orderType&OrderTypeBuy){
           //  添加联系会员及上传付款凭证按钮
+            self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.seller_name];
             [self addMemberAndPinghzengButton];
         }else if(orderType & OrderTypeSell){
             //  添加联系会员按钮
             [self addMemberButton];
+            self.bottomLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
+
         }
         
     }else if(orderType&OrderTypeWaitingConfirm){
@@ -80,7 +82,7 @@
             self.middLabel.hidden = YES;
             self.middLabelHeightConstraint.constant = 0;
             self.topLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.app_time]];
-            self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.buy_name];
+            self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.seller_name];
             
             //  添加联系会员及催确认按钮
             [self addMemberAndTuikuanButton];
@@ -101,7 +103,12 @@
         self.topLabel.hidden = YES;
         self.bottomLabel.hidden = YES;
         self.middLabel.hidden = NO;
-        self.middLabel.text = [NSString stringWithFormat:@"购买会员:%@",self.orderData.buy_name];
+        if(orderType&OrderTypeBuy){
+            self.middLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.seller_name];
+        }else if(orderType & OrderTypeSell){
+            self.middLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
+
+        }
         //  添加评价按钮
         [self addPingjiaButton];
     }
