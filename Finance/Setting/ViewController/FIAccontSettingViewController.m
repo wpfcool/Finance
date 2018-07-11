@@ -13,6 +13,7 @@
 #import "FIBankListViewController.h"
 #import "FIAliyPayViewController.h"
 #import "FIPassWordManagerViewController.h"
+#import "AppDelegate.h"
 @interface FIAccontSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)NSArray * titleArr;
@@ -167,6 +168,10 @@
         default:
             break;
     }
+}
+- (IBAction)logoutClick:(id)sender {
+    AppDelegate * deleage =(AppDelegate *) [UIApplication sharedApplication].delegate;
+    [deleage loginRootViewController];
 }
 
 - (void)didReceiveMemoryWarning {
