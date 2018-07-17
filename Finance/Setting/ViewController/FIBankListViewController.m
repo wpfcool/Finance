@@ -63,7 +63,7 @@
             }else{
                   self.cardView.numberLabel.text = self.bankData.bankCard;
             }
-                     
+            
             self.navigationItem.rightBarButtonItem =nil;
             [self emptyViewHidden];
         }
