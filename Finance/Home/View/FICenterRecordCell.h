@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FICenterRecordCell : UITableViewCell
+@protocol FICenterRecordCellDelegate<NSObject>
+-(void)buyOrderList;
+-(void)sellOutOrderList;
+@end
 
+@interface FICenterRecordCell : UITableViewCell
+@property (nonatomic,weak)id<FICenterRecordCellDelegate>delegate;
 @end

@@ -62,6 +62,9 @@
     dispatch_resume(self.timer);
     
 }
+- (IBAction)backClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)getCodeClick:(id)sender {
     

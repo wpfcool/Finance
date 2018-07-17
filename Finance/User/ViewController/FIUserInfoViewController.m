@@ -88,8 +88,8 @@ static NSString * headerIdentifer = @"headerIdentifer";
         UIImageView * imageView = [cell.contentView viewWithTag:100];
         UILabel * nameLabel  = [cell.contentView viewWithTag:101];
         
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.userInfo.user_image]];
-        nameLabel.text = self.userInfo.nickname?self.userInfo.nickname: self.userInfo.username;
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.userInfo.user_image] placeholderImage:[UIImage imageNamed:@"home_avator_default"]];
+        nameLabel.text = self.userInfo.nickName?self.userInfo.nickName: self.userInfo.username;
         
         return cell;
     }else{

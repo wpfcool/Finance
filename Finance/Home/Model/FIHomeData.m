@@ -17,4 +17,8 @@
     NSString * tmp = [NSString stringWithFormat:@"%.2f",bonusSeed.doubleValue];
     _bonusSeed = tmp;
 }
+-(void)setSum:(NSString *)sum{
+    NSString * tmp = [NSString stringWithFormat:@"%.2f",sum.doubleValue];
+    _sum = tmp;
+}
 @end

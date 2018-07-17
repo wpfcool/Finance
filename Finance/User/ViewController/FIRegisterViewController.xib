@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -150,6 +150,17 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_code" translatesAutoresizingMaskIntoConstraints="NO" id="NzA-St-74Z">
                     <rect key="frame" x="37" y="406" width="16" height="15"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwx-5o-QQa">
+                    <rect key="frame" x="0.0" y="29" width="70" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Vvl-J2-N2R"/>
+                        <constraint firstAttribute="height" constant="40" id="k5U-re-cMJ"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="backClick:" destination="-1" eventType="touchUpInside" id="Lft-nR-iVS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -174,12 +185,14 @@
                 <constraint firstItem="eMD-Yv-G3i" firstAttribute="centerY" secondItem="4yd-pD-L1F" secondAttribute="centerY" id="URy-10-bqk"/>
                 <constraint firstItem="aIo-67-UB4" firstAttribute="trailing" secondItem="1HI-hl-EQM" secondAttribute="trailing" id="VO6-Sj-7km"/>
                 <constraint firstItem="1HI-hl-EQM" firstAttribute="top" secondItem="pLS-rB-eIk" secondAttribute="bottom" constant="13" id="W1h-KY-AW1"/>
+                <constraint firstItem="gJX-KT-fQG" firstAttribute="top" secondItem="nwx-5o-QQa" secondAttribute="bottom" id="YX3-BK-Ii5"/>
                 <constraint firstItem="NzA-St-74Z" firstAttribute="leading" secondItem="ya2-fR-PIW" secondAttribute="leading" id="YaM-T7-LrT"/>
                 <constraint firstAttribute="trailing" secondItem="ShG-Vc-5fR" secondAttribute="trailing" constant="20" id="ZYZ-iy-Mim"/>
                 <constraint firstItem="dtV-iK-FmC" firstAttribute="trailing" secondItem="ya2-fR-PIW" secondAttribute="trailing" id="ZdM-nF-gOu"/>
                 <constraint firstItem="7Ek-K4-qcq" firstAttribute="leading" secondItem="bF2-Cn-IIK" secondAttribute="trailing" constant="10" id="aY8-IL-jgJ"/>
                 <constraint firstItem="7Ek-K4-qcq" firstAttribute="trailing" secondItem="EbL-Tk-FHz" secondAttribute="trailing" id="agR-H3-tJD"/>
                 <constraint firstItem="EbL-Tk-FHz" firstAttribute="top" secondItem="gJX-KT-fQG" secondAttribute="bottom" constant="122" id="aok-pk-MgK"/>
+                <constraint firstItem="nwx-5o-QQa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ded-s4-Tuw"/>
                 <constraint firstItem="7Ek-K4-qcq" firstAttribute="centerY" secondItem="bF2-Cn-IIK" secondAttribute="centerY" id="dfw-vb-ZZC"/>
                 <constraint firstItem="ya2-fR-PIW" firstAttribute="leading" secondItem="EbL-Tk-FHz" secondAttribute="leading" id="f4z-O5-JVq"/>
                 <constraint firstItem="EbL-Tk-FHz" firstAttribute="top" secondItem="bF2-Cn-IIK" secondAttribute="bottom" constant="13" id="fdO-s8-JCe"/>
@@ -198,6 +211,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back" width="9" height="16"/>
         <image name="user_code" width="16" height="15"/>
         <image name="user_password" width="13" height="16"/>
         <image name="user_phone" width="13" height="18"/>

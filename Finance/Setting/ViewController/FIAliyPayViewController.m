@@ -51,7 +51,7 @@
                 self.aliPayData = [FIAliPayData yy_modelWithJSON:dic];
                 self.cardView.nameLabel.text =  self.aliPayData.alipayName;
                 self.cardView.numberLabel.text =self.aliPayData.alipayNum;
-                self.cardView.typeLabel.hidden = YES;
+//                self.cardView.typeLabel.hidden = YES;
                 //去掉+
                 self.navigationItem.rightBarButtonItem = nil;
             }

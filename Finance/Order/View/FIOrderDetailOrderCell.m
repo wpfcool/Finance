@@ -25,7 +25,7 @@
 }
 -(void)setOrderData:(FIOrderData *)orderData{
     _orderData = orderData;
-    self.orederNOLabel.text = orderData.orderNo;
+    self.orederNOLabel.text =[NSString stringWithFormat:@"订单编号:%@",orderData.orderNo] ;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@",orderData.price];
     self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",orderData.number];
     self.macthLabel.text = [NSString stringWithFormat:@"%@",[self getDate:orderData.app_time]];
@@ -38,6 +38,8 @@
 
     if(_orderType & OrderTypeBuy){
         self.userNameTypeLabel.text = @"卖出会员";
+        self.userNameLabel.text = self.orderData.seller_name;
+
         if(_orderType & OrderTypeWaitingPay){
             _bottomButton.hidden = NO;
             [_bottomButton setTitle:@"上传付款凭证" forState:UIControlStateNormal];
@@ -45,12 +47,14 @@
         }
         else if(_orderType & OrderTypeWaitingConfirm){
             _bottomButton.hidden = NO;
-            [_bottomButton setTitle:@"催确认" forState:UIControlStateNormal];
+            [_bottomButton setTitle:@"查看付款凭证" forState:UIControlStateNormal];
         }
         
         
     }else if(_orderType & OrderTypeSell){
-        self.userNameTypeLabel.text = @"买入会员";
+        self.userNameTypeLabel.text = @"购买会员";
+        self.userNameLabel.text = self.orderData.buy_name;
+
         if(_orderType & OrderTypeWaitingConfirm){
             _bottomButton.hidden = NO;
             [_bottomButton setTitle:@"查看付款凭证" forState:UIControlStateNormal];
@@ -70,7 +74,9 @@
 
         }
         else if(_orderType & OrderTypeWaitingConfirm){
-            [_delegate cuiConfirm:self.orderData.order_id];
+//            [_delegate cuiConfirm:self.orderData.order_id];
+            [_delegate getPingzheng:self.orderData.image];
+
         }
         
         

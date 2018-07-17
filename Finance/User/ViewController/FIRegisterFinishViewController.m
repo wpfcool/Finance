@@ -51,6 +51,9 @@
     
     
 }
+- (IBAction)backClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)agreeProtocol:(UIGestureRecognizer*)tap{
     
 }

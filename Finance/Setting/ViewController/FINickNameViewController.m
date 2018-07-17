@@ -22,7 +22,7 @@
     self.navigationItem.title = @"昵称";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveClick:)];
     self.nickNameTextTield.placeholder = @"请输入昵称";
-    self.nickNameTextTield.text = self.userinfo.nickname;
+    self.nickNameTextTield.text = self.userinfo.nickName;
     
     
 
@@ -37,7 +37,7 @@
     [self asyncSendRequestWithURL:ALTER_NICKNAME_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"nickname":self.nickNameTextTield.text} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"修改成功" duration:2.0];
-            self.userinfo.nickname = self.nickNameTextTield.text;
+            self.userinfo.nickName = self.nickNameTextTield.text;
         }
     }];
     

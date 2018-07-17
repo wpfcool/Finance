@@ -9,5 +9,5 @@
 #import "FISimpleHeaderTableViewController.h"
 
 @interface FISellSeedViewController : FISimpleHeaderTableViewController
-
+@property (nonatomic,assign)NSInteger type;//1为梦想背包 2为奖金背包
 @end

@@ -32,9 +32,12 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FIAlterInfoWithMoneyCell" bundle:nil] forCellReuseIdentifier:@"FIAlterInfoWithMoneyCell"];
     
-    [self getPropNum];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getPropNum];
 
+}
 -(void)getPropNum{
     
 //    1、改银行卡 2、改名卡
@@ -94,18 +97,43 @@
 }
 
 -(void)buttonClick:(FIAlterInfoWithMoneyCell *)cell{
+    
+    
+
+    
+    
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     if(indexPath.row == 0){
-        NSString * text = cell.titleTextField.text;
+        NSString * title = (self.alterType == PropTypeRealName?@"输入真实姓名":@"输入手机号");
+        UIAlertController * controller = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
         
-        NSLog(@"-===%@",text);
-        if(self.alterType == PropTypeRealName){
-            //修改真实姓名
-            [self alertRealName:text];
+        [controller addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            if(self.alterType == PropTypeRealName){
+                textField.placeholder = self.userInfo.trueName;
+            }else if(self.alterType == PropTypePhone){
+                textField.placeholder = self.userInfo.phone;
+                
+
+            }
+        }];
+        [controller addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-        }else if(self.alterType == PropTypePhone){
-            [self alertPhone:text];
-        }
+            NSString * txt = controller.textFields.firstObject.text;
+            
+                    if(self.alterType == PropTypeRealName){
+                        //修改真实姓名
+                        [self alertRealName:txt];
+            
+                    }else if(self.alterType == PropTypePhone){
+                        [self alertPhone:txt];
+                    }
+            
+        }]];
+        [controller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [self presentViewController:controller animated:YES completion:nil];
+        
 
         
     }else if(indexPath.row == 1){
@@ -126,11 +154,12 @@
         [self showAlert:@"不能和旧手机号相同"];
         return;
     }
-    
+
     [self asyncSendRequestWithURL:ALTER_REALNAME_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"username":realName} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             self.userInfo.trueName = realName;
             [self.view makeToast:@"修改成功" duration:2.0];
+            [self.tableView reloadData];
         }
     }];
 }
@@ -148,7 +177,9 @@
     [self asyncSendRequestWithURL:ALTERPHONE_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"phone":phone} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             self.userInfo.phone = phone;
-            [self.view makeToast:dic[@"msg"] duration:2.0];
+            [self.view makeToast:@"成功" duration:2.0];
+            [self.tableView reloadData];
+
         }
     }];
 }

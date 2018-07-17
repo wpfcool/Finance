@@ -13,8 +13,8 @@
 + (NSString *)shortVersion;
 
 +(NSString *)uuid;
-//根据剩余秒数生成hh:MM:ss
-+(NSString *)getTime:(NSString *)time;
+//根据剩余秒数生成dd:MM:ss
++(NSString *)getTime:(NSInteger)time;
 
 +(NSMutableAttributedString *)attributeStringWithRedX:(NSString *)str;
 @end

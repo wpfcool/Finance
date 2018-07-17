@@ -10,6 +10,6 @@
 
 @interface FIAccountCardView : UIControl
 @property (nonatomic,strong)UILabel * nameLabel;
-@property (nonatomic,strong)UILabel * typeLabel;
+//@property (nonatomic,strong)UILabel * typeLabel;
 @property (nonatomic,strong)UILabel * numberLabel;
 @end

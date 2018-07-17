@@ -28,6 +28,13 @@
 		F90B426B20ED09D200759679 /* FIAliPayData.m in Sources */ = {isa = PBXBuildFile; fileRef = F90B426A20ED09D200759679 /* FIAliPayData.m */; };
 		F90B428720EF4BE600759679 /* FISettingPasswordCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F90B428520EF4BE600759679 /* FISettingPasswordCodeCell.m */; };
 		F90B428820EF4BE600759679 /* FISettingPasswordCodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90B428620EF4BE600759679 /* FISettingPasswordCodeCell.xib */; };
+		F90DA8A920FE3ADE0077BD94 /* GKLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA89B20FE3ADD0077BD94 /* GKLoadingView.m */; };
+		F90DA8AA20FE3ADE0077BD94 /* UIScrollView+GKGestureHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA89D20FE3ADD0077BD94 /* UIScrollView+GKGestureHandle.m */; };
+		F90DA8AB20FE3ADE0077BD94 /* GKPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA8A120FE3ADD0077BD94 /* GKPhotoBrowser.m */; };
+		F90DA8AC20FE3ADE0077BD94 /* GKPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA8A320FE3ADD0077BD94 /* GKPhoto.m */; };
+		F90DA8AD20FE3ADE0077BD94 /* GKWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA8A520FE3ADD0077BD94 /* GKWebImageManager.m */; };
+		F90DA8AE20FE3ADE0077BD94 /* GKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F90DA8A620FE3ADD0077BD94 /* GKPhotoBrowser.bundle */; };
+		F90DA8AF20FE3ADE0077BD94 /* GKPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F90DA8A820FE3ADD0077BD94 /* GKPhotoView.m */; };
 		F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */; };
 		F90EC91520DF3BF1008CD05A /* FISimpleHeaderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91320DF3BF1008CD05A /* FISimpleHeaderTableViewController.m */; };
 		F90EC91B20E0C4CD008CD05A /* FITextFieldViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F90EC91920E0C4CD008CD05A /* FITextFieldViewCell.m */; };
@@ -199,6 +206,21 @@
 		F90B428420EF4BE600759679 /* FISettingPasswordCodeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISettingPasswordCodeCell.h; sourceTree = "<group>"; };
 		F90B428520EF4BE600759679 /* FISettingPasswordCodeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FISettingPasswordCodeCell.m; sourceTree = "<group>"; };
 		F90B428620EF4BE600759679 /* FISettingPasswordCodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FISettingPasswordCodeCell.xib; sourceTree = "<group>"; };
+		F90DA89920FE3ADD0077BD94 /* GKWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWebImageManager.h; sourceTree = "<group>"; };
+		F90DA89B20FE3ADD0077BD94 /* GKLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKLoadingView.m; sourceTree = "<group>"; };
+		F90DA89C20FE3ADD0077BD94 /* GKLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKLoadingView.h; sourceTree = "<group>"; };
+		F90DA89D20FE3ADD0077BD94 /* UIScrollView+GKGestureHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKGestureHandle.m"; sourceTree = "<group>"; };
+		F90DA89E20FE3ADD0077BD94 /* GKPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhoto.h; sourceTree = "<group>"; };
+		F90DA89F20FE3ADD0077BD94 /* GKWebImageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKWebImageProtocol.h; sourceTree = "<group>"; };
+		F90DA8A020FE3ADD0077BD94 /* GKPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoView.h; sourceTree = "<group>"; };
+		F90DA8A120FE3ADD0077BD94 /* GKPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoBrowser.m; sourceTree = "<group>"; };
+		F90DA8A220FE3ADD0077BD94 /* GKPhotoBrowserConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowserConfigure.h; sourceTree = "<group>"; };
+		F90DA8A320FE3ADD0077BD94 /* GKPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhoto.m; sourceTree = "<group>"; };
+		F90DA8A420FE3ADD0077BD94 /* UIScrollView+GKGestureHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKGestureHandle.h"; sourceTree = "<group>"; };
+		F90DA8A520FE3ADD0077BD94 /* GKWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKWebImageManager.m; sourceTree = "<group>"; };
+		F90DA8A620FE3ADD0077BD94 /* GKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKPhotoBrowser.bundle; sourceTree = "<group>"; };
+		F90DA8A720FE3ADD0077BD94 /* GKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPhotoBrowser.h; sourceTree = "<group>"; };
+		F90DA8A820FE3ADD0077BD94 /* GKPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPhotoView.m; sourceTree = "<group>"; };
 		F90EC90D20DF3B68008CD05A /* FIBuySeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIBuySeedViewController.h; sourceTree = "<group>"; };
 		F90EC90E20DF3B68008CD05A /* FIBuySeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIBuySeedViewController.m; sourceTree = "<group>"; };
 		F90EC91220DF3BF1008CD05A /* FISimpleHeaderTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FISimpleHeaderTableViewController.h; sourceTree = "<group>"; };
@@ -438,6 +460,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F90DA89820FE3ADD0077BD94 /* GKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				F90DA89920FE3ADD0077BD94 /* GKWebImageManager.h */,
+				F90DA89A20FE3ADD0077BD94 /* GKLoadingView */,
+				F90DA89D20FE3ADD0077BD94 /* UIScrollView+GKGestureHandle.m */,
+				F90DA89E20FE3ADD0077BD94 /* GKPhoto.h */,
+				F90DA89F20FE3ADD0077BD94 /* GKWebImageProtocol.h */,
+				F90DA8A020FE3ADD0077BD94 /* GKPhotoView.h */,
+				F90DA8A120FE3ADD0077BD94 /* GKPhotoBrowser.m */,
+				F90DA8A220FE3ADD0077BD94 /* GKPhotoBrowserConfigure.h */,
+				F90DA8A320FE3ADD0077BD94 /* GKPhoto.m */,
+				F90DA8A420FE3ADD0077BD94 /* UIScrollView+GKGestureHandle.h */,
+				F90DA8A520FE3ADD0077BD94 /* GKWebImageManager.m */,
+				F90DA8A620FE3ADD0077BD94 /* GKPhotoBrowser.bundle */,
+				F90DA8A720FE3ADD0077BD94 /* GKPhotoBrowser.h */,
+				F90DA8A820FE3ADD0077BD94 /* GKPhotoView.m */,
+			);
+			name = GKPhotoBrowser;
+			path = "../../../../Downloads/GKPhotoBrowser-master/GKPhotoBrowser";
+			sourceTree = "<group>";
+		};
+		F90DA89A20FE3ADD0077BD94 /* GKLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				F90DA89B20FE3ADD0077BD94 /* GKLoadingView.m */,
+				F90DA89C20FE3ADD0077BD94 /* GKLoadingView.h */,
+			);
+			path = GKLoadingView;
+			sourceTree = "<group>";
+		};
 		F90EC90B20DF3B44008CD05A /* Seed */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +565,7 @@
 		F9159E6720C4E853002BFB1B /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				F90DA89820FE3ADD0077BD94 /* GKPhotoBrowser */,
 				F956720120F3458000DB825A /* Order */,
 				F96940F420E38BEB00968B27 /* Setting */,
 				F90EC90B20DF3B44008CD05A /* Seed */,
@@ -772,8 +826,8 @@
 				F956723020F471FA00DB825A /* FIComplainViewController.h */,
 				F956723120F471FA00DB825A /* FIComplainViewController.m */,
 				F956723220F471FA00DB825A /* FIComplainViewController.xib */,
-				F956723520F4726A00DB825A /* FIPingjiaViewController.h */,
 				F956723620F4726A00DB825A /* FIPingjiaViewController.m */,
+				F956723520F4726A00DB825A /* FIPingjiaViewController.h */,
 				F956723720F4726A00DB825A /* FIPingjiaViewController.xib */,
 			);
 			path = ViewController;
@@ -1045,6 +1099,7 @@
 				F956723920F4726A00DB825A /* FIPingjiaViewController.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F956721920F3765D00DB825A /* FIOrderListCell.xib in Resources */,
+				F90DA8AE20FE3ADE0077BD94 /* GKPhotoBrowser.bundle in Resources */,
 				F956722920F39D2000DB825A /* FIOrderDetailOrderCell.xib in Resources */,
 				F9DE266820E4DB02007C6D0C /* FIPropDetailViewController.xib in Resources */,
 				F956720020F325BF00DB825A /* FIResetPassViewController.xib in Resources */,
@@ -1095,6 +1150,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Finance/Pods-Finance-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1106,6 +1162,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1157,9 +1214,12 @@
 				F9545C5220DB8B0400531C66 /* FISectionHeaderCell.m in Sources */,
 				F94F097D20DCA4740076A073 /* FICenterData.m in Sources */,
 				F93EBCFB20C7D6CB0000AE72 /* FIBaseNavigationViewController.m in Sources */,
+				F90DA8AB20FE3ADE0077BD94 /* GKPhotoBrowser.m in Sources */,
 				F956722D20F452C900DB825A /* FIOrderDetail1ViewController.m in Sources */,
 				F9545C4D20DB7CA900531C66 /* FIHomeManagerCell.m in Sources */,
+				F90DA8AA20FE3ADE0077BD94 /* UIScrollView+GKGestureHandle.m in Sources */,
 				F956723320F471FA00DB825A /* FIComplainViewController.m in Sources */,
+				F90DA8AF20FE3ADE0077BD94 /* GKPhotoView.m in Sources */,
 				F956723820F4726A00DB825A /* FIPingjiaViewController.m in Sources */,
 				F956722320F39D0400DB825A /* FIOrderDetailTimeViewCell.m in Sources */,
 				F9DE267020E4F94D007C6D0C /* FINickNameViewController.m in Sources */,
@@ -1169,6 +1229,7 @@
 				F956720620F3459D00DB825A /* FIOrderListViewController.m in Sources */,
 				F93EBD0A20C7F04F0000AE72 /* FIHomeViewController.m in Sources */,
 				F9DE266220E4DAF3007C6D0C /* FIPropListViewController.m in Sources */,
+				F90DA8AC20FE3ADE0077BD94 /* GKPhoto.m in Sources */,
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */,
 				F94F098120DCAA140076A073 /* FITeam.m in Sources */,
@@ -1177,6 +1238,7 @@
 				F9DE266C20E4DE26007C6D0C /* FIPropData.m in Sources */,
 				D91481BA20EA5A7F0045C5E6 /* FIBankListViewController.m in Sources */,
 				F9D4A44C20EF7DCE004667E5 /* FIScoreData.m in Sources */,
+				F90DA8A920FE3ADE0077BD94 /* GKLoadingView.m in Sources */,
 				F90B426B20ED09D200759679 /* FIAliPayData.m in Sources */,
 				F943F3A720E21C060065640C /* FIBagViewController.m in Sources */,
 				F9D4A44320EF5E25004667E5 /* FIScoreListViewController.m in Sources */,
@@ -1192,6 +1254,7 @@
 				F9545C5B20DB90C000531C66 /* FIBadgeView.m in Sources */,
 				F90EC91020DF3B68008CD05A /* FIBuySeedViewController.m in Sources */,
 				F9545C6820DBA37300531C66 /* FIMyTeamViewController.m in Sources */,
+				F90DA8AD20FE3ADE0077BD94 /* GKWebImageManager.m in Sources */,
 				F9545C7920DBBCC900531C66 /* FICenterRecordCell.m in Sources */,
 				F93EBD0120C7E53F0000AE72 /* SysUtils.m in Sources */,
 				F93EBCEC20C7BDAA0000AE72 /* FIBaseViewController.m in Sources */,

@@ -58,6 +58,7 @@
     }
     
     UIImageView * photoImageView = [cell.contentView viewWithTag:100];
+    photoImageView.image = [UIImage imageNamed:@"home_avator_default"];
     photoImageView.hidden = YES;
     cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
     cell.textLabel.font = [UIFont systemFontOfSize:15];
@@ -87,7 +88,7 @@
             cell.detailTextLabel.text =self.userInfo.memberGrade ;
             break;
         case 5:
-            cell.detailTextLabel.text = self.userInfo.nickname;
+            cell.detailTextLabel.text = self.userInfo.nickName;
             break;
             
         default:

@@ -32,6 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.emptyLabel.text = @"暂无订单";
+    self.emptyImageView.image = [UIImage imageNamed:@"empty_no_order"];
     self.currentPage = 1;
     self.view.backgroundColor = HEX_UICOLOR(0xf3f3f3, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -72,8 +75,11 @@
     
     [self asyncSendRequestWithURL:ORDERLIST_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"buyType":@(self.orderCataory),@"type":index,@"pageNo":@(self.currentPage),@"pageSize":@20} RequestMethod:POST showHUD:YES result:^(NSArray * arr, NSError *error) {
         if(!error){
+            [self.tableView.mj_header endRefreshing];
             if(arr.count != 20){
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }else{
+                [self.tableView.mj_footer endRefreshing];
             }
             if(self.currentPage == 1){
                 [self.dataList removeAllObjects];
@@ -82,10 +88,14 @@
                 FIOrderData * data = [FIOrderData yy_modelWithJSON:dic];
                 [self.dataList addObject:data];
             }
+            if(self.dataList.count == 0){
+                [self emptyViewShow];
+            }else{
+                [self emptyViewHidden];
+            }
             [self.tableView reloadData];
         }
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView.mj_footer endRefreshing];
+
 
     }];
     
@@ -184,7 +194,13 @@
 
     
 }
--(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type{
+-(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone{
+    
+    if(phone.length != 0){
+        NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",phone];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+        return;
+    }
     NSString * phontType = @"";
     if(type & OrderTypeBuy){
         phontType = @"2";

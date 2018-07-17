@@ -14,6 +14,12 @@
     [super awakeFromNib];
     // Initialization code
 }
+- (IBAction)buyClick:(id)sender {
+    [_delegate buyOrderList];
+}
+- (IBAction)selloutClick:(id)sender {
+    [_delegate sellOutOrderList];
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

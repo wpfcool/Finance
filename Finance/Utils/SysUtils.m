@@ -34,12 +34,13 @@
     return uuid;
 }
 
-+(NSString *)getTime:(NSString *)time{
-    NSInteger second = [time integerValue];
-    NSInteger hour = second / 3600;
-    NSInteger minute = (second - hour * 3600) / 60;
-    NSInteger secondN = (second - hour * 3600 - minute * 60);
-    return [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(long)hour,(long)minute,(long)secondN];
++(NSString *)getTime:(NSInteger)time{
+    
+    //天
+    NSInteger day = time / 86400;
+    NSInteger hour = (time - day* 86400)/3600;
+    NSInteger minute = (time - hour * 3600 - day * 86400) / 60;
+    return [NSString stringWithFormat:@"%.2ld:%.2ld:%.2ld",(long)day,(long)hour,(long)minute];
 }
 +(NSMutableAttributedString *)attributeStringWithRedX:(NSString *)str{
     NSMutableAttributedString * string = [[NSMutableAttributedString alloc]initWithString:str];

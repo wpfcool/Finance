@@ -110,6 +110,7 @@
 -(void)sellClick:(id)sender{
     
     FISellSeedViewController * vc = [[FISellSeedViewController alloc]init];
+    vc.type = self.type;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

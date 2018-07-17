@@ -35,7 +35,12 @@
     self.orderPriceLabel.text = [NSString stringWithFormat:@"¥%@",orderData.price];
     self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",orderData.number];
     
-    self.timeLabel.text = [self getTime:orderData.pay_time];
+   NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    
+    NSInteger time = currentTime - orderData.app_time.integerValue;
+//    self.timeLabel.text = [self getTime:orderData.pay_time];
+    
+     self.timeLabel.text  = [SysUtils getTime:time];
 }
 
 -(void)setOrderType:(OrderType)orderType{
@@ -67,7 +72,7 @@
         }else if(orderType & OrderTypeSell){
             //  添加联系会员按钮
             [self addMemberButton];
-            self.bottomLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
+            self.bottomLabel.text = [NSString stringWithFormat:@"购买会员:%@",self.orderData.buy_name];
 
         }
         
@@ -81,7 +86,7 @@
         if(orderType&OrderTypeBuy){
             self.middLabel.hidden = YES;
             self.middLabelHeightConstraint.constant = 0;
-            self.topLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.app_time]];
+            self.topLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.pay_time]];
             self.bottomLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.seller_name];
             
             //  添加联系会员及催确认按钮
@@ -90,8 +95,8 @@
             self.middLabel.hidden = NO;
             self.middLabelHeightConstraint.constant = 15;
             self.topLabel.text = [NSString stringWithFormat:@"申请时间:%@",[self getDate:self.orderData.app_time]];
-            self.middLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.app_time]];
-            self.bottomLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
+            self.middLabel.text = [NSString stringWithFormat:@"付款时间:%@",[self getDate:self.orderData.pay_time]];
+            self.bottomLabel.text = [NSString stringWithFormat:@"购买会员:%@",self.orderData.buy_name];
             
             //  添加联系会员按钮 投我要诉 确认收款
             [self addMemberTouSuConfirmButton];
@@ -106,7 +111,7 @@
         if(orderType&OrderTypeBuy){
             self.middLabel.text = [NSString stringWithFormat:@"卖方会员:%@",self.orderData.seller_name];
         }else if(orderType & OrderTypeSell){
-            self.middLabel.text = [NSString stringWithFormat:@"买方会员:%@",self.orderData.buy_name];
+            self.middLabel.text = [NSString stringWithFormat:@"购买会员:%@",self.orderData.buy_name];
 
         }
         //  添加评价按钮
@@ -206,19 +211,21 @@
 -(void)addMemberAndTuikuanButton{
     [self removeViewFormButtonView];
     
-    UIButton *buttontmp = [self blueButton];
-    [buttontmp setTitle:@"催确认" forState:UIControlStateNormal];
-    [buttontmp addTarget:self
-                        action:@selector(cuiConfirmClick:) forControlEvents:UIControlEventTouchUpInside];
-    buttontmp.layer.borderColor = HEX_UICOLOR(0xF82F9, 1).CGColor;
-    [self.buttonView addSubview:buttontmp];
+//    UIButton *buttontmp = [self blueButton];
+//    [buttontmp setTitle:@"催确认" forState:UIControlStateNormal];
+//    [buttontmp addTarget:self
+//                        action:@selector(cuiConfirmClick:) forControlEvents:UIControlEventTouchUpInside];
+//    buttontmp.layer.borderColor = HEX_UICOLOR(0xF82F9, 1).CGColor;
+//    [self.buttonView addSubview:buttontmp];
+//    buttontmp.hidden = YES;
+//
+//    [buttontmp mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(self.buttonView);
+//        make.centerY.equalTo(self.buttonView);
+//        make.width.mas_equalTo(@65);
+//        make.height.mas_equalTo(@24);
+//    }];
     
-    [buttontmp mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.buttonView);
-        make.centerY.equalTo(self.buttonView);
-        make.width.mas_equalTo(@65);
-        make.height.mas_equalTo(@24);
-    }];
     
     UIButton * contactMember=[self grayButton];
     [contactMember setTitle:@"联系会员" forState:UIControlStateNormal];
@@ -226,7 +233,7 @@
                       action:@selector(contactMember:) forControlEvents:UIControlEventTouchUpInside];
     [self.buttonView addSubview:contactMember];
     [contactMember mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(buttontmp.mas_left).offset(-10);
+        make.right.equalTo(self.buttonView);
         make.centerY.equalTo(self.buttonView);
         make.width.mas_equalTo(@65);
         make.height.mas_equalTo(@24);
@@ -299,7 +306,7 @@
 }
 -(void)contactMember:(id)sender{
     //联系会员
-    [_delegate contactMemeber:self.orderData.order_id orderType:self.orderType];
+    [_delegate contactMemeber:self.orderData.order_id orderType:self.orderType Phone:self.orderData.phone];
 }
 
 -(void)cuiConfirmClick:(id)sender{

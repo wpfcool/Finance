@@ -28,7 +28,7 @@
 
     _seed = [[FIBusinessSeed alloc]init];
     _titleArr = @[@"购买云矿机数量",@"对应支付金额",@"输入安全密码"];
-    _placeHolderTitleArr = @[@"当前等级可购买1-20颗云矿机",@"5000",@"请输入安全密码"];
+    _placeHolderTitleArr = @[@"当前等级可购买1-20颗云矿机",@"0",@"请输入安全密码"];
 
     UILabel * timeTmp = [[UILabel alloc]init];
     timeTmp.font = [UIFont systemFontOfSize:11];
@@ -56,7 +56,7 @@
     
     _countLabel = [[UILabel alloc]init];
     _countLabel.font = [UIFont systemFontOfSize:19];
-    _countLabel.text  = @"5";
+    _countLabel.text  = @"";
     _countLabel.textColor = [UIColor whiteColor];
     [self.headerView addSubview:_countLabel];
     
@@ -88,7 +88,7 @@
 -(void)getCOunt{
     [self asyncSendRequestWithURL:TIME_SEED_COUNT_URL param:@{@"user_id":[FIUser shareInstance].user_id} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
-            self.timeLabel.text =[SysUtils getTime: [NSString stringWithFormat:@"%@",dic[@"time"]] ];
+            self.timeLabel.text =[NSString stringWithFormat:@"%@",dic[@"time"]];
             self.countLabel.text = [NSString stringWithFormat:@"%@",dic[@"num"]];
         }
     }];
@@ -157,7 +157,7 @@
     
     [self asyncSendRequestWithURL:BUY_SEED_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"password":self.seed.seedPassword,@"num":self.seed.seedNum} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
-            [self.view makeToast:dic[@"msg"] duration:2.0];
+            [self.view makeToast:@"成功" duration:2.0];
         }
     }];
     

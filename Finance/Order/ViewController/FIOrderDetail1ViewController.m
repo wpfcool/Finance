@@ -11,8 +11,7 @@
 #import "FIOrderDetailOrderCell.h"
 #import "HttpRequest.h"
 #import <Masonry/Masonry.h>
-#import <SDWebImage/UIImageView+WebCache.h>
-
+#import "GKPhotoBrowser.h"
 @interface FIOrderDetail1ViewController ()<UITableViewDataSource,UITableViewDelegate,FIOrderDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableVIew;
 @property (weak, nonatomic) IBOutlet UIButton *complainButton;
@@ -93,15 +92,19 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0){
         FIOrderDetailTimeViewCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cellidentifer" forIndexPath:indexPath];
-        cell.timeLabel.text = [self getTime:self.orderData.pay_time];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+        NSInteger time = currentTime - self.orderData.app_time.integerValue;
+        cell.timeLabel.text = [SysUtils getTime:time];
         return cell;
         
     }else if(indexPath.section == 1){
         
         FIOrderDetailOrderCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIOrderDetailOrderCellidentifer" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.delegate = self;
-        cell.orderType = self.orderType;
         cell.orderData = self.orderData;
+        cell.orderType = self.orderType;
         return cell;
     }
     
@@ -156,39 +159,19 @@
         return;
     }
     
-    UIWindow * window = [UIApplication sharedApplication].delegate.window;
+    NSMutableArray *photos = [NSMutableArray new];
+    GKPhoto *photo = [GKPhoto new];
+    photo.url = [NSURL URLWithString:self.orderData.image];
+    [photos addObject:photo];
+    GKPhotoBrowser *browser = [GKPhotoBrowser photoBrowserWithPhotos:photos currentIndex:0];
+    browser.showStyle = GKPhotoBrowserShowStyleNone;
+    [browser showFromVC:self];
 
-    self.bgView= [[UIView alloc]initWithFrame:window.bounds];
-    self.bgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    [window addSubview:self.bgView];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
-    tap.numberOfTapsRequired =1;
-    [self.bgView addGestureRecognizer:tap];
-    
-    UIImageView * imageView = [[UIImageView alloc] init];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [self.bgView addSubview:imageView];
-    
-    [imageView sd_setImageWithURL:[NSURL URLWithString:self.orderData.image]];
-    
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.centerX.centerY.equalTo(bgView);
-        make.edges.equalTo(self.bgView);
-    }];
 }
 -(void)tapClick:(id)sender{
     [self.bgView removeFromSuperview];
     self.bgView = nil;
 }
--(NSString *)getTime:(NSString *)time{
-    
-    NSDate * date = [NSDate dateWithTimeIntervalSince1970:time.integerValue];
-    NSDateFormatter * fommate = [[NSDateFormatter alloc]init];
-    [fommate setDateFormat:@"hh:mm:ss"];
-    return [fommate stringFromDate:date];
-}
-
 
 
 - (void)didReceiveMemoryWarning {

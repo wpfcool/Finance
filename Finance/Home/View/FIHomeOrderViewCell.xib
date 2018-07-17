@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMG-i6-qPi">
                                 <rect key="frame" x="20.5" y="26" width="40" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_order_match" translatesAutoresizingMaskIntoConstraints="NO" id="2DX-lm-Ptj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_daipipei" translatesAutoresizingMaskIntoConstraints="NO" id="2DX-lm-Ptj">
                                         <rect key="frame" x="6.5" y="0.0" width="26" height="24"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待匹配" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hf4-xa-IXf">
@@ -75,19 +75,19 @@
                         <rect key="frame" x="80" y="0.0" width="80" height="101.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Un-or-eU7">
-                                <rect key="frame" x="20" y="25" width="40" height="50"/>
+                                <rect key="frame" x="20" y="26.5" width="40" height="47"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_order_match" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-gV-Pzf">
-                                        <rect key="frame" x="6.5" y="0.0" width="26" height="24"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_daiPay" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-gV-Pzf">
+                                        <rect key="frame" x="7" y="0.0" width="25" height="21"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待付款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-B2-htb">
-                                        <rect key="frame" x="0.0" y="34" width="40" height="16"/>
+                                        <rect key="frame" x="0.0" y="31" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juh-lc-EQz" userLabel="badge" customClass="FIBadgeView">
-                                        <rect key="frame" x="22.5" y="-4" width="14" height="14"/>
+                                        <rect key="frame" x="22" y="-4" width="14" height="14"/>
                                         <color key="backgroundColor" red="1" green="0.18257085219999999" blue="0.38585243629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="SAG-vz-qoD"/>
@@ -130,8 +130,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Hj-EE-Gsa">
                                 <rect key="frame" x="20" y="25" width="40" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_order_match" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-rI-Q13">
-                                        <rect key="frame" x="6.5" y="0.0" width="26" height="24"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="order_daiOk" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-rI-Q13">
+                                        <rect key="frame" x="9.5" y="0.0" width="20" height="24"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待确认" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7c-fF-KC7">
                                         <rect key="frame" x="0.0" y="34" width="40" height="16"/>
@@ -140,7 +140,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11m-Rw-kZ2" userLabel="badge" customClass="FIBadgeView">
-                                        <rect key="frame" x="22.5" y="-4" width="14" height="14"/>
+                                        <rect key="frame" x="19.5" y="-4" width="14" height="14"/>
                                         <color key="backgroundColor" red="1" green="0.18257085219999999" blue="0.38585243629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="8ci-rR-OdN"/>
@@ -181,19 +181,19 @@
                         <rect key="frame" x="240" y="0.0" width="80" height="101.5"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVh-db-yqc">
-                                <rect key="frame" x="20" y="25" width="40" height="50"/>
+                                <rect key="frame" x="20" y="27" width="40" height="46"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_order_match" translatesAutoresizingMaskIntoConstraints="NO" id="p0b-UV-iel">
-                                        <rect key="frame" x="6.5" y="0.0" width="26" height="24"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oreder_daiPingjia" translatesAutoresizingMaskIntoConstraints="NO" id="p0b-UV-iel">
+                                        <rect key="frame" x="8" y="0.0" width="23" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-rB-V8X">
-                                        <rect key="frame" x="0.0" y="34" width="40" height="16"/>
+                                        <rect key="frame" x="0.0" y="30" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4g-qT-G2T" userLabel="badge" customClass="FIBadgeView">
-                                        <rect key="frame" x="22.5" y="-4" width="14" height="14"/>
+                                        <rect key="frame" x="21" y="-4" width="14" height="14"/>
                                         <color key="backgroundColor" red="1" green="0.18257085219999999" blue="0.38585243629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="hGa-mr-hRG"/>
@@ -263,6 +263,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="home_order_match" width="26" height="24"/>
+        <image name="order_daiOk" width="20" height="24"/>
+        <image name="order_daiPay" width="25" height="21"/>
+        <image name="order_daipipei" width="26" height="24"/>
+        <image name="oreder_daiPingjia" width="23" height="20"/>
     </resources>
 </document>

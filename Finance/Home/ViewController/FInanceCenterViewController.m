@@ -17,7 +17,8 @@
 #import "FICenterData.h"
 #import "FIBagViewController.h"
 #import "FIActivityCoceViewController.h"
-@interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeHeaderViewDelegate>
+#import "FIOrderPageViewController.h"
+@interface FInanceCenterViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeHeaderViewDelegate,FICenterRecordCellDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
 @property (nonatomic,strong)FICenterData * centerData;
@@ -123,6 +124,7 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0){
         FICenterRecordCell * cell = [tableView dequeueReusableCellWithIdentifier:recordIdentifer forIndexPath:indexPath];
+        cell.delegate = self;
         return cell;
     }else if(indexPath.section == 1){
         FIPictureTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:pictureIdentifer forIndexPath:indexPath];
@@ -185,6 +187,19 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
         self.title = @"";
     }
+}
+
+-(void)buyOrderList{
+    FIOrderPageViewController * page = [[FIOrderPageViewController alloc]init];
+    page.index = 0;////0位待匹配1为待付款 2 待确认 3待评价
+    page.orderCataory = 1;//1买入2卖出
+    [self.navigationController pushViewController:page animated:YES];
+}
+-(void)sellOutOrderList{
+    FIOrderPageViewController * page = [[FIOrderPageViewController alloc]init];
+    page.index = 0;////0位待匹配1为待付款 2 待确认 3待评价
+    page.orderCataory = 2;//1买入2卖出
+    [self.navigationController pushViewController:page animated:YES];
 }
 
 -(void)dealloc{

@@ -11,7 +11,9 @@
 @protocol FIOrderDelegate <NSObject>
 
 -(void)uploadPingzheng:(NSString *)orderId;
--(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type;
+-(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone;
+
+
 -(void)cuiConfirm:(NSString *)orderId;
 -(void)confirmPay:(NSString *)orderId;
 -(void)complain:(FIOrderData *)orderData orderType:(OrderType)type;

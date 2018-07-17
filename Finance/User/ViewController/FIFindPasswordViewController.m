@@ -39,6 +39,9 @@
     _codeButton.layer.borderColor =  HEX_UICOLOR(0x979797, 1).CGColor;
     _nextButton.layer.cornerRadius = 24;
 }
+- (IBAction)backClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void)countDown{
     __block int count = 120;
     dispatch_queue_t queue = dispatch_get_main_queue();

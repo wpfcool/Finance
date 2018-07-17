@@ -21,26 +21,27 @@
 
 
 -(void)setCurrentIndex:(NSInteger)currentIndex{
-    self.waiting_matchLabel.font = [UIFont systemFontOfSize:13];
-    self.waiting_payLabel.font = [UIFont systemFontOfSize:13];
-    self.waiting_confirmLabel.font = [UIFont systemFontOfSize:13];
-    self.waiting_envateLabel.font = [UIFont systemFontOfSize:13];
+
+    self.waiting_matchLabel.textColor = HEX_UICOLOR(0x4A4A4A, 1);
+    self.waiting_payLabel.textColor = HEX_UICOLOR(0x4A4A4A, 1);
+    self.waiting_confirmLabel.textColor = HEX_UICOLOR(0x4A4A4A, 1);
+    self.waiting_envateLabel.textColor = HEX_UICOLOR(0x4A4A4A, 1);
 
     switch (currentIndex) {
         case 0:
-            self.waiting_matchLabel.font = [UIFont boldSystemFontOfSize:13];
+            self.waiting_matchLabel.textColor = HEX_UICOLOR(0x4C89FB, 1);
             break;
             
         case 1:
-            self.waiting_payLabel.font = [UIFont boldSystemFontOfSize:13];
+            self.waiting_payLabel.textColor = HEX_UICOLOR(0x4C89FB, 1);
 
             break;
         case 2:
-            self.waiting_confirmLabel.font = [UIFont boldSystemFontOfSize:13];
+            self.waiting_confirmLabel.textColor = HEX_UICOLOR(0x4C89FB, 1);
 
             break;
         case 3:
-            self.waiting_envateLabel.font = [UIFont boldSystemFontOfSize:13];
+            self.waiting_envateLabel.textColor = HEX_UICOLOR(0x4C89FB, 1);
 
             break;
         default:

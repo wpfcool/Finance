@@ -14,7 +14,7 @@
 @property(nonatomic,copy)NSString *trueName;
 @property(nonatomic,copy)NSString *phone;
 @property(nonatomic,copy)NSString *memberGrade;
-@property(nonatomic,copy)NSString *nickname;
+@property(nonatomic,copy)NSString *nickName;
 @property(nonatomic,copy)NSString *dramSeed;
 @property(nonatomic,copy)NSString *creditScore;
 @property(nonatomic,copy)NSString *bonusSeed;

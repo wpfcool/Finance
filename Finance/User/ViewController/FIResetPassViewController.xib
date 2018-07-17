@@ -86,6 +86,17 @@
                         <action selector="okClick:" destination="-1" eventType="touchUpInside" id="N3y-fC-ynY"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Js-Hb-6SE">
+                    <rect key="frame" x="0.0" y="29" width="60" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2rP-zv-ttG"/>
+                        <constraint firstAttribute="width" constant="60" id="Lbc-lX-wvL"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="MIR-4a-ycG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -93,6 +104,7 @@
                 <constraint firstItem="bGE-uN-GYx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="37.5" id="5Wo-d1-RrA"/>
                 <constraint firstItem="E9Y-pp-oyP" firstAttribute="centerY" secondItem="69l-S3-ivZ" secondAttribute="centerY" id="9Bl-G7-LiF"/>
                 <constraint firstItem="4Qg-9g-W8r" firstAttribute="top" secondItem="spL-vh-eFn" secondAttribute="bottom" constant="50" id="A2u-aD-Hws"/>
+                <constraint firstItem="1Js-Hb-6SE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CeW-JC-c1Y"/>
                 <constraint firstItem="4Qg-9g-W8r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Ely-fY-u1f"/>
                 <constraint firstItem="spL-vh-eFn" firstAttribute="trailing" secondItem="bGE-uN-GYx" secondAttribute="trailing" id="FS6-md-8QC"/>
                 <constraint firstItem="NAa-gh-ruR" firstAttribute="trailing" secondItem="bGE-uN-GYx" secondAttribute="trailing" id="OsR-kd-9Oq"/>
@@ -109,12 +121,14 @@
                 <constraint firstItem="spL-vh-eFn" firstAttribute="top" secondItem="bGE-uN-GYx" secondAttribute="bottom" constant="69" id="vPn-VZ-fq3"/>
                 <constraint firstItem="E9Y-pp-oyP" firstAttribute="trailing" secondItem="spL-vh-eFn" secondAttribute="trailing" id="viN-QZ-CWa"/>
                 <constraint firstItem="E9Y-pp-oyP" firstAttribute="leading" secondItem="69l-S3-ivZ" secondAttribute="trailing" constant="10" id="xUc-Lf-RNe"/>
+                <constraint firstItem="WqV-7Z-DnY" firstAttribute="top" secondItem="1Js-Hb-6SE" secondAttribute="bottom" id="z9m-Im-u9J"/>
                 <constraint firstItem="69l-S3-ivZ" firstAttribute="bottom" secondItem="spL-vh-eFn" secondAttribute="bottom" constant="-13" id="zHw-RG-mwS"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="93.5"/>
         </view>
     </objects>
     <resources>
+        <image name="back" width="9" height="16"/>
         <image name="fogget_password" width="16" height="16"/>
         <image name="user_password" width="13" height="16"/>
     </resources>

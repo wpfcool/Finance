@@ -27,7 +27,7 @@
     self.layer.cornerRadius = 10;
     [self setClipsToBounds:YES];
     CAGradientLayer * layer = [CAGradientLayer layer];
-    layer.colors = @[(id)HEX_UICOLOR(0xFF8D6D, 1).CGColor,(id)HEX_UICOLOR(0xFC5C73, 1).CGColor];
+    layer.colors = @[(id)HEX_UICOLOR(0xF0CD5C, 1).CGColor,(id)HEX_UICOLOR(0xF88C3F, 1).CGColor];
     layer.locations = @[@0,@1];
     layer.frame= CGRectMake(0, 0, SCREEN_WIDTH - 40, 130);
     layer.startPoint = CGPointMake(0, 0);
@@ -38,10 +38,10 @@
     _nameLabel.font = [UIFont systemFontOfSize:17];
     _nameLabel.textColor = [UIColor whiteColor];
     [self addSubview:_nameLabel];
-    _typeLabel = [[UILabel alloc]init];
-    _typeLabel.font = [UIFont systemFontOfSize:14];
-    _typeLabel.textColor = [UIColor whiteColor];
-    [self addSubview:_typeLabel];
+//    _typeLabel = [[UILabel alloc]init];
+//    _typeLabel.font = [UIFont systemFontOfSize:14];
+//    _typeLabel.textColor = [UIColor whiteColor];
+//    [self addSubview:_typeLabel];
     _numberLabel = [[UILabel alloc]init];
     _numberLabel.font = [UIFont systemFontOfSize:14];
     _numberLabel.textColor = [UIColor whiteColor];
@@ -50,15 +50,16 @@
     
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(40);
-        make.top.equalTo(self.mas_top).offset(22);
+//        make.top.equalTo(self.mas_top).offset(22);
+        make.bottom.equalTo(self.mas_centerY).offset(-5);
     }];
-    [_typeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left).offset(40);
-        make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
-    }];
+//    [_typeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self.mas_left).offset(40);
+//        make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
+//    }];
     [_numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(40);
-        make.bottom.equalTo(self.mas_bottom).offset(-28);
+        make.top.equalTo(self.mas_centerY).offset(5);
     }];
 
 }

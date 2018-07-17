@@ -28,7 +28,7 @@
     self.emptyImageView.image = [UIImage imageNamed:@"empty_no_account"];
     [self.cardView addTarget:self
                       action:@selector(cardClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self bankListRequest];
+//    [self bankListRequest];
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -57,9 +57,13 @@
             }
             self.bankData = [FIBankData yy_modelWithJSON:dic];
             self.cardView.nameLabel.text = self.bankData.bankName;
-            self.cardView.nameLabel.text = self.bankData.bankCard;
-            self.cardView.typeLabel.text = self.bankData.trueName;
-            
+            if(self.bankData.bankCard.length > 4){
+                NSString * bankNo = [NSString stringWithFormat:@"****    ****    ****    %@",[self.bankData.bankCard substringWithRange:NSMakeRange(self.bankData.bankCard.length-4, 4)]];
+                self.cardView.numberLabel.text = bankNo;
+            }else{
+                  self.cardView.numberLabel.text = self.bankData.bankCard;
+            }
+                     
             self.navigationItem.rightBarButtonItem =nil;
             [self emptyViewHidden];
         }

@@ -60,6 +60,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
             imageView.clipsToBounds = YES;
             imageView.layer.cornerRadius = 35;
             imageView.layer.borderColor = [UIColor colorWithRed:254/255.0 green:222/255.0 blue:181/255.0 alpha:1].CGColor;
+            imageView.image = [UIImage imageNamed:@"home_avator_default"];
             imageView.layer.borderWidth = 2;
             [cell.contentView addSubview:imageView];
             
@@ -75,7 +76,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
         UIImageView * imageView = [cell.contentView viewWithTag:100];
         UILabel * nameLabel  = [cell.contentView viewWithTag:101];
         
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.leader.user_image]];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.leader.user_image] placeholderImage:[UIImage imageNamed:@"user_image"]];
         nameLabel.text = self.leader.nickName;
         
         return cell;
