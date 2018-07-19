@@ -27,11 +27,21 @@
 
 }
 -(void)initUI{
+    self.layer.cornerRadius = 7;
     _contentLabel = [[UILabel alloc]init];
+    _contentLabel.textAlignment = NSTextAlignmentCenter;
+    _contentLabel.font = [UIFont systemFontOfSize:10];
+    _contentLabel.textColor = [UIColor whiteColor];
     [self addSubview:_contentLabel];
+    
+    
+    [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
 }
 -(void)setBadge:(NSInteger)badge{
     _badge = badge;
+    _contentLabel.text = [NSString stringWithFormat:@"%@",@(_badge)];;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

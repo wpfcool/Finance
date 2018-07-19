@@ -28,7 +28,7 @@
 
     _seed = [[FIBusinessSeed alloc]init];
     _titleArr = @[@"购买云矿机数量",@"对应支付金额",@"输入安全密码"];
-    _placeHolderTitleArr = @[@"当前等级可购买1-20颗云矿机",@"0",@"请输入安全密码"];
+    _placeHolderTitleArr = @[@"请输入云矿机数量(至少1pcs并且为0.25整数倍)",@"0",@"请输入安全密码"];
 
     UILabel * timeTmp = [[UILabel alloc]init];
     timeTmp.font = [UIFont systemFontOfSize:11];
@@ -151,13 +151,26 @@
 - (IBAction)submitClick:(id)sender {
     
     if(self.seed.seedNum.length == 0 || self.seed.seedPassword.length == 0 ){
-        [self showAlert:@"输入不能为空"];
+        [self.view makeToast:@"输入不能为空" duration:2];
         return;
     }
+    
+ 
+    CGFloat  num =   self.seed.seedNum.floatValue / 0.25;
+    if((num - floor(num) != 0 ) ||  self.seed.seedNum.floatValue< 1){
+        [self.view makeToast:@"数量不合法" duration:2];
+        return;
+    }
+    
+    
+    
+    
+//    if(self.seed.seedNum.integerValue < 1 || )
     
     [self asyncSendRequestWithURL:BUY_SEED_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"password":self.seed.seedPassword,@"num":self.seed.seedNum} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"成功" duration:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     

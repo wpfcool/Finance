@@ -9,9 +9,12 @@
 #import "FIBankInfoViewController.h"
 #import "FIHorizontalTextFieldCell.h"
 #import <Masonry/Masonry.h>
-@interface FIBankInfoViewController ()<UITableViewDataSource,UITableViewDelegate,FITextFieldViewCellDelegate>
+#import "FIAlterInfoWithMoneyCell.h"
+#import "FIPropListViewController.h"
+@interface FIBankInfoViewController ()<UITableViewDataSource,UITableViewDelegate,FITextFieldViewCellDelegate,FIAlterInfoWithMoneyCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (nonatomic,strong)NSString * number;
 
 @end
 
@@ -33,6 +36,22 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     [self.tableView registerNib:[UINib nibWithNibName:@"FIHorizontalTextFieldCell" bundle:nil] forCellReuseIdentifier:@"FIHorizontalTextFieldCell1"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FIAlterInfoWithMoneyCell" bundle:nil] forCellReuseIdentifier:@"FIAlterInfoWithMoneyCell"];
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getPropNum];
+}
+-(void)getPropNum{
+    
+    //    1、改银行卡
+    [self asyncSendRequestWithURL:PROP_NUM_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"prop_id":@(1)} RequestMethod:POST showHUD:YES result:^(NSString * dic, NSError *error) {
+        if(!error){
+            self.number = dic;
+            [self.tableView reloadData];
+        }
+    }];
 }
 - (IBAction)submitClick:(id)sender {
 
@@ -44,53 +63,70 @@
     [self asyncSendRequestWithURL:ADD_BANK_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"bankname":self.bankData.bankName,@"bankcard":self.bankData.bankCard} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"成功" duration:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 4;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    FIHorizontalTextFieldCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIHorizontalTextFieldCell1" forIndexPath:indexPath];
-    
-    cell.delegate = self;
-    cell.contentTextField.userInteractionEnabled = YES;
-
-    switch (indexPath.row) {
-        case 0:
-        {
-            cell.titleLabel.text = @"持卡人:";
-            cell.contentTextField.text = self.realName;
-            cell.contentTextField.userInteractionEnabled = NO;
+    if(indexPath.row == 3){
+        FIAlterInfoWithMoneyCell * cell =[tableView dequeueReusableCellWithIdentifier:@"FIAlterInfoWithMoneyCell" forIndexPath:indexPath];
+        cell.titleTextField.textColor = HEX_UICOLOR(0x1A1A1A, 1);
+        cell.titleTextField.font = [UIFont systemFontOfSize:14];
+        cell.rightButton.titleLabel.font =  [UIFont systemFontOfSize:15];;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.delegate = self;
+        cell.titleTextField.text = [NSString stringWithFormat:@"已有改银行卡:%@张",self.number];
+        [cell.rightButton setTitle:@"去购买" forState:UIControlStateNormal];
+        [cell.rightButton setTitleColor:HEX_UICOLOR(0xEB5D00, 1) forState:UIControlStateNormal];
+        cell.titleTextField.enabled = NO;
+        return cell;
+    }else{
+        FIHorizontalTextFieldCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIHorizontalTextFieldCell1" forIndexPath:indexPath];
+        
+        
+        cell.delegate = self;
+        cell.contentTextField.userInteractionEnabled = YES;
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.titleLabel.text = @"持卡人:";
+                cell.contentTextField.text = self.realName;
+                cell.contentTextField.userInteractionEnabled = NO;
+            }
+                break;
+            case 1:{
+                cell.titleLabel.text = @"银行名称:";
+                cell.contentTextField.text = self.bankData.bankName;
+                cell.contentTextField.placeholder = @"请输入银行名称";
+                cell.contentTextField.status =TextFieldStatusTypeBankName;
+                
+            }
+                
+                break;
+            case 2:{
+                cell.titleLabel.text = @"银行账号:";
+                cell.contentTextField.text = self.bankData.bankCard;
+                cell.contentTextField.placeholder = @"请输入银行账号";
+                cell.contentTextField.status =TextFieldStatusTypeBankCard;
+                
+            }
+                
+                break;
+                
+            default:
+                break;
         }
-            break;
-        case 1:{
-            cell.titleLabel.text = @"银行名称:";
-            cell.contentTextField.text = self.bankData.bankName;
-            cell.contentTextField.placeholder = @"请输入银行名称";
-            cell.contentTextField.status =TextFieldStatusTypeBankName;
-
-        }
-            
-            break;
-        case 2:{
-            cell.titleLabel.text = @"银行账号:";
-            cell.contentTextField.text = self.bankData.bankCard;
-            cell.contentTextField.placeholder = @"请输入银行账号";
-            cell.contentTextField.status =TextFieldStatusTypeBankCard;
-
-
-        }
-            
-            break;
-
-        default:
-            break;
+        
+        return cell;
     }
-    
-    return cell;
+    return nil;
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -115,7 +151,11 @@
     return view;
     
 }
-
+-(void)buttonClick:(FIAlterInfoWithMoneyCell *)cell{
+    
+    FIPropListViewController * VC = [[FIPropListViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
 -(NSMutableAttributedString *)attributeStringWithRedX:(NSString *)str{
     NSMutableAttributedString * string = [[NSMutableAttributedString alloc]initWithString:str];
       [string addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x3F3F3F, 1) range:NSMakeRange(0, str.length)];

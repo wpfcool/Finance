@@ -159,6 +159,7 @@
             <connections>
                 <outlet property="bottomButton" destination="9sf-dM-cBd" id="mi1-zw-aAp"/>
                 <outlet property="macthLabel" destination="fMJ-7H-M5J" id="Ev5-Jg-8Ra"/>
+                <outlet property="matchTmpLabel" destination="cUj-77-VuK" id="8KP-gG-0Hw"/>
                 <outlet property="orederNOLabel" destination="Q9w-N1-14e" id="2qq-R7-a4p"/>
                 <outlet property="pcsLabel" destination="Pc3-Gc-Azj" id="9z2-Ek-IFU"/>
                 <outlet property="priceLabel" destination="Jw1-8Y-fi6" id="GBn-Q0-66l"/>

@@ -31,8 +31,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _seed = [[FIBusinessSeed alloc]init];
-    _titleArr = @[@"卖出云矿机",@"卖出云矿机数量",@"对应支付金额",@"输入安全密码"];
-    _placeHolderTitleArr = @[@"请选择背包类型",@"请输入云矿机数量",@"1000",@"请输入安全密码"];
+    _titleArr = @[@"背包类型",@"卖出云矿机数量",@"对应支付金额",@"输入安全密码"];
+    _placeHolderTitleArr = @[@"请选择背包类型",@"请输入云矿机数量(至少1.25pcs并且为0.25整数倍)",@"0",@"请输入安全密码"];
     
     UILabel * tmpDreamBag = [[UILabel alloc]init];
     tmpDreamBag.text = @"梦想背包(PCS)";
@@ -195,17 +195,27 @@
 - (IBAction)submitClick:(id)sender {
     
     if(self.seed.seedNum.length == 0 || self.seed.seedPassword.length == 0){
-        [self showAlert:@"输入不能为空"];
+        [self.view makeToast:@"输入不能为空" duration:2];
+
         return;
     }
     if(self.seed.type.length == 0){
-        [self showAlert:@"请选择背包类型"];
+        [self.view makeToast:@"请选择背包类型" duration:2];
         return;
     }
+    
+    
+    CGFloat  num =   self.seed.seedNum.floatValue / 0.25;
+    if((num - floor(num) != 0 ) ||  self.seed.seedNum.floatValue< 1.25){
+        [self.view makeToast:@"数量不合法" duration:2];
+        return;
+    }
+    
     [self asyncSendRequestWithURL:SELL_SEED_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"password":self.seed.seedPassword,@"num":self.seed.seedNum,@"type":self.seed.type} RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
         if(!error){
             //            [self showAlert:];
             [self.view makeToast:@"成功" duration:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     

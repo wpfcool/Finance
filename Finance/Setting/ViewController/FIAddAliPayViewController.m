@@ -7,15 +7,20 @@
 //
 
 #import "FIAddAliPayViewController.h"
-
+#import "FIPropListViewController.h"
 @interface FIAddAliPayViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *aliPayTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 
 @end
 
 @implementation FIAddAliPayViewController
+- (IBAction)goShopClick:(id)sender {
+    FIPropListViewController * VC = [[FIPropListViewController alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +39,21 @@
  
     
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self getPropNum];
+}
+-(void)getPropNum{
+    
+    //    1、改银行卡
+    [self asyncSendRequestWithURL:PROP_NUM_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"prop_id":@(1)} RequestMethod:POST showHUD:YES result:^(NSString * dic, NSError *error) {
+        if(!error){
+//            self.number = dic;
+            self.numberLabel.text = [NSString stringWithFormat:@"%@张",dic];
+        }
+    }];
+}
 - (IBAction)submitClick:(id)sender {
     
     if(_aliPayTextField.text.length == 0 || _userNameTextField.text.length == 0){
@@ -42,7 +62,8 @@
     }
     [self asyncSendRequestWithURL:ADD_ALIYPAY_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"real_name":_userNameTextField.text,@"alipay":_aliPayTextField.text} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
-            [self.view makeToast:@"添加成功" duration:2.0];
+            [self.view makeToast:@"成功" duration:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     

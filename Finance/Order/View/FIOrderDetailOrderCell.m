@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *bottomButton;
+@property (weak, nonatomic) IBOutlet UILabel *matchTmpLabel;
 
 @end
 @implementation FIOrderDetailOrderCell
@@ -36,6 +37,14 @@
     _orderType = orderType;
     _bottomButton.hidden = YES;
 
+    if(_orderType & OrderTypeWaitingMatch){
+        self.matchTmpLabel.text = @"申请时间";
+       self.macthLabel.text = [NSString stringWithFormat:@"%@",[self getDate:self.orderData.add_time]];
+    }else{
+        self.matchTmpLabel.text = @"匹配时间";
+        self.macthLabel.text = [NSString stringWithFormat:@"%@",[self getDate:self.orderData.app_time]];
+    }
+    
     if(_orderType & OrderTypeBuy){
         self.userNameTypeLabel.text = @"卖出会员";
         self.userNameLabel.text = self.orderData.seller_name;
@@ -91,7 +100,7 @@
     
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:time.integerValue];
     NSDateFormatter * fommate = [[NSDateFormatter alloc]init];
-    [fommate setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    [fommate setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [fommate stringFromDate:date];
 }
 

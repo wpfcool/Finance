@@ -38,6 +38,7 @@
         if(!error){
             [self.view makeToast:@"修改成功" duration:2.0];
             self.userinfo.nickName = self.nickNameTextTield.text;
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     

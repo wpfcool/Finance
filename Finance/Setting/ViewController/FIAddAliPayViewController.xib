@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FIAddAliPayViewController">
             <connections>
                 <outlet property="aliPayTextField" destination="gFB-29-kBv" id="ZPQ-PB-rTi"/>
+                <outlet property="numberLabel" destination="2gG-Mf-PIB" id="vrE-9x-Lo7"/>
                 <outlet property="submitButton" destination="mxF-5I-lGa" id="5xv-3I-Tnr"/>
                 <outlet property="userNameTextField" destination="vwO-Hz-Drz" id="q6B-2c-xOq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -120,16 +121,44 @@
                         <action selector="submitClick:" destination="-1" eventType="touchUpInside" id="fAL-r5-yyr"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已有改银行卡:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htz-9x-iVa">
+                    <rect key="frame" x="14.5" y="130" width="102.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gG-Mf-PIB">
+                    <rect key="frame" x="122" y="140.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-2A-U47">
+                    <rect key="frame" x="312" y="125" width="43" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="去购买">
+                        <color key="titleColor" red="0.92156862750000001" green="0.36470588240000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="goShopClick:" destination="-1" eventType="touchUpInside" id="8OV-S2-qFf"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Shk-2A-U47" firstAttribute="centerY" secondItem="2gG-Mf-PIB" secondAttribute="centerY" id="0d1-I5-sYb"/>
+                <constraint firstAttribute="trailing" secondItem="Shk-2A-U47" secondAttribute="trailing" constant="20" id="7gu-hz-VXH"/>
                 <constraint firstItem="mxF-5I-lGa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="A69-qZ-xAR"/>
+                <constraint firstItem="2gG-Mf-PIB" firstAttribute="centerY" secondItem="htz-9x-iVa" secondAttribute="centerY" id="ARQ-eJ-T6N"/>
                 <constraint firstItem="cMd-Mi-ufh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="PIw-mV-ZPR"/>
+                <constraint firstItem="2gG-Mf-PIB" firstAttribute="leading" secondItem="htz-9x-iVa" secondAttribute="trailing" constant="5" id="VGb-or-fMO"/>
                 <constraint firstAttribute="trailing" secondItem="mxF-5I-lGa" secondAttribute="trailing" constant="20" id="VWz-Qr-t3Q"/>
                 <constraint firstAttribute="trailing" secondItem="6ow-4W-gyo" secondAttribute="trailing" id="Y7o-At-hfU"/>
+                <constraint firstItem="htz-9x-iVa" firstAttribute="top" secondItem="6ow-4W-gyo" secondAttribute="bottom" constant="20" id="bRQ-zb-9EG"/>
                 <constraint firstItem="cMd-Mi-ufh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="f3F-Ix-VE5"/>
                 <constraint firstItem="6ow-4W-gyo" firstAttribute="top" secondItem="cMd-Mi-ufh" secondAttribute="bottom" id="jIz-tA-Zha"/>
                 <constraint firstAttribute="bottom" secondItem="mxF-5I-lGa" secondAttribute="bottom" constant="20" id="qSC-mO-bmL"/>
+                <constraint firstItem="htz-9x-iVa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="14.5" id="qzE-Ie-RvE"/>
                 <constraint firstItem="6ow-4W-gyo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uWH-d4-48t"/>
                 <constraint firstAttribute="trailing" secondItem="cMd-Mi-ufh" secondAttribute="trailing" id="vTL-6i-8wI"/>
             </constraints>

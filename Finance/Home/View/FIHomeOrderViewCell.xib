@@ -255,9 +255,13 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="confirmBadge" destination="11m-Rw-kZ2" id="zek-CF-wI2"/>
+                <outlet property="confirmWidth" destination="rAO-cD-jWE" id="u1Q-2J-sgI"/>
                 <outlet property="fukuanBadge" destination="juh-lc-EQz" id="Yxu-zX-PVR"/>
+                <outlet property="fukunWidth" destination="iOb-8s-4cw" id="VpV-kh-6en"/>
                 <outlet property="macthBadge" destination="OJR-Gn-eDW" id="Kkq-om-awg"/>
                 <outlet property="pingjiaBadge" destination="i4g-qT-G2T" id="rRj-WT-HlO"/>
+                <outlet property="pingjiaWidth" destination="txX-GO-4N1" id="8b9-8l-dzf"/>
+                <outlet property="pipeiWidth" destination="3O0-ge-0jY" id="aGd-kb-TaM"/>
             </connections>
             <point key="canvasLocation" x="46" y="83"/>
         </tableViewCell>

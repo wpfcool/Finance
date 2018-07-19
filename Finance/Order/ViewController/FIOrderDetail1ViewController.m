@@ -93,9 +93,16 @@
     if(indexPath.section == 0){
         FIOrderDetailTimeViewCell * cell =[tableView dequeueReusableCellWithIdentifier:@"cellidentifer" forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
-        NSInteger time = currentTime - self.orderData.app_time.integerValue;
-        cell.timeLabel.text = [SysUtils getTime:time];
+        
+        if(self.orderType & OrderTypeWaitingMatch){
+            cell.timeLabel.text = @"未匹配";
+
+        }else{
+            NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+            NSInteger time = currentTime - self.orderData.app_time.integerValue;
+            cell.timeLabel.text = [SysUtils getTime:time];
+        }
+
         return cell;
         
     }else if(indexPath.section == 1){

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class FIHomeOrderViewCell;
+#import "FIHomeData.h"
 @protocol FIHomeOrderViewCellDelegate<NSObject>
 -(void)waitingMatchClick:(FIHomeOrderViewCell *)cell;
 -(void)waitingPayClick:(FIHomeOrderViewCell *)cell;
@@ -16,6 +17,7 @@
 @end
 @interface FIHomeOrderViewCell : UITableViewCell
 @property (nonatomic,weak)id<FIHomeOrderViewCellDelegate>delegate;
+-(void)setHomeData:(FIHomeData *)homeData type:(NSInteger)type;
 @end
 
 

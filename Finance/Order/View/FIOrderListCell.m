@@ -287,7 +287,7 @@
     
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:time.integerValue];
     NSDateFormatter * fommate = [[NSDateFormatter alloc]init];
-    [fommate setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    [fommate setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [fommate stringFromDate:date];
 }
 

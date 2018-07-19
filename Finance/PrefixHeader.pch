@@ -38,7 +38,9 @@ alpha:(float)(a)]
 typedef NS_ENUM(NSInteger,PropType){
     PropTypeBank =1,
     PropTypeRealName = 2,
-    PropTypePhone = 3
+    PropTypePhone = 3,
+    PropTypeAlipy = 4
+
 };
 
 

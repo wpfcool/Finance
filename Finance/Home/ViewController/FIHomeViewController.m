@@ -105,6 +105,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
             self.headerView.dreamMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.dramSeed.doubleValue]  ;
             self.headerView.bonusMoneyLabel.text = [NSString stringWithFormat:@"%.2f",self.homeData.bonusSeed.doubleValue]  ;
             self.headerView.timeLabel.text = self.homeData.time;
+            [self.tableView reloadData];
         }
     }];
     
@@ -159,6 +160,14 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
             return cell;
         }else{
             FIHomeOrderViewCell * cell = [tableView dequeueReusableCellWithIdentifier:orderIdeintifier forIndexPath:indexPath];
+            if(indexPath.section == 1){
+               
+                [cell setHomeData:self.homeData type:1];
+            }else if(indexPath.section == 2){
+              
+                [cell setHomeData:self.homeData type:2];
+
+            }
             cell.delegate = self;
             return cell;
         }

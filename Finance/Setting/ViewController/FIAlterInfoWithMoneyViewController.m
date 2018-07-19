@@ -97,10 +97,7 @@
 }
 
 -(void)buttonClick:(FIAlterInfoWithMoneyCell *)cell{
-    
-    
 
-    
     
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     if(indexPath.row == 0){

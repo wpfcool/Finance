@@ -34,8 +34,8 @@
     _passworldTextField.delegate = self;
     
     
-    _userNameTextField.text = @"wpfcool2008";
-    _passworldTextField.text = @"123456";
+//    _userNameTextField.text = @"wpfcool2008";
+//    _passworldTextField.text = @"123456";
 
 }
 - (IBAction)loginClick:(id)sender {
