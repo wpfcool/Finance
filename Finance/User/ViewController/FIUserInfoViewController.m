@@ -15,6 +15,7 @@
 #import "FIPropListViewController.h"
 #import "FIScoreViewController.h"
 #import "FIActivityCoceViewController.h"
+#import "FIBaseTableViewCell.h"
 @interface FIUserInfoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,strong)FIUserInfo * userInfo;
@@ -31,7 +32,8 @@ static NSString * headerIdentifer = @"headerIdentifer";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"个人中心";
     self.tableView.tableFooterView = [UIView new];
-    
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     _titleArr = @[@"会员级别",@"信用评分",@"梦想背包",@"奖金背包",@"激活码",@"生命力",@"道具商城"];
     _imageArr = @[@"setting_huiyuan",@"setting_pingfen",@"setting_dream",@"setting_jiangjin",@"setting_code",@"setting_life",@"setting_shop"];
     [self loadData];
@@ -84,7 +86,7 @@ static NSString * headerIdentifer = @"headerIdentifer";
             [cell.contentView addSubview:nameLabel];
             
         }
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UIImageView * imageView = [cell.contentView viewWithTag:100];
         UILabel * nameLabel  = [cell.contentView viewWithTag:101];
         
@@ -105,7 +107,8 @@ static NSString * headerIdentifer = @"headerIdentifer";
         cell.imageView.image = [UIImage imageNamed:_imageArr[indexPath.row]];
         cell.detailTextLabel.text = @"11";
         cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"more"]];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         switch (indexPath.row) {
             case 0:
                 cell.detailTextLabel.text = self.userInfo.memberGrade;
@@ -203,6 +206,12 @@ static NSString * headerIdentifer = @"headerIdentifer";
                 break;
         }
     }
+}
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

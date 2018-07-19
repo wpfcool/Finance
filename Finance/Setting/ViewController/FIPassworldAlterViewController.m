@@ -29,8 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor whiteColor];
     self.submitButton.layer.cornerRadius = 24;
     self.tableView.tableFooterView = [UIView new];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     if(self.type == 1){
         self.navigationItem.title = @"修改登录密码";
         self.titleArr = @[@"原密码:",@"新密码:",@"确认密码:"];
@@ -110,7 +113,9 @@
     }
     return nil;
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
 -(void)textFieldDidChanged:(FIStatusTextField *)textField{
     
     if(textField.status == TextFieldStatusTypePasswordOld){
@@ -189,6 +194,14 @@
         
     }
     
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [[UIView alloc]init];
+    view.backgroundColor = BGCOLOR;
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

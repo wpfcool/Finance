@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @class FIOrderData;
 @protocol FIOrderDelegate <NSObject>
-
+@optional
 -(void)uploadPingzheng:(NSString *)orderId;
 -(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone;
 

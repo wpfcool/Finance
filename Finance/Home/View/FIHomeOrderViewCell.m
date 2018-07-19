@@ -41,10 +41,6 @@
     _fukuanBadge.hidden = YES;
     _confirmBadge.hidden = YES;
     _pingjiaBadge.hidden = YES;
-    
-    _homeData.b1 = @"1";
-    _homeData.s1 = @"10";
-    
     if(type == 1){
         //买入订单
         if(_homeData.b1.integerValue !=0){

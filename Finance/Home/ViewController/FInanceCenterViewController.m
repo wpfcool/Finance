@@ -37,6 +37,8 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0  blue:233/255.0  alpha:1];
         _tableView.contentInset = UIEdgeInsetsMake(-[self navBarBottom], 0, 0, 0);
+        _tableView.separatorInset = UIEdgeInsetsZero;
+        _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     }
     return _tableView;
 }
@@ -70,7 +72,7 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"FIPictureTableViewCell" bundle:nil] forCellReuseIdentifier:pictureIdentifer];
     [self.tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:sectionIdentifire];
     [self.tableView registerNib:[UINib nibWithNibName:@"FICenterGainCell" bundle:nil] forCellReuseIdentifier:centerGainIdentifier];
-    
+    self.tableView.tableFooterView = [UIView new];
     [self loadData];
     
 }
@@ -124,20 +126,29 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.section == 0){
         FICenterRecordCell * cell = [tableView dequeueReusableCellWithIdentifier:recordIdentifer forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         cell.delegate = self;
+        
         return cell;
     }else if(indexPath.section == 1){
         FIPictureTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:pictureIdentifer forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         cell.contentLabel.text = self.centerData.grand_seed;
         return cell;
     }else if(indexPath.section == 2){
         if(indexPath.row == 0){
             FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:sectionIdentifire forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
             cell.nameLabel.text = @"收益专区";
-            [cell hiddenMore:YES];
+//            [cell hiddenMore:YES];
             return cell;
         }else{
             FICenterGainCell * cell = [tableView dequeueReusableCellWithIdentifier:centerGainIdentifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
             cell.totalLabel.text = self.centerData.total_seed;
             cell.buylabel.text = [NSString stringWithFormat:@"买入云矿机总数 %@pcs ",self.centerData.buy_seed];
             cell.selloutLabel.text = [NSString stringWithFormat:@"已卖出云矿机数量 %@pcs ",self.centerData.sell_seed];
@@ -150,8 +161,11 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
     return nil;
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.01;
+    return 0.1;
 }
 -(void)headerOneClick{
     FIBagViewController * VC = [[FIBagViewController alloc]init];
@@ -185,7 +199,7 @@ static NSString * centerGainIdentifier = @"centerGainIdentifier";
         [self wr_setNavBarTintColor:[UIColor whiteColor]];
         [self wr_setNavBarTitleColor:[UIColor whiteColor]];
         [self wr_setStatusBarStyle:UIStatusBarStyleLightContent];
-        self.title = @"";
+        self.title = @"财务中心";
     }
 }
 

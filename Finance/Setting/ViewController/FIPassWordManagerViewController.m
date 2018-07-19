@@ -18,9 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationItem.title = @"密码管理";
     self.tableView.tableFooterView = [UIView new];
-    
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"managerIdentifier"];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -29,6 +31,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"managerIdentifier" forIndexPath:indexPath];
     cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"more"]];
+    cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"修改登录密码";

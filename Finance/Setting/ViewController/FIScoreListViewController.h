@@ -9,5 +9,5 @@
 #import "FIBaseViewController.h"
 
 @interface FIScoreListViewController : FIBaseViewController
-
+@property(nonatomic,assign)NSInteger type;
 @end

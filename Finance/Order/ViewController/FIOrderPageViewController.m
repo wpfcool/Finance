@@ -37,7 +37,7 @@
     self.currentPage = self.index;
     
     self.tabView = [[NSBundle mainBundle] loadNibNamed:@"FIOrderTabView" owner:nil options:nil][0];;
-    self.tabView.frame = CGRectMake(0, [self navBarBottom] ,SCREEN_WIDTH, 70);
+    self.tabView.frame = CGRectMake(0, [self navBarBottom]+10 ,SCREEN_WIDTH, 70);
     self.tabView.delegate = self;
     [self.view addSubview:self.tabView];
 
@@ -47,7 +47,7 @@
     self.pageViewController.dataSource = self;
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
-    self.pageViewController.view.frame = CGRectMake(0, [self navBarBottom]+70, SCREEN_WIDTH, SCREEN_HEIGHT - 70-[self navBarBottom]);
+    self.pageViewController.view.frame = CGRectMake(0, [self navBarBottom]+80, SCREEN_WIDTH, SCREEN_HEIGHT - 80-[self navBarBottom]);
     UIViewController * vc = self.childViewControllersArray[self.currentPage];
     [self.pageViewController setViewControllers:@[vc] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     self.tabView.currentIndex = self.currentPage;

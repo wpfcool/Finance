@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单详情";
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     if((self.orderType & OrderTypeSell) &&( self.orderType & OrderTypeWaitingConfirm) ){
         self.bottomHeightConstraint.constant = 50;
         self.bottomView.hidden = NO;
@@ -179,6 +180,7 @@
     [self.bgView removeFromSuperview];
     self.bgView = nil;
 }
+
 
 
 - (void)didReceiveMemoryWarning {

@@ -15,6 +15,10 @@
 #define Login_URL HOST "api/login/login"
 //注册接口
 #define REGISTER_URL HOST "api/login/register"
+//注册验证手机号
+
+#define REGISTER_YANZHENG_URL HOST "api/login/checkcode"
+
 //完善个人信息接口
 //#define INFO_URL HOST "api/login/info"
 

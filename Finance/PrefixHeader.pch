@@ -34,7 +34,7 @@ alpha:(float)(a)]
 #define NAV_HEIGHT 64
 #define kIphone6Scale(x) ((x)*SCREEN_HEIGHT/667.0f) //以iphone6设计稿来计算适配其他屏幕的高度
 
-
+#define BGCOLOR  [UIColor colorWithRed:242/255.0 green:244/255.0  blue:244/255.0 alpha:1]
 typedef NS_ENUM(NSInteger,PropType){
     PropTypeBank =1,
     PropTypeRealName = 2,

@@ -69,6 +69,8 @@
     if(indexPath.section == 0){
         
         FIMemberTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIMemberTableViewCell" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         return cell;
     }else{
         static NSString * otherlIdentifier = @"otherlIdentifier";
@@ -76,6 +78,8 @@
         if(cell == nil){
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:otherlIdentifier];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"more"]];
         cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
         cell.textLabel.font = [UIFont systemFontOfSize:15];

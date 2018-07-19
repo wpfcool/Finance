@@ -8,7 +8,7 @@
 
 #import "FIScoreViewController.h"
 #import <Masonry/Masonry.h>
-#import "FIScoreListViewController.h"
+#import "FIPageScoreViewController.h"
 @interface FIScoreViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong)UILabel * scoreLabel;
 @property(nonatomic,strong)NSArray * titleArr;
@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     _titleArr = @[@"我的信用评分记录",@"信用评分制度",@"常见问题"];
     self.submitButton.hidden = YES;
     self.headerBgImageView.image = [UIImage imageNamed:@"account_score_bg"];
@@ -45,6 +46,9 @@
     }];
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    self.tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
+
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -52,6 +56,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.text = _titleArr[indexPath.row];
     cell.textLabel.font = [UIFont systemFontOfSize:15];
     cell.textLabel.textColor = HEX_UICOLOR(0x1a1a1a, 1);
@@ -60,11 +65,13 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row == 0){
-        FIScoreListViewController * vc = [[FIScoreListViewController alloc]init];
+        FIPageScoreViewController * vc = [[FIPageScoreViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
 -(NSString *)getTitle{
     return @"信用评分";
 }

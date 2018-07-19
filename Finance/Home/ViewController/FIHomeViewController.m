@@ -21,6 +21,7 @@
 #import "FIBagViewController.h"
 #import "FIUserInfoViewController.h"
 #import "FIOrderPageViewController.h"
+#import "FIMessageViewController.h"
 @interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -40,8 +41,11 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.tableFooterView = [UIView new];
-        _tableView.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0  blue:233/255.0  alpha:1];
+//        _tableView.backgroundColor =[UIColor colorWithRed:233/255.0 green:233/255.0  blue:233/255.0  alpha:1];
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView.contentInset = UIEdgeInsetsMake(-[self navBarBottom], 0, 0, 0);
+        _tableView.separatorInset = UIEdgeInsetsZero;
+        _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     }
     return _tableView;
 }
@@ -63,7 +67,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [self wr_setNavBarBackgroundAlpha:0];
     [self wr_setNavBarTintColor:[UIColor whiteColor]];
     
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home_message"] style:UIBarButtonItemStyleDone target:self action:@selector(messageClick:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"home_message"] style:UIBarButtonItemStyleDone target:self action:@selector(messageClick:)];
     
     
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -150,6 +154,7 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     }else{
         if(indexPath.row == 0){
             FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:orderHeaderIdeintifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             if(indexPath.section == 1){
                 cell.nameLabel.text = @"买入订单";
                 
@@ -160,6 +165,8 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
             return cell;
         }else{
             FIHomeOrderViewCell * cell = [tableView dequeueReusableCellWithIdentifier:orderIdeintifier forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
             if(indexPath.section == 1){
                
                 [cell setHomeData:self.homeData type:1];
@@ -266,7 +273,9 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [self.navigationController pushViewController:page animated:YES];
 }
 -(void)messageClick:(id)sender{
-    
+    FIMessageViewController * vc = [[FIMessageViewController alloc]init];
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 -(void)leftButtonClick:(id)sender{

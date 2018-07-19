@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title  =@"道具商城";
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"FIPropListCell" bundle:nil] forCellReuseIdentifier:@"FIPropListCell"];
     [self getPropList];
 }
@@ -57,6 +58,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     FIPropListCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIPropListCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     FIPropData * item = self.propList[indexPath.row];
     cell.nameLabel.text = item.name;
     [cell.bgImageView sd_setImageWithURL:[NSURL URLWithString:item.img]];
@@ -65,7 +67,8 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return (SCREEN_WIDTH - 28) * 350 / 730.0;
+//    return (SCREEN_WIDTH - 28) * 350 / 730.0;
+    return 165;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -74,6 +77,15 @@
     detailVC.alterType =  item.propId.integerValue;
     [self.navigationController pushViewController:detailVC animated:YES];
 
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [[UIView alloc]init];
+    view.backgroundColor = [UIColor whiteColor];
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

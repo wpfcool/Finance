@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FISectionHeaderCell : UITableViewCell
+#import "FIBaseTableViewCell.h"
+@interface FISectionHeaderCell : FIBaseTableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 -(void)hiddenMore:(BOOL)hidden;
 @end

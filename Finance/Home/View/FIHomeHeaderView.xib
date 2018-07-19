@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,7 +50,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="125" height="69"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="梦想背包(PCS)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1h-gD-oCa">
-                                    <rect key="frame" x="25" y="12" width="76" height="13.5"/>
+                                    <rect key="frame" x="25" y="8" width="76" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzn-e2-0SK">
-                                    <rect key="frame" x="54" y="28" width="17" height="23"/>
+                                    <rect key="frame" x="54" y="24" width="17" height="23"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                             <constraints>
                                 <constraint firstItem="Jzn-e2-0SK" firstAttribute="top" secondItem="z1h-gD-oCa" secondAttribute="bottom" constant="2.5" id="Cgb-t1-g74"/>
                                 <constraint firstAttribute="bottom" secondItem="LJV-tv-dpS" secondAttribute="bottom" id="FvN-Iq-pm2"/>
-                                <constraint firstItem="z1h-gD-oCa" firstAttribute="top" secondItem="q97-MW-mQn" secondAttribute="top" constant="12" id="Mh9-PK-yOW"/>
+                                <constraint firstItem="z1h-gD-oCa" firstAttribute="top" secondItem="q97-MW-mQn" secondAttribute="top" constant="8" id="Mh9-PK-yOW"/>
                                 <constraint firstItem="LJV-tv-dpS" firstAttribute="leading" secondItem="q97-MW-mQn" secondAttribute="leading" id="RCx-9J-che"/>
                                 <constraint firstAttribute="trailing" secondItem="Ihc-3c-iaF" secondAttribute="trailing" id="TMc-G7-v8i"/>
                                 <constraint firstItem="LJV-tv-dpS" firstAttribute="top" secondItem="q97-MW-mQn" secondAttribute="top" id="Ygr-m5-xAK"/>
@@ -94,7 +94,7 @@
                             <rect key="frame" x="125" y="0.0" width="125" height="69"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奖金背包(PCS)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-i4-qif">
-                                    <rect key="frame" x="24" y="12" width="76" height="13.5"/>
+                                    <rect key="frame" x="24" y="8" width="76" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYA-D8-qPE">
-                                    <rect key="frame" x="54" y="28" width="17" height="23"/>
+                                    <rect key="frame" x="54" y="24" width="17" height="23"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -136,13 +136,13 @@
                             <rect key="frame" x="250" y="0.0" width="125" height="69"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="周期剩余时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qau-Lp-4bA">
-                                    <rect key="frame" x="28.5" y="12" width="67.5" height="13.5"/>
+                                    <rect key="frame" x="28.5" y="8" width="67.5" height="13.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2r6-95-1le">
-                                    <rect key="frame" x="54" y="28" width="17" height="23"/>
+                                    <rect key="frame" x="54" y="24" width="17" height="23"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>

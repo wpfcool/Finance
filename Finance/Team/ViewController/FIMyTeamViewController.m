@@ -23,6 +23,9 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"我的团队";
     self.tableView.tableFooterView = [UIView new];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
+
     [self loadData];
 }
 
@@ -52,7 +55,7 @@
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifierOne];
         if(cell == nil){
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifierOne];
-            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setBackgroundImage:[UIImage imageNamed:@"team_active"] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(activeClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -68,6 +71,8 @@
         if(cell == nil){
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         cell.textLabel.font = [UIFont systemFontOfSize:15];
         cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
         if(indexPath.row == 0){

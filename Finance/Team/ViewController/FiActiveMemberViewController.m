@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"激活会员";
     self.activieButton.layer.cornerRadius = 24;
     [self getCodeNum];

@@ -8,6 +8,7 @@
 
 #import "FIBaseViewController.h"
 #import "HttpRequest.h"
+#import <Masonry/Masonry.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 @interface FIBaseViewController ()
 @property (nonatomic,strong)MBProgressHUD * hud;
@@ -19,9 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.view.backgroundColor =  [UIColor colorWithRed:242/255.0 green:244/255.0  blue:244/255.0 alpha:1];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor =  BGCOLOR;
     [self.view addSubview:self.emptyView];
+    
+    [self.emptyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    [self.emptyImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.emptyView);
+        make.centerY.equalTo(self.emptyView);
+
+    }];
+    [self.emptyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.emptyImageView.mas_bottom).offset(10);
+        make.centerX.equalTo(self.emptyImageView);
+    }];
+    
     if ([self.navigationController.viewControllers count] > 1 &&
         !self.navigationItem.leftBarButtonItem && !self.navigationController.navigationBarHidden) {
         UIImage *leftButtonIcon = [[UIImage imageNamed:@"white_back"]
@@ -47,17 +62,12 @@
 }
 -(UIView *)emptyView{
     if(!_emptyView){
-        _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _emptyView = [[UIView alloc]init];
         _emptyView.hidden = YES;
         _emptyView.backgroundColor = [UIColor whiteColor];
         [_emptyView addSubview:self.emptyImageView];
         [_emptyView addSubview:self.emptyLabel];
-        _emptyImageView.frame = CGRectMake((SCREEN_WIDTH -90)/2.0 ,(self.view.frame.size.height-98)/2.0 - 20 , 90, 98);
-        _emptyLabel.frame = CGRectMake(0, CGRectGetMaxY(_emptyImageView.frame)+10, SCREEN_WIDTH, 20);
     }
-    
-
-
     return _emptyView;
 }
 -(void)clickBackButton:(id)sender{
@@ -145,8 +155,20 @@
     self.emptyView.hidden = YES;
 
 }
+-(void)emptyViewPositionCenterY:(CGFloat)y{
+    [self.emptyImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.emptyView).offset(-y);
+    }];
+}
 
-
+//- (void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//    
+//    CGFloat top = self.hasNaviBackgroundView ? 64 : 0;
+//    self.emptyView.frame = CGRectMake(0, top, self.view.frame.size.width, self.view.frame.size.height - top);
+//
+//}
 
 
 /*

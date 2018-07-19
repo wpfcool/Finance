@@ -26,7 +26,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"账户设置";
+    self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.separatorColor = HEX_UICOLOR(0xe7e7e7, 1);
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 35, 0, 15);
     _titleArr = @[@"头像",@"用户名",@"真实姓名",@"手机号码",@"会员级别",@"昵称",@"我的银行账户",@"支付宝账户",@"密码管理"];
     _imageArr=@[@"setting_avator",@"setting_username",@"seting_realname",@"setting_phone",@"setting_member_grade",@"setting_nickname",@"setting_bank",@"setting_alipay",@"setting_password"];
 }
@@ -46,17 +49,17 @@
     
     static NSString * otherlIdentifier = @"otherlIdentifier";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:otherlIdentifier];
+
     if(cell == nil){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:otherlIdentifier];
-        
-        
         UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-30-34, 8, 34, 34)];
         imageView.tag = 100;
         imageView.layer.cornerRadius = 17;
         imageView.clipsToBounds = YES;
         [cell.contentView addSubview:imageView];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     UIImageView * photoImageView = [cell.contentView viewWithTag:100];
     photoImageView.image = [UIImage imageNamed:@"home_avator_default"];
     photoImageView.hidden = YES;
@@ -169,6 +172,13 @@
         default:
             break;
     }
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10)];
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
 }
 - (IBAction)logoutClick:(id)sender {
     AppDelegate * deleage =(AppDelegate *) [UIApplication sharedApplication].delegate;

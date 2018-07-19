@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
     if(self.bankData){
         self.navigationItem.title = @"修改账号";
     }else{
@@ -38,6 +39,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"FIHorizontalTextFieldCell" bundle:nil] forCellReuseIdentifier:@"FIHorizontalTextFieldCell1"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"FIAlterInfoWithMoneyCell" bundle:nil] forCellReuseIdentifier:@"FIAlterInfoWithMoneyCell"];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -75,6 +78,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(indexPath.row == 3){
         FIAlterInfoWithMoneyCell * cell =[tableView dequeueReusableCellWithIdentifier:@"FIAlterInfoWithMoneyCell" forIndexPath:indexPath];
+    
         cell.titleTextField.textColor = HEX_UICOLOR(0x1A1A1A, 1);
         cell.titleTextField.font = [UIFont systemFontOfSize:14];
         cell.rightButton.titleLabel.font =  [UIFont systemFontOfSize:15];;
@@ -85,10 +89,12 @@
         [cell.rightButton setTitleColor:HEX_UICOLOR(0xEB5D00, 1) forState:UIControlStateNormal];
         cell.titleTextField.enabled = NO;
         return cell;
+        
     }else{
         FIHorizontalTextFieldCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIHorizontalTextFieldCell1" forIndexPath:indexPath];
         
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         cell.delegate = self;
         cell.contentTextField.userInteractionEnabled = YES;
         
@@ -128,7 +134,14 @@
     return nil;
 
 }
-
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [[UIView alloc]init];
+    view.backgroundColor = BGCOLOR;
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
 }
@@ -140,12 +153,22 @@
     label.attributedText = [SysUtils attributeStringWithRedX:@"*请务必确保银行信息正确，如因错误的银行信息导致收不到款，会员自行承担责任。"] ;
     label.numberOfLines = 0;
     [view addSubview:label];
-    
+    UIView  *line = [[UIView alloc]initWithFrame:CGRectMake(15, 0, SCREEN_WIDTH-30, 0.5)];
+    line.backgroundColor = HEX_UICOLOR(0xe7e7e7, 1);
+    [view addSubview:line];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view.mas_left).offset(15);
         make.right.equalTo(view.mas_right).offset(-15);
         make.top.equalTo(view.mas_top).offset(15);
         make.bottom.equalTo(view.mas_bottom).offset(-15);
+        
+    }];
+    
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(view.mas_left).offset(15);
+        make.right.equalTo(view.mas_right).offset(-15);
+        make.top.equalTo(view.mas_top).offset(0);
+        make.height.mas_equalTo(@0.5);
         
     }];
     return view;

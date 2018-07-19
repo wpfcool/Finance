@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.submitButton.layer.cornerRadius = 24;
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     if(self.payData){
            self.navigationItem.title = @"修改账户";
         self.userNameTextField.text = self.payData.alipayName;

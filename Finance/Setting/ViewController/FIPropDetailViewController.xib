@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1wl-65-IG0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="616"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="iPo-tl-JQ1"/>
@@ -70,7 +70,7 @@
                 <constraint firstAttribute="trailing" secondItem="1wl-65-IG0" secondAttribute="trailing" id="2rm-9N-3gF"/>
                 <constraint firstItem="gCG-cX-FzO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6rp-3v-Pd9"/>
                 <constraint firstItem="1wl-65-IG0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W2j-2t-gjO"/>
-                <constraint firstItem="gCG-cX-FzO" firstAttribute="top" secondItem="1wl-65-IG0" secondAttribute="bottom" id="gnt-kp-5JF"/>
+                <constraint firstItem="gCG-cX-FzO" firstAttribute="top" secondItem="1wl-65-IG0" secondAttribute="bottom" constant="1" id="gnt-kp-5JF"/>
                 <constraint firstItem="1wl-65-IG0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="krj-jn-bxE"/>
                 <constraint firstAttribute="trailing" secondItem="gCG-cX-FzO" secondAttribute="trailing" id="xfh-r1-mjO"/>
                 <constraint firstAttribute="bottom" secondItem="gCG-cX-FzO" secondAttribute="bottom" id="zRI-UP-Tao"/>

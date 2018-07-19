@@ -35,6 +35,7 @@
     
     self.emptyLabel.text = @"暂无订单";
     self.emptyImageView.image = [UIImage imageNamed:@"empty_no_order"];
+    [self emptyViewPositionCenterY:[self navBarBottom]];
     self.currentPage = 1;
     self.view.backgroundColor = HEX_UICOLOR(0xf3f3f3, 1);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -50,6 +51,13 @@
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerFresh)];
     [self getListRequest];
+    
+    
+//    [self.emptyImageView mas_upConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self.emptyView);
+//        make.centerY.equalTo(self.emptyView);
+//
+//    }];
 }
 -(void)headerFresh{
     self.currentPage = 1;

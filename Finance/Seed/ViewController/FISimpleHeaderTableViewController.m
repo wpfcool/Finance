@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    self.view.backgroundColor = [UIColor whiteColor];
     UITableViewController* tvc=[[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
     [self addChildViewController:tvc];
     [tvc.view setFrame:self.view.frame];
@@ -26,6 +26,8 @@
     _tableView.tableFooterView = [UIView new];
     [self.view addSubview:_tableView];
     
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     _submitButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_submitButton addTarget:self action:@selector(submitClick:) forControlEvents:UIControlEventTouchUpInside];
     [_submitButton setTitle:@"提交" forState:UIControlStateNormal];

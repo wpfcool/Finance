@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    self.view.backgroundColor = [UIColor whiteColor];
     [self wr_setNavBarBackgroundAlpha:0];
     [self wr_setNavBarTintColor:[UIColor whiteColor]];
     [self wr_setNavBarTitleColor:[UIColor whiteColor]];

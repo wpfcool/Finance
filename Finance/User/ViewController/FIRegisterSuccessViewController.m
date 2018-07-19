@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+
     _topConstraint.constant = kIphone6Scale(166);
     _bottomConstraint.constant = kIphone6Scale(65);
 }

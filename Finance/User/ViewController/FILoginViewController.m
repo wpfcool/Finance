@@ -27,6 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationController.navigationBarHidden = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
     self.loginButton.layer.cornerRadius = 24;
     _topestConstraint.constant = kIphone6Scale(122);
     _distanceConstraint.constant = kIphone6Scale(69);
@@ -34,8 +35,8 @@
     _passworldTextField.delegate = self;
     
     
-//    _userNameTextField.text = @"wpfcool2008";
-//    _passworldTextField.text = @"123456";
+    _userNameTextField.text = @"zhangsan";
+    _passworldTextField.text = @"12345678";
 
 }
 - (IBAction)loginClick:(id)sender {

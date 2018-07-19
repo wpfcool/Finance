@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+
        _registerButton.layer.cornerRadius = 24;
     _nickNameTopConstraint.constant = kIphone6Scale(100);
     _realNameTopConstraint.constant = kIphone6Scale(60);

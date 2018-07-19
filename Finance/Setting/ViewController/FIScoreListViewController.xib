@@ -31,11 +31,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nuf-ZJ-Smz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZJQ-Av-hEf"/>
                 <constraint firstAttribute="bottom" secondItem="nuf-ZJ-Smz" secondAttribute="bottom" id="eXX-hO-abi"/>
                 <constraint firstAttribute="trailing" secondItem="nuf-ZJ-Smz" secondAttribute="trailing" id="jy4-4j-rsH"/>
+                <constraint firstItem="nuf-ZJ-Smz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vzr-Pi-yWE"/>
                 <constraint firstItem="nuf-ZJ-Smz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zQc-99-JyL"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="123.5"/>
         </view>
     </objects>
 </document>

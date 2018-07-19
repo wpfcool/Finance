@@ -14,6 +14,8 @@
 @property (nonatomic,strong)NSString * seedNum;
 @property (nonatomic,strong)NSString * sell_evaluate_time;
 @property (nonatomic,strong)NSString * sell_score;
+@property (nonatomic,strong)NSString * score;
+@property (nonatomic,strong)NSString * time;
 
 
 @end

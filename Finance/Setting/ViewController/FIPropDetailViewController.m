@@ -34,6 +34,7 @@
 -(void)showPassWordView{
     self.safePasswordView = [[NSBundle mainBundle] loadNibNamed:@"FIPasswordView" owner:nil options:nil][0];
     self.safePasswordView.frame = CGRectMake((SCREEN_WIDTH-300)/2.0 ,(SCREEN_HEIGHT -215)/2.0-100, 300, 215);
+    self.safePasswordView.layer.cornerRadius = 10;
     UIWindow * window = [UIApplication sharedApplication].delegate.window;
     
     _alertBgView = [[UIView alloc]initWithFrame:window.bounds];
@@ -72,7 +73,8 @@
     
 
     
-    
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     self.tableView.sectionFooterHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedSectionFooterHeight = 100;;
     if(self.propItem==nil){
@@ -140,7 +142,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 65;
+    return 50;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -155,7 +157,16 @@
     label.attributedText = [SysUtils attributeStringWithRedX:str];
     label.numberOfLines = 0;
     [view addSubview:label];
-    
+    UIView  *line = [[UIView alloc]initWithFrame:CGRectMake(15, 0, SCREEN_WIDTH-30, 0.5)];
+    line.backgroundColor = HEX_UICOLOR(0xe7e7e7, 1);
+    [view addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(view.mas_left).offset(15);
+        make.right.equalTo(view.mas_right).offset(-15);
+        make.top.equalTo(view.mas_top).offset(0);
+        make.height.mas_equalTo(@0.5);
+        
+    }];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(view.mas_left).offset(15);
         make.right.equalTo(view.mas_right).offset(-15);
@@ -165,6 +176,14 @@
     }];
     return view;
     
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [[UIView alloc]init];
+    view.backgroundColor = BGCOLOR;
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

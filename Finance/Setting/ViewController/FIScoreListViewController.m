@@ -27,9 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.emptyLabel.text = @"暂无数据";
+    self.emptyImageView.image = [UIImage imageNamed:@"empty_no_data"];
+    [self emptyViewPositionCenterY:100];
     self.view.backgroundColor = HEX_UICOLOR(0xf3f3f3, 1);
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationItem.title = @"信用评分";
     self.currentPage = 1;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -63,8 +66,9 @@
 }
 -(void)getListRequest{
     
+    NSString * scoreType = self.type == 0?@"1":@"2";
     
-    NSDictionary * dic = @{@"user_id":[FIUser shareInstance].user_id,@"pageNo":@(self.currentPage),@"pageSize":@20,@"type":@1};
+    NSDictionary * dic = @{@"user_id":[FIUser shareInstance].user_id,@"pageNo":@(self.currentPage),@"pageSize":@20,@"type":scoreType};
     [self asyncSendRequestWithURL:SCORELIST_URL param:dic RequestMethod:POST showHUD:NO result:^(NSArray *arr, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
         [self.tableView.mj_header endRefreshing];
@@ -79,6 +83,12 @@
                 FIScoreData * data = [FIScoreData yy_modelWithJSON:dic];
                 [self.dataList addObject:data];
             }
+            
+            if(self.dataList.count == 0){
+                [self emptyViewShow];
+            }else{
+                [self emptyViewHidden];
+            }
             [self.tableView reloadData];
         }
     }];
@@ -89,10 +99,19 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FIScoreTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"FIScoreTableViewCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     FIScoreData * item = self.dataList[indexPath.row];
+    
     cell.nameLabel.text = item.username;
     cell.orderNo.text = item.orderNo;
-    cell.scoreLabel.text = item.sell_score;
+    if(self.type == 0){
+        cell.scoreLabel.text = [NSString stringWithFormat:@"%.1f",item.sell_score.doubleValue] ;
+        cell.timeLabel.text = [SysUtils getDate:item.sell_evaluate_time];
+    }else{
+        cell.scoreLabel.text = [NSString stringWithFormat:@"%.1f",item.score.doubleValue] ;
+        cell.timeLabel.text = [SysUtils getDate:item.time];
+
+    }
     return cell;
 }
 

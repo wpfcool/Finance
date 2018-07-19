@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     if(self.alterType == PropTypeRealName){
         self.navigationItem.title = @"真实姓名";
         
@@ -28,8 +29,9 @@
         self.navigationItem.title = @"手机号码";
         
     }
-    self.tableView.tableFooterView =[UIView new];
-    
+//    self.tableView.tableFooterView =[UIView new];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
     [self.tableView registerNib:[UINib nibWithNibName:@"FIAlterInfoWithMoneyCell" bundle:nil] forCellReuseIdentifier:@"FIAlterInfoWithMoneyCell"];
     
 }
@@ -142,6 +144,7 @@
         
     }
 }
+
 -(void)alertRealName:(NSString *)realName{
     if(realName.length==0){
         [self showAlert:@"请输入姓名"];
@@ -185,9 +188,12 @@
     return 30;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 30)];
+    UIView * view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 42)];
+    UIView  *line = [[UIView alloc]initWithFrame:CGRectMake(15, 0, SCREEN_WIDTH-30, 0.5)];
+    line.backgroundColor = HEX_UICOLOR(0xe7e7e7, 1);
+    [view addSubview:line];
     
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(14, 0, SCREEN_WIDTH-28, 30)];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(14, 12, SCREEN_WIDTH-28, 30)];
     if(self.alterType == PropTypeRealName){
         label.attributedText = [SysUtils attributeStringWithRedX:@"*如需更改手机号，请先到道具商城购买改手机号卡。"];
 

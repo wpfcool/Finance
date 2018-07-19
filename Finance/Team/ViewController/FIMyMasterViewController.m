@@ -23,7 +23,9 @@ static NSString * headerIdentifer = @"headerIdentifer";
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"详细资料";
     self.tableView.tableFooterView = [UIView new];
-    
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:headerIdentifer];
     [self loadData];
 }
@@ -72,7 +74,8 @@ static NSString * headerIdentifer = @"headerIdentifer";
             [cell.contentView addSubview:nameLabel];
             
         }
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         UIImageView * imageView = [cell.contentView viewWithTag:100];
         UILabel * nameLabel  = [cell.contentView viewWithTag:101];
         
@@ -84,17 +87,22 @@ static NSString * headerIdentifer = @"headerIdentifer";
         
         if(indexPath.row == 0){
             FISectionHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:headerIdentifer forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
             cell.nameLabel.text = @"个人信息";
             cell.nameLabel.font = [UIFont systemFontOfSize:15];
             cell.nameLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
             [cell hiddenMore:YES];
+            cell.lineVew.hidden = YES;
             return cell;
         }else{
             static NSString * otherlIdentifier = @"otherlIdentifier";
-            UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:otherlIdentifier];
+            FIBaseTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:otherlIdentifier];
             if(cell == nil){
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:otherlIdentifier];
+                cell = [[FIBaseTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:otherlIdentifier];
             }
+            cell.lineVew.hidden = NO;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.textLabel.textColor = HEX_UICOLOR(0x1A1A1A, 1);
             cell.textLabel.font = [UIFont systemFontOfSize:15];
             if(indexPath.row == 1){
@@ -121,7 +129,9 @@ static NSString * headerIdentifer = @"headerIdentifer";
     return 0;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if(section == 0)
     return 10;
+    return 0.01;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

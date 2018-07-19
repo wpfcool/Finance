@@ -29,7 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+
     self.topestonstraint.constant = kIphone6Scale(122);
     self.passwordTopConstraint.constant = kIphone6Scale(69);
     self.codeTopConstraint.constant = kIphone6Scale(69);
@@ -91,11 +92,20 @@
         return;
     }
     
-    NSDictionary * dic = @{@"userName":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     
-    FIRegisterFinishViewController * registerNextVC = [[FIRegisterFinishViewController alloc]init];
-    registerNextVC.preDic = dic;
-    [self.navigationController pushViewController:registerNextVC animated:YES];
+    
+    
+    NSDictionary * dic1 = @{@"userName":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
+    
+    
+    [self asyncSendRequestWithURL:REGISTER_YANZHENG_URL param:@{@"userName":_userNameTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        if(!error){
+            FIRegisterFinishViewController * registerNextVC = [[FIRegisterFinishViewController alloc]init];
+            registerNextVC.preDic = dic1;
+            [self.navigationController pushViewController:registerNextVC animated:YES];
+        }
+    }];
+
 
 }
 
