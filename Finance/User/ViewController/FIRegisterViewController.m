@@ -74,6 +74,11 @@
         return;
     }
     
+    if(![SysUtils isPhoneNumber:_phoneTextField.text]){
+        [self showAlert:@"手机号不正确"];
+        return;
+    }
+    
     NSDictionary * dic = @{@"phone":_phoneTextField.text};
     [self asyncSendRequestWithURL:SEND_IPHONE_CODE param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(error){
@@ -87,16 +92,27 @@
     
 }
 - (IBAction)nextClick:(id)sender {
+    
     if(_userNameTextField.text.length == 0 || _passwordTextField.text.length == 0 || _phoneTextField.text.length == 0  || _codeTextField.text.length == 0){
         [self showAlert:@"输入不能为空"];
         return;
     }
     
+    if(![SysUtils isPhoneNumber:_phoneTextField.text]){
+        [self showAlert:@"手机号不正确"];
+        return;
+    }
     
-    
+    if(![SysUtils isPasswordNumber:_passwordTextField.text]){
+        [self showAlert:@"密码格式不正确"];
+        return;
+    }
+    if(![SysUtils isUserNameNumber:_userNameTextField.text]){
+        [self showAlert:@"用户名格式不正确"];
+        return;
+    }
     
     NSDictionary * dic1 = @{@"userName":_userNameTextField.text,@"password":_passwordTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
-    
     
     [self asyncSendRequestWithURL:REGISTER_YANZHENG_URL param:@{@"userName":_userNameTextField.text,@"phone":_phoneTextField.text,@"code":_codeTextField.text} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){

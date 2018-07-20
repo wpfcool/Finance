@@ -57,4 +57,35 @@
     [fommate setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [fommate stringFromDate:date];
 }
++(BOOL)isPasswordNumber:(NSString *)passwordNumber{
+    NSString *regex = @"^(?![0-9]+$)\\w{8,}";
+    return [SysUtils chenkString:passwordNumber regex:regex];
+}
++(BOOL)isUserNameNumber:(NSString *)userName{
+    NSString *regex = @"^(?![0-9]+$)\\w{6,12}";
+    return [SysUtils chenkString:userName regex:regex];
+}
++(BOOL)isSafePasswordNumber:(NSString *)passwordNumber{
+    NSString *regex = @"^[0-9]{6}$";
+    return [SysUtils chenkString:passwordNumber regex:regex];
+}
+
++(BOOL)isPhoneNumber:(NSString *)phoneNumber{
+    
+    NSString *regex = @"^1[34578]\\d{9}$";
+    return [SysUtils chenkString:phoneNumber regex:regex];
+}
++ (BOOL)chenkString:(NSString *)str regex:(NSString *)regex
+{
+    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:regex options:NSRegularExpressionCaseInsensitive error:nil];
+    // 对str字符串进行匹配
+    NSArray *matches = [regular matchesInString:str
+                                        options:0
+                                          range:NSMakeRange(0, str.length)];
+    
+    if(matches.count > 0){
+        return YES;
+    }
+    return NO;
+}
 @end

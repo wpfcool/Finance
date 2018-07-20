@@ -8,6 +8,7 @@
 
 #import "FIPassworldAlterViewController.h"
 #import "FIHorizontalTextFieldCell.h"
+#import "AppDelegate.h"
 #import "FISettingPasswordCodeCell.h"
 @interface FIPassworldAlterViewController ()<UITableViewDelegate,UITableViewDataSource,FITextFieldViewCellDelegate,FISettingPasswordCodeCellDelegate>
 @property (nonatomic,strong)NSArray * titleArr;
@@ -173,11 +174,25 @@
             [self showAlert:@"输入不能为空"];
             return;
         }
+        if(![self.passwordNew2 isEqualToString:self.passwordNew]){
+            [self showAlert:@"两次密码输入不一致"];
+            return;
+        }
+        
+        if(![SysUtils isPasswordNumber:self.passwordNew]){
+            [self showAlert:@"密码格式不正确"];
+            return;
+        }
+        
         [self asyncSendRequestWithURL:ALTER_LOGINPASS_URL param:@{@"user_id": [FIUser shareInstance].user_id,@"password":self.passwordNew,@"repwd":self.passwordNew2,@"oldpwd":self.passwordOld,@"phone":self.phone,@"code":self.codeString} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
             if(!error){
-                [self.view makeToast:@"修改成功" duration:2.0];
-
-            }
+                [self.view makeToast:@"修改成功,请重新登录" duration:1.0];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    AppDelegate * delegate =(AppDelegate *) [UIApplication sharedApplication].delegate;
+                    [delegate loginRootViewController];
+                });
+           
+                }
         }];
         
     }else if(self.type == 2){
@@ -185,9 +200,22 @@
             [self showAlert:@"输入不能为空"];
             return;
         }
-        [self asyncSendRequestWithURL:ALTER_LOGINPASS_URL param:@{@"user_id": [FIUser shareInstance].user_id,@"password":self.passwordNew,@"repwd":self.passwordNew2,@"phone":self.phone,@"code":self.codeString} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
+        
+        if(![self.passwordNew2 isEqualToString:self.passwordNew]){
+            [self showAlert:@"两次密码输入不一致"];
+            return;
+        }
+        
+        if(![SysUtils isSafePasswordNumber:self.passwordNew]){
+            [self showAlert:@"安全密码应为6位数字"];
+            return;
+            
+        }
+        
+        [self asyncSendRequestWithURL:ALTER_SAFEPASS_URL param:@{@"user_id": [FIUser shareInstance].user_id,@"password":self.passwordNew,@"repwd":self.passwordNew2,@"phone":self.phone,@"code":self.codeString} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
             if(!error){
                 [self.view makeToast:@"修改成功" duration:2.0];
+                [self.navigationController popViewControllerAnimated:YES];
 
             }
         }];

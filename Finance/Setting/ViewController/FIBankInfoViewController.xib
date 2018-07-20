@@ -29,6 +29,10 @@
                         <outlet property="delegate" destination="-1" id="u3L-Zj-AbO"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMI-cb-6K2">
+                    <rect key="frame" x="0.0" y="599" width="375" height="68"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX3-au-jim">
                     <rect key="frame" x="20" y="599" width="335" height="48"/>
                     <color key="backgroundColor" red="0.24313725489999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -46,14 +50,19 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="CMI-cb-6K2" secondAttribute="trailing" id="04o-dx-xXh"/>
                 <constraint firstAttribute="bottom" secondItem="uX3-au-jim" secondAttribute="bottom" constant="20" id="4B2-Hl-dMe"/>
+                <constraint firstItem="CMI-cb-6K2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ds3-CA-Y16"/>
                 <constraint firstAttribute="trailing" secondItem="uX3-au-jim" secondAttribute="trailing" constant="20" id="F5Q-xb-99n"/>
                 <constraint firstAttribute="trailing" secondItem="bPl-Vu-UR5" secondAttribute="trailing" id="KU7-lK-KXk"/>
                 <constraint firstItem="bPl-Vu-UR5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pso-Ji-RFp"/>
                 <constraint firstItem="bPl-Vu-UR5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="R1V-zl-Hr5"/>
                 <constraint firstItem="uX3-au-jim" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="SGv-3l-Q5q"/>
+                <constraint firstAttribute="bottom" secondItem="CMI-cb-6K2" secondAttribute="bottom" id="Yf5-Ez-hdt"/>
                 <constraint firstItem="uX3-au-jim" firstAttribute="top" secondItem="bPl-Vu-UR5" secondAttribute="bottom" id="aYE-Aq-jKN"/>
+                <constraint firstItem="CMI-cb-6K2" firstAttribute="top" secondItem="bPl-Vu-UR5" secondAttribute="bottom" id="als-Bt-aRm"/>
             </constraints>
+            <point key="canvasLocation" x="44.5" y="105.5"/>
         </view>
     </objects>
 </document>

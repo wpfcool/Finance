@@ -9,6 +9,7 @@
 #import "FIPageScoreViewController.h"
 #import "FIScoreListViewController.h"
 
+#define LINEWIDTH 110
 
 @interface FIPageScoreViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource>
 @property (nonatomic,strong)UIPageViewController * pageViewController;
@@ -59,7 +60,7 @@
     [self.view addSubview:button2];
     
     
-    _lineView = [[UIView alloc]initWithFrame:CGRectMake(0,  [self navBarBottom]+40, SCREEN_WIDTH/2.0, 2)];
+    _lineView = [[UIView alloc]initWithFrame:CGRectMake(SCREEN_WIDTH/4.0-LINEWIDTH/2.0,  [self navBarBottom]+40, LINEWIDTH, 2)];
     _lineView.backgroundColor = [UIColor colorWithRed:93/255.0 green:136/255.0 blue:219/255.0 alpha:1];
     [self.view addSubview:_lineView];
     
@@ -91,13 +92,20 @@
     [btn1 setTitleColor:[UIColor colorWithRed:96/255.0 green:96/255.0 blue:96/255.0 alpha:1] forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor colorWithRed:96/255.0 green:96/255.0 blue:96/255.0 alpha:1] forState:UIControlStateNormal];
 
+    btn1.titleLabel.font = [UIFont systemFontOfSize:14];
+
+    btn2.titleLabel.font = [UIFont systemFontOfSize:14];
+
+    
     [btn setTitleColor: [UIColor colorWithRed:93/255.0 green:136/255.0 blue:219/255.0 alpha:1] forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+
     NSInteger index = btn.tag - 100;
     if(index == 0){
-        _lineView.frame=CGRectMake(0,  [self navBarBottom]+40, SCREEN_WIDTH/2.0, 2);
+        _lineView.frame=CGRectMake(SCREEN_WIDTH/4.0-LINEWIDTH/2.0,  [self navBarBottom]+40, LINEWIDTH, 2);
 
     }else if(index == 1){
-        _lineView.frame=CGRectMake(SCREEN_WIDTH/2.0,  [self navBarBottom]+40, SCREEN_WIDTH/2.0, 2);
+        _lineView.frame=CGRectMake(SCREEN_WIDTH/2.0 +SCREEN_WIDTH/4.0-LINEWIDTH/2.0,  [self navBarBottom]+40,LINEWIDTH, 2);
 
     }
     
@@ -124,20 +132,23 @@
     UIButton * btn2 = [self.view viewWithTag:101];
     [btn1 setTitleColor:[UIColor colorWithRed:96/255.0 green:96/255.0 blue:96/255.0 alpha:1] forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor colorWithRed:96/255.0 green:96/255.0 blue:96/255.0 alpha:1] forState:UIControlStateNormal];
+    btn1.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    btn2.titleLabel.font = [UIFont systemFontOfSize:14];
     if(index == 0){
         [btn1 setTitleColor: [UIColor colorWithRed:93/255.0 green:136/255.0 blue:219/255.0 alpha:1] forState:UIControlStateNormal];
-        _lineView.frame=CGRectMake(0,  [self navBarBottom]+40, SCREEN_WIDTH/2.0, 2);
+        _lineView.frame=CGRectMake(SCREEN_WIDTH/4.0-LINEWIDTH/2.0,  [self navBarBottom]+40, LINEWIDTH, 2);
+        btn1.titleLabel.font = [UIFont boldSystemFontOfSize:14];
 
 
     }else if(index == 1){
         [btn2 setTitleColor: [UIColor colorWithRed:93/255.0 green:136/255.0 blue:219/255.0 alpha:1] forState:UIControlStateNormal];
-        _lineView.frame=CGRectMake(SCREEN_WIDTH/2.0,  [self navBarBottom]+40, SCREEN_WIDTH/2.0, 2);
+        _lineView.frame=CGRectMake(SCREEN_WIDTH/2.0 +SCREEN_WIDTH/4.0-LINEWIDTH/2.0,  [self navBarBottom]+40,LINEWIDTH, 2);
 
+        btn2.titleLabel.font = [UIFont boldSystemFontOfSize:14];
 
     }
 
-    
-    
 
 
     

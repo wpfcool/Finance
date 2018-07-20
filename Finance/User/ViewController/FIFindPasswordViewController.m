@@ -67,6 +67,10 @@
         [self showAlert:@"手机号输入不能为空"];
         return;
     }
+    if(![SysUtils isPhoneNumber:_phoneField.text]){
+        [self showAlert:@"手机号格式不正确"];
+        return;
+    }
     [self.view endEditing:YES];
     NSDictionary * dic = @{@"phone":_phoneField.text};
     [self asyncSendRequestWithURL:SEND_IPHONE_CODE param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
@@ -82,6 +86,12 @@
 - (IBAction)nextButtonClick:(id)sender {
     if(_userNameField.text.length == 0 || _phoneField.text.length == 0 || _codeField.text.length == 0){
         [self showAlert:@"输入不能为空"];
+        return;
+    }
+    
+    
+    if(![SysUtils isPhoneNumber:_phoneField.text]){
+        [self showAlert:@"手机号格式不正确"];
         return;
     }
     

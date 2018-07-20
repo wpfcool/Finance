@@ -61,6 +61,7 @@
     [self asyncSendRequestWithURL:BUY_PROP_URL param:@{@"prop_id":self.propItem.propId,@"user_id":[FIUser shareInstance].user_id,@"password":password} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"购买成功" duration:2.0];
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
 }

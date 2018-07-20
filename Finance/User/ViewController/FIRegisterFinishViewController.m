@@ -40,7 +40,13 @@
     _bankNoTopConstaint.constant = kIphone6Scale(60);
     _passwordTopConstraint.constant = kIphone6Scale(60);
 
-    NSMutableAttributedString * attar = [[NSMutableAttributedString alloc]initWithString:@"我已阅读并同意《用户协议》"];
+    NSString * string =@"我已阅读并同意《用户协议》";
+    NSMutableAttributedString * attar = [[NSMutableAttributedString alloc]initWithString:string];
+    
+    [attar addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x999999, 1) range:NSMakeRange(0, string.length)];
+        [attar addAttribute:NSFontAttributeName value: [UIFont systemFontOfSize:13] range:NSMakeRange(0, string.length)];
+    
+        [attar addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7 ,6)];
 //    attar.yy_font = [UIFont systemFontOfSize:13];
 //    attar.yy_color = HEX_UICOLOR(0x999999, 1);
 //    [attar yy_setColor:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7, 6)];
@@ -62,6 +68,17 @@
 - (IBAction)registerClick:(id)sender {
     if(_realNameField.text.length == 0 || _bankField.text.length == 0 || _bankNoField.text.length == 0  || _passwordField.text.length == 0 || _nickNameField.text.length == 0){
         [self showAlert:@"输入不能为空"];
+        return;
+    }
+    
+    if(!self.agreeButton.selected){
+        [self showAlert:@"必须遵守用户协议"];
+        return;
+    }
+    
+    if(![SysUtils isSafePasswordNumber:_passwordField.text]){
+        [self showAlert:@"交易密码必须为6位数字"];
+
         return;
     }
     

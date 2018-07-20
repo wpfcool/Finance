@@ -43,6 +43,7 @@
     [self asyncSendRequestWithURL:RESETPASS_URL param:@{@"userName":self.username,@"password":self.password1Field.text,@"conPassword":self.password2Field.text} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"修改成功" duration:2.0];
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
     }];
 }
