@@ -56,7 +56,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihc-3c-iaF">
-                                    <rect key="frame" x="124" y="19" width="1" height="30"/>
+                                    <rect key="frame" x="124" y="14.5" width="1" height="30"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="0.5" id="1BI-N6-js7"/>
@@ -85,7 +85,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Ihc-3c-iaF" secondAttribute="trailing" id="TMc-G7-v8i"/>
                                 <constraint firstItem="LJV-tv-dpS" firstAttribute="top" secondItem="q97-MW-mQn" secondAttribute="top" id="Ygr-m5-xAK"/>
                                 <constraint firstItem="Jzn-e2-0SK" firstAttribute="centerX" secondItem="q97-MW-mQn" secondAttribute="centerX" id="ZEC-uJ-4cS"/>
-                                <constraint firstItem="Ihc-3c-iaF" firstAttribute="centerY" secondItem="q97-MW-mQn" secondAttribute="centerY" id="axf-fR-dTS"/>
+                                <constraint firstItem="Ihc-3c-iaF" firstAttribute="centerY" secondItem="q97-MW-mQn" secondAttribute="centerY" constant="-5" id="axf-fR-dTS"/>
                                 <constraint firstItem="z1h-gD-oCa" firstAttribute="centerX" secondItem="q97-MW-mQn" secondAttribute="centerX" id="hPa-gT-CGd"/>
                                 <constraint firstItem="Ihc-3c-iaF" firstAttribute="leading" secondItem="LJV-tv-dpS" secondAttribute="trailing" id="xX1-l0-Ghn"/>
                             </constraints>
@@ -100,7 +100,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuq-0n-oXS">
-                                    <rect key="frame" x="124.5" y="19" width="0.5" height="30"/>
+                                    <rect key="frame" x="124.5" y="14.5" width="0.5" height="30"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="0.5" id="5Z2-g4-eNz"/>
@@ -123,7 +123,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="jue-AL-jhY" secondAttribute="bottom" id="4Gt-SJ-Xsb"/>
-                                <constraint firstItem="nuq-0n-oXS" firstAttribute="centerY" secondItem="5Kb-pd-hhA" secondAttribute="centerY" id="57H-04-WmO"/>
+                                <constraint firstItem="nuq-0n-oXS" firstAttribute="centerY" secondItem="5Kb-pd-hhA" secondAttribute="centerY" constant="-5" id="57H-04-WmO"/>
                                 <constraint firstAttribute="trailing" secondItem="jue-AL-jhY" secondAttribute="trailing" id="6yK-i7-ccO"/>
                                 <constraint firstItem="cYA-D8-qPE" firstAttribute="centerX" secondItem="5Kb-pd-hhA" secondAttribute="centerX" id="Kfa-08-xZ9"/>
                                 <constraint firstItem="jue-AL-jhY" firstAttribute="top" secondItem="5Kb-pd-hhA" secondAttribute="top" id="Pgi-S0-71i"/>
