@@ -81,6 +81,10 @@
 
         return;
     }
+    if(![SysUtils isBankNumber:_bankField.text]){
+        [self showAlert:@"银行卡号必须为数字"];
+        return;
+    }
     
     NSMutableDictionary * dic = @{@"nickname":_nickNameField.text,@"real_name":_realNameField.text,@"bankname":_bankField.text,@"bankcard":_bankNoField.text,@"tranpwd":_passwordField.text}.mutableCopy;
     [dic addEntriesFromDictionary:self.preDic];

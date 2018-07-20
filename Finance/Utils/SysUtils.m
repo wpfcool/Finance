@@ -57,12 +57,16 @@
     [fommate setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [fommate stringFromDate:date];
 }
++(BOOL)isBankNumber:(NSString *)bank{
+    NSString *regex = @"^[0-9]*$";
+    return [SysUtils chenkString:bank regex:regex];
+}
 +(BOOL)isPasswordNumber:(NSString *)passwordNumber{
-    NSString *regex = @"^(?![0-9]+$)\\w{8,}";
+    NSString *regex = @"^(?![0-9]+$)\\w{8,}$";
     return [SysUtils chenkString:passwordNumber regex:regex];
 }
 +(BOOL)isUserNameNumber:(NSString *)userName{
-    NSString *regex = @"^(?![0-9]+$)\\w{6,12}";
+    NSString *regex = @"^(?![0-9]+$)\\w{6,12}$";
     return [SysUtils chenkString:userName regex:regex];
 }
 +(BOOL)isSafePasswordNumber:(NSString *)passwordNumber{

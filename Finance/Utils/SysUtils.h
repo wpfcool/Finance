@@ -15,6 +15,7 @@
 +(BOOL)isSafePasswordNumber:(NSString *)passwordNumber;//是否是安全密码
 +(BOOL)isPasswordNumber:(NSString *)passwordNumber;
 +(BOOL)isUserNameNumber:(NSString *)userName;
++(BOOL)isBankNumber:(NSString *)bank;
 +(NSString *)uuid;
 //根据剩余秒数生成dd:MM:ss
 +(NSString *)getTime:(NSInteger)time;

@@ -63,6 +63,11 @@
         return;
     }
     
+    if(![SysUtils isBankNumber:self.bankData.bankCard]){
+        [self showAlert:@"银行卡号必须为数字"];
+        return;
+    }
+    
     [self asyncSendRequestWithURL:ADD_BANK_URL param:@{@"user_id":[FIUser shareInstance].user_id,@"bankname":self.bankData.bankName,@"bankcard":self.bankData.bankCard} RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(!error){
             [self.view makeToast:@"成功" duration:2.0];
