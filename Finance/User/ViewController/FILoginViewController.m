@@ -35,8 +35,8 @@
     _passworldTextField.delegate = self;
     
     
-    _userNameTextField.text = @"zhangsan";
-    _passworldTextField.text = @"12345678";
+//    _userNameTextField.text = @"zhangsan";
+//    _passworldTextField.text = @"12345678";
 
 }
 - (IBAction)loginClick:(id)sender {

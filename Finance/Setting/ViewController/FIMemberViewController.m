@@ -25,6 +25,9 @@
     _titleArr = @[@"查看我的团队",@"会员级别政策",@"常见问题"];
     _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.tableFooterView = [UIView new];
+    _tableView.separatorInset = UIEdgeInsetsMake(0, 15, 0, 15);
+    _tableView.separatorColor = HEX_UICOLOR(0xE7E7E7, 1);
+
     [self.view addSubview:_tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -32,28 +35,28 @@
         make.edges.equalTo(self.view);
 
     }];
-    _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *653/750.0)];
+    _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH *516/750.0)];
     UIImageView * _headerBgImageView = [[UIImageView alloc]initWithFrame:_headerView.bounds];
     [_headerView addSubview:_headerBgImageView];
     
-    UILabel * memberLabl = [[UILabel alloc]initWithFrame:CGRectMake(0, _headerView.bounds.size.height - kIphone6Scale(80), SCREEN_WIDTH, 25)];
-    memberLabl.textAlignment = NSTextAlignmentCenter;
-    [_headerView addSubview:memberLabl];
-    memberLabl.font = [UIFont systemFontOfSize:20];
-    memberLabl.text = self.member;
+//    UILabel * memberLabl = [[UILabel alloc]initWithFrame:CGRectMake(0, _headerView.bounds.size.height - kIphone6Scale(80), SCREEN_WIDTH, 25)];
+//    memberLabl.textAlignment = NSTextAlignmentCenter;
+//    [_headerView addSubview:memberLabl];
+//    memberLabl.font = [UIFont systemFontOfSize:20];
+//    memberLabl.text = self.member;
     
     self.tableView.tableHeaderView = _headerView;
     if([self.member isEqualToString:@"青铜"]){
         _headerBgImageView.image = [UIImage imageNamed:@"member_qingtong"];
-        memberLabl.textColor = HEX_UICOLOR(0xE88043, 1);
+//        memberLabl.textColor = HEX_UICOLOR(0xE88043, 1);
 
     }else if([self.member isEqualToString:@"黄金"]){
         _headerBgImageView.image = [UIImage imageNamed:@"member_huangjin"];
-        memberLabl.textColor = HEX_UICOLOR(0xF89C2A, 1);
+//        memberLabl.textColor = HEX_UICOLOR(0xF89C2A, 1);
 
     }else if([self.member isEqualToString:@"白金"]){
         _headerBgImageView.image = [UIImage imageNamed:@"member_baijin"];
-        memberLabl.textColor = HEX_UICOLOR(0x5D8AF8, 1);
+//        memberLabl.textColor = HEX_UICOLOR(0x5D8AF8, 1);
     }
     [self.tableView registerNib:[UINib nibWithNibName:@"FIMemberTableViewCell" bundle:nil] forCellReuseIdentifier:@"FIMemberTableViewCell"];
 }
