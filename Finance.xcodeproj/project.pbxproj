@@ -57,6 +57,11 @@
 		F9159E7820C4E855002BFB1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E7720C4E855002BFB1B /* main.m */; };
 		F9159E8220C4E855002BFB1B /* FinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E8120C4E855002BFB1B /* FinanceTests.m */; };
 		F9159E8D20C4E855002BFB1B /* FinanceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9159E8C20C4E855002BFB1B /* FinanceUITests.m */; };
+		F91C0907212AC23B00E11CD4 /* FIOrderMemberInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C0905212AC23B00E11CD4 /* FIOrderMemberInfoViewController.m */; };
+		F91C0908212AC23B00E11CD4 /* FIOrderMemberInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C0906212AC23B00E11CD4 /* FIOrderMemberInfoViewController.xib */; };
+		F91C090C212AC52300E11CD4 /* FIOrderMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C090A212AC52300E11CD4 /* FIOrderMemberCell.m */; };
+		F91C090D212AC52300E11CD4 /* FIOrderMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91C090B212AC52300E11CD4 /* FIOrderMemberCell.xib */; };
+		F91C0910212AD26200E11CD4 /* BCMember.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C090F212AD26200E11CD4 /* BCMember.m */; };
 		F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC8820C68D380000AE72 /* HttpRequest.m */; };
 		F93EBC8A20C68E400000AE72 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC8820C68D380000AE72 /* HttpRequest.m */; };
 		F93EBC9220C69DF20000AE72 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = F93EBC9020C69DF20000AE72 /* GTMBase64.m */; };
@@ -266,6 +271,14 @@
 		F9159E8820C4E855002BFB1B /* FinanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9159E8C20C4E855002BFB1B /* FinanceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinanceUITests.m; sourceTree = "<group>"; };
 		F9159E8E20C4E855002BFB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91C0904212AC23B00E11CD4 /* FIOrderMemberInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderMemberInfoViewController.h; sourceTree = "<group>"; };
+		F91C0905212AC23B00E11CD4 /* FIOrderMemberInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderMemberInfoViewController.m; sourceTree = "<group>"; };
+		F91C0906212AC23B00E11CD4 /* FIOrderMemberInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderMemberInfoViewController.xib; sourceTree = "<group>"; };
+		F91C0909212AC52300E11CD4 /* FIOrderMemberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FIOrderMemberCell.h; sourceTree = "<group>"; };
+		F91C090A212AC52300E11CD4 /* FIOrderMemberCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FIOrderMemberCell.m; sourceTree = "<group>"; };
+		F91C090B212AC52300E11CD4 /* FIOrderMemberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FIOrderMemberCell.xib; sourceTree = "<group>"; };
+		F91C090E212AD26200E11CD4 /* BCMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCMember.h; sourceTree = "<group>"; };
+		F91C090F212AD26200E11CD4 /* BCMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCMember.m; sourceTree = "<group>"; };
 		F93EBC8720C68D380000AE72 /* HttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
 		F93EBC8820C68D380000AE72 /* HttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
 		F93EBC8B20C6908D0000AE72 /* API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
@@ -845,6 +858,9 @@
 				F956723620F4726A00DB825A /* FIPingjiaViewController.m */,
 				F956723520F4726A00DB825A /* FIPingjiaViewController.h */,
 				F956723720F4726A00DB825A /* FIPingjiaViewController.xib */,
+				F91C0904212AC23B00E11CD4 /* FIOrderMemberInfoViewController.h */,
+				F91C0905212AC23B00E11CD4 /* FIOrderMemberInfoViewController.m */,
+				F91C0906212AC23B00E11CD4 /* FIOrderMemberInfoViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -864,6 +880,9 @@
 				F956722520F39D2000DB825A /* FIOrderDetailOrderCell.h */,
 				F956722620F39D2000DB825A /* FIOrderDetailOrderCell.m */,
 				F956722720F39D2000DB825A /* FIOrderDetailOrderCell.xib */,
+				F91C0909212AC52300E11CD4 /* FIOrderMemberCell.h */,
+				F91C090A212AC52300E11CD4 /* FIOrderMemberCell.m */,
+				F91C090B212AC52300E11CD4 /* FIOrderMemberCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -874,6 +893,8 @@
 				F956721220F372F900DB825A /* FIOrderData.h */,
 				F956721320F372F900DB825A /* FIOrderData.m */,
 				F956722F20F4615F00DB825A /* FIOrderDelegate.h */,
+				F91C090E212AD26200E11CD4 /* BCMember.h */,
+				F91C090F212AD26200E11CD4 /* BCMember.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1104,6 +1125,7 @@
 				F9DE265420E4B773007C6D0C /* FIMemberTableViewCell.xib in Resources */,
 				F9DE267120E4F94D007C6D0C /* FINickNameViewController.xib in Resources */,
 				D9116E7220EE5BB400F978F0 /* FIHorizontalTextFieldCell.xib in Resources */,
+				F91C0908212AC23B00E11CD4 /* FIOrderMemberInfoViewController.xib in Resources */,
 				F956722E20F452C900DB825A /* FIOrderDetail1ViewController.xib in Resources */,
 				F9545C7520DBBC4400531C66 /* FISectionHeaderCell.xib in Resources */,
 				F9D4A44920EF5E8D004667E5 /* FIScoreTableViewCell.xib in Resources */,
@@ -1116,6 +1138,7 @@
 				F96940F320E386BC00968B27 /* FIUserInfoViewController.xib in Resources */,
 				D91481B420E9F2280045C5E6 /* FIPropListCell.xib in Resources */,
 				F956723920F4726A00DB825A /* FIPingjiaViewController.xib in Resources */,
+				F91C090D212AC52300E11CD4 /* FIOrderMemberCell.xib in Resources */,
 				F93EBCE320C7B6DD0000AE72 /* FILoginViewController.xib in Resources */,
 				F956721920F3765D00DB825A /* FIOrderListCell.xib in Resources */,
 				F90DA8AE20FE3ADE0077BD94 /* GKPhotoBrowser.bundle in Resources */,
@@ -1238,6 +1261,7 @@
 				F90DA8AB20FE3ADE0077BD94 /* GKPhotoBrowser.m in Sources */,
 				F956722D20F452C900DB825A /* FIOrderDetail1ViewController.m in Sources */,
 				F9545C4D20DB7CA900531C66 /* FIHomeManagerCell.m in Sources */,
+				F91C0907212AC23B00E11CD4 /* FIOrderMemberInfoViewController.m in Sources */,
 				F90DA8AA20FE3ADE0077BD94 /* UIScrollView+GKGestureHandle.m in Sources */,
 				F910C1752100CE8300760D9D /* FIMessageViewController.m in Sources */,
 				F956723320F471FA00DB825A /* FIComplainViewController.m in Sources */,
@@ -1254,6 +1278,7 @@
 				F90DA8AC20FE3ADE0077BD94 /* GKPhoto.m in Sources */,
 				F9545C4220D8F47B00531C66 /* FIFindPasswordViewController.m in Sources */,
 				F9545C8320DBC9AB00531C66 /* FICenterGainCell.m in Sources */,
+				F91C0910212AD26200E11CD4 /* BCMember.m in Sources */,
 				F94F098120DCAA140076A073 /* FITeam.m in Sources */,
 				F915535420EB4EDE00E29FC1 /* FIAddAliPayViewController.m in Sources */,
 				F9D4A44820EF5E8D004667E5 /* FIScoreTableViewCell.m in Sources */,
@@ -1284,6 +1309,7 @@
 				F90EC91F20E0C97A008CD05A /* FIStatusTextField.m in Sources */,
 				F93EBD0420C7E6070000AE72 /* SFHFKeychainUtils.m in Sources */,
 				F96940F920E38C0B00968B27 /* FIAccontSettingViewController.m in Sources */,
+				F91C090C212AC52300E11CD4 /* FIOrderMemberCell.m in Sources */,
 				D9116E7E20EE75F100F978F0 /* FIPassWordManagerViewController.m in Sources */,
 				F93EBC8920C68D380000AE72 /* HttpRequest.m in Sources */,
 				D91481B520E9F2280045C5E6 /* FIPropListCell.m in Sources */,

@@ -11,12 +11,14 @@
 @protocol FIOrderDelegate <NSObject>
 @optional
 -(void)uploadPingzheng:(NSString *)orderId;
--(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone;
-
+//-(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone;
+-(void)contactMemeber:(NSString * )userid;
 
 -(void)cuiConfirm:(NSString *)orderId;
 -(void)confirmPay:(NSString *)orderId;
 -(void)complain:(FIOrderData *)orderData orderType:(OrderType)type;
 -(void)pingjia:(NSString *)orderId orderType:(OrderType)type;
 -(void)getPingzheng:(NSString *)image;//获得凭证
+
+//-(void)memberInfo:(NSString *)
 @end

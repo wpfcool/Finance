@@ -306,7 +306,8 @@
 }
 -(void)contactMember:(id)sender{
     //联系会员
-    [_delegate contactMemeber:self.orderData.order_id orderType:self.orderType Phone:self.orderData.phone];
+//    [_delegate contactMemeber:self.orderData.order_id orderType:self.orderType Phone:self.orderData.phone];
+    [_delegate contactMemeber:self.orderData.user_id];
 }
 
 -(void)cuiConfirmClick:(id)sender{

@@ -35,7 +35,6 @@
 }
 
 +(NSString *)getTime:(NSInteger)time{
-    
     //天
     NSInteger day = time / 86400;
     NSInteger hour = (time - day* 86400)/3600;

@@ -11,8 +11,9 @@
 @interface FIOrderData : NSObject
 @property (nonatomic,copy)NSString *order_id;
 @property (nonatomic,copy)NSString *orderNum;//订单数量
-
 @property (nonatomic,copy)NSString *orderNo;//订单号
+
+@property (nonatomic,copy)NSString *user_id;//订单号
 @property (nonatomic,copy)NSString *price;
 @property (nonatomic,copy)NSString *overNumber;//剩余云矿机匹配数量
 @property (nonatomic,copy)NSString *number;//一共需要匹配云矿机数量

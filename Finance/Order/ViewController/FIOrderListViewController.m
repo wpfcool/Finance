@@ -13,7 +13,7 @@
 #import "FIOrderDetail1ViewController.h"
 #import "FIPingjiaViewController.h"
 #import "HttpRequest.h"
-
+#import "FIOrderMemberInfoViewController.h"
 @interface FIOrderListViewController ()<UITableViewDelegate,UITableViewDataSource,FIOrderDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic,assign)NSInteger currentPage;
@@ -201,6 +201,11 @@
         }];
 
     
+}
+-(void)contactMemeber:(NSString *)userid{
+    FIOrderMemberInfoViewController * vc = [[FIOrderMemberInfoViewController alloc]init];
+    vc.userid = userid;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)contactMemeber:(NSString *)orderId orderType:(OrderType)type Phone:(NSString *)phone{
     

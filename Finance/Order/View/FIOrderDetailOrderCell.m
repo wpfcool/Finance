@@ -80,7 +80,6 @@
         if(_orderType & OrderTypeWaitingPay){
             [_delegate uploadPingzheng:self.orderData.order_id];
             
-
         }
         else if(_orderType & OrderTypeWaitingConfirm){
 //            [_delegate cuiConfirm:self.orderData.order_id];

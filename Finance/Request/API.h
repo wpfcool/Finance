@@ -9,7 +9,7 @@
 #ifndef API_h
 #define API_h
 
-#define HOST @"http://45.56.88.145:80/"
+#define HOST @"http://17hbc.com/"
 
 //登录
 #define Login_URL HOST "api/login/login"
@@ -88,6 +88,8 @@
 #define ORDERPHONE_URL HOST  "api/order/getorderphone"
 //投诉
 #define COMPLAIN_URL HOST  "api/order/lodge"
+//订单联系会员
+#define ORDER_MEMBER_INFO_URL HOST "api/user/getuser"
 //
 //评价
 #define PingjaURL HOST  "api/order/score"

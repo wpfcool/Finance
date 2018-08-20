@@ -45,11 +45,7 @@
     
     [attar addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x999999, 1) range:NSMakeRange(0, string.length)];
         [attar addAttribute:NSFontAttributeName value: [UIFont systemFontOfSize:13] range:NSMakeRange(0, string.length)];
-    
         [attar addAttribute:NSForegroundColorAttributeName value:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7 ,6)];
-//    attar.yy_font = [UIFont systemFontOfSize:13];
-//    attar.yy_color = HEX_UICOLOR(0x999999, 1);
-//    [attar yy_setColor:HEX_UICOLOR(0x3E83FF, 1) range:NSMakeRange(7, 6)];
     self.agreeLabel.attributedText = attar;
     
     self.agreeLabel.userInteractionEnabled = YES;
@@ -78,10 +74,9 @@
     
     if(![SysUtils isSafePasswordNumber:_passwordField.text]){
         [self showAlert:@"交易密码必须为6位数字"];
-
         return;
     }
-    if(![SysUtils isBankNumber:_bankField.text]){
+    if(![SysUtils isBankNumber:_bankNoField.text]){
         [self showAlert:@"银行卡号必须为数字"];
         return;
     }
