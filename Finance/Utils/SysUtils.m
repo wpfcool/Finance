@@ -75,7 +75,7 @@
 
 +(BOOL)isPhoneNumber:(NSString *)phoneNumber{
     
-    NSString *regex = @"^1[34578]\\d{9}$";
+    NSString *regex = @"^1[345789]\\d{9}$";
     return [SysUtils chenkString:phoneNumber regex:regex];
 }
 + (BOOL)chenkString:(NSString *)str regex:(NSString *)regex
