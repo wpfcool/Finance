@@ -11,6 +11,7 @@
 @interface BCMember : NSObject
 @property (nonatomic,copy)NSString *username;
 @property (nonatomic,copy)NSString *trueName;
+@property (nonatomic,copy)NSString *bankName;
 
 @property (nonatomic,copy)NSString *bankCard;
 

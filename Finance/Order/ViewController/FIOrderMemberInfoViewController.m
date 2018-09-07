@@ -37,7 +37,7 @@
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return 6;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FIOrderMemberCell * cell = [tableView dequeueReusableCellWithIdentifier:@"memberindentirer" forIndexPath:indexPath];
@@ -61,6 +61,14 @@
             break;
         case 2:
         {
+            cell.titleLabel.text = @"开户银行:";
+            cell.contentLabel.text = self.memeber.bankName;
+            cell.rightButton.hidden = YES;
+            
+        }
+            break;
+        case 3:
+        {
             cell.titleLabel.text = @"银行卡号";
             cell.contentLabel.text = self.memeber.bankCard;
             cell.rightButton.hidden = NO;
@@ -68,7 +76,7 @@
 
         }
             break;
-        case 3:
+        case 4:
         {
             cell.titleLabel.text = @"支付宝账号";
             cell.contentLabel.text = self.memeber.alipayNum;
@@ -76,7 +84,7 @@
 
         }
             break;
-        case 4:
+        case 5:
         {
             cell.titleLabel.text = @"手机号";
             cell.contentLabel.text = self.memeber.phone;

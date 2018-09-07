@@ -33,7 +33,6 @@
     _orderData = orderData;
     self.orderNoLabel.text = orderData.orderNo;
     self.orderPriceLabel.text = [NSString stringWithFormat:@"¥%@",orderData.price];
-    self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",orderData.number];
     
    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     
@@ -45,8 +44,11 @@
 
 -(void)setOrderType:(OrderType)orderType{
     _orderType = orderType;
-    
+    self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",self.orderData.orderNum];
+
     if(orderType & OrderTypeWaitingMatch){
+        self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",self.orderData.overNumber];
+
         self.heightConstraint.constant = 125;
         self.timeView.hidden = YES;
         self.buttonView.hidden = YES;

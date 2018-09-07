@@ -196,6 +196,10 @@
             [self hiddenHUD];
             if(!error){
                 [self.view makeToast:@"上传成功" duration:2.0];
+                [self.tableView reloadData];
+            }else{
+                [self.view makeToast:@"上传失败" duration:2.0];
+
             }
             
         }];

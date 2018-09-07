@@ -29,6 +29,8 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"订单详情";
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.confirmButton.layer.cornerRadius = 22;
+    self.complainButton.layer.cornerRadius = 22;
     if((self.orderType & OrderTypeSell) &&( self.orderType & OrderTypeWaitingConfirm) ){
         self.bottomHeightConstraint.constant = 50;
         self.bottomView.hidden = NO;
@@ -154,7 +156,11 @@
         [self hiddenHUD];
         if(!error){
             [self.view makeToast:@"上传成功" duration:2.0];
+        }else{
+            [self.view makeToast:@"上传失败" duration:2.0];
+            
         }
+        
         
     }];
     

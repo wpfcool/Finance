@@ -22,6 +22,7 @@
 #import "FIUserInfoViewController.h"
 #import "FIOrderPageViewController.h"
 #import "FIMessageViewController.h"
+#import <MJRefresh/MJRefresh.h>
 @interface FIHomeViewController ()<UITableViewDelegate,UITableViewDataSource,FIHomeManagerCellDelegate,FIHomeOrderViewCellDelegate,FIHomeHeaderViewDelegate>
 @property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)FIHomeHeaderView * headerView;
@@ -78,10 +79,10 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
                    action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton ];
     
-    
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshData:)];
     UIView * header = [[UIView alloc] initWithFrame:CGRectMake( 0, 0, SCREEN_WIDTH, 247)];
     [header addSubview:self.headerView];
     self.tableView.tableHeaderView =header;
@@ -90,19 +91,24 @@ static NSString * orderIdeintifier = @"orederIdeintifier";
     [_tableView registerNib:[UINib nibWithNibName:@"FIHomeManagerCell" bundle:nil] forCellReuseIdentifier:managerIdeintifier];
     [_tableView registerNib:[UINib nibWithNibName:@"FISectionHeaderCell" bundle:nil] forCellReuseIdentifier:orderHeaderIdeintifier];
     [_tableView registerNib:[UINib nibWithNibName:@"FIHomeOrderViewCell" bundle:nil] forCellReuseIdentifier:orderIdeintifier];
+    [self loadData];
+
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+-(void)freshData:(id)sender{
     [self loadData];
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
 
 -(void)loadData{
     
     NSDictionary * dic = @{@"user_id":[FIUser shareInstance].user_id};
     [self asyncSendRequestWithURL:HOME_URL param:dic RequestMethod:POST showHUD:YES result:^(NSDictionary * dic, NSError *error) {
+        [self.tableView.mj_header endRefreshing];
         if(!error){
             self.homeData = [FIHomeData yy_modelWithJSON:dic];
             self.headerView.totalMoneyLabel.text = self.homeData.sum;

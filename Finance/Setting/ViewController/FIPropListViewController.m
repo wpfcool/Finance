@@ -61,7 +61,13 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     FIPropData * item = self.propList[indexPath.row];
     cell.nameLabel.text = item.name;
-    [cell.bgImageView sd_setImageWithURL:[NSURL URLWithString:item.img]];
+    [cell.bgImageView sd_setImageWithURL:[NSURL URLWithString:item.img] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        if(image==nil){
+            cell.nameLabel.textColor =RGBA_UICOLOR(0, 0, 0, 1);
+            cell.priceLabel.textColor =RGBA_UICOLOR(0, 0, 0, 1);
+
+        }
+    }];
     cell.priceLabel.text = [NSString stringWithFormat:@"%@ pcs",item.price];
     return cell;
 }

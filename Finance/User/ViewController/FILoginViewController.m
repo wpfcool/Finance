@@ -52,6 +52,11 @@
     NSDictionary * dic = @{@"userName":_userNameTextField.text,@"password":_passworldTextField.text,@"system_num":[SysUtils uuid],@"version_num":[SysUtils shortVersion],@"source":@"2"};
     [self asyncSendRequestWithURL:Login_URL param:dic RequestMethod:POST showHUD:YES result:^(id dic, NSError *error) {
         if(dic){
+            
+            NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+            
+            [userDefault setObject:dic forKey:@"LOGIN"];
+            [userDefault synchronize];
             FIUser *user =[FIUser shareInstance];
             user.userName = dic[@"userName"];
             user.user_id = dic[@"user_id"];

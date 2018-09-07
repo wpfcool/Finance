@@ -181,6 +181,11 @@
     return 10;
 }
 - (IBAction)logoutClick:(id)sender {
+    
+    NSUserDefaults * userdefault = [NSUserDefaults standardUserDefaults];
+    [userdefault removeObjectForKey:@"LOGIN"];
+//    NSDictionary * dic = [userDefault objectForKey:@"LOGIN"];
+
     AppDelegate * deleage =(AppDelegate *) [UIApplication sharedApplication].delegate;
     [deleage loginRootViewController];
 }

@@ -34,7 +34,23 @@
     // 统一设置状态栏样式
     [WRNavigationBar wr_setDefaultNavBarShadowImageHidden:NO];
 
-    [self loginRootViewController];
+    
+    NSUserDefaults * userDefault = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dic = [userDefault objectForKey:@"LOGIN"];
+
+    if(dic){
+        
+        FIUser *user =[FIUser shareInstance];
+        user.userName = dic[@"userName"];
+        user.user_id = dic[@"user_id"];
+        user.token = dic[@"token"];
+        [self homeRootViewController];
+
+    }else{
+        [self loginRootViewController];
+
+    }
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -28,7 +28,6 @@
     _orderData = orderData;
     self.orederNOLabel.text =[NSString stringWithFormat:@"订单编号:%@",orderData.orderNo] ;
     self.priceLabel.text = [NSString stringWithFormat:@"¥%@",orderData.price];
-    self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",orderData.number];
     self.macthLabel.text = [NSString stringWithFormat:@"%@",[self getDate:orderData.app_time]];
     self.userNameLabel.text = orderData.buy_name;
 //    self.timeLabel.text = [self getTime:orderData.pay_time];
@@ -36,8 +35,11 @@
 -(void)setOrderType:(OrderType)orderType{
     _orderType = orderType;
     _bottomButton.hidden = YES;
+    self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",self.orderData.orderNum];
 
     if(_orderType & OrderTypeWaitingMatch){
+        self.pcsLabel.text = [NSString stringWithFormat:@"%@  pcs",self.orderData.overNumber];
+
         self.matchTmpLabel.text = @"申请时间";
        self.macthLabel.text = [NSString stringWithFormat:@"%@",[self getDate:self.orderData.add_time]];
     }else{

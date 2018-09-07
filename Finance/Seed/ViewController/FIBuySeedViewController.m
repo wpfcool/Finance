@@ -67,7 +67,7 @@
     
     UILabel * countTmpLabel = [[UILabel alloc]init];
     countTmpLabel.font = [UIFont systemFontOfSize:11];
-    countTmpLabel.text  = @"播种次数(次)";
+    countTmpLabel.text  = @"矿机购买次数(次)";
     countTmpLabel.textColor = [UIColor whiteColor];
     [self.headerView addSubview:countTmpLabel];
     

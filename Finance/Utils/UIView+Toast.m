@@ -20,7 +20,7 @@
     hud.detailsLabel.font = [UIFont boldSystemFontOfSize:16];
     hud.margin = 10;
 
-    hud.offset = CGPointMake(0.f, self.frame.size.height/2.0-150);
+    hud.offset = CGPointMake(0.f, [UIScreen mainScreen].bounds.size.height/2.0-150);
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.bezelView.color = [UIColor blackColor];
     hud.contentColor = [UIColor whiteColor];

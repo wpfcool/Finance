@@ -7,7 +7,7 @@
 //
 
 #import "FIOrderMemberCell.h"
-
+#import "UIView+Toast.h"
 @implementation FIOrderMemberCell
 
 - (void)awakeFromNib {
@@ -27,6 +27,8 @@
         UIPasteboard * paste = [UIPasteboard generalPasteboard];
         [paste setString:self.contentLabel.text];
         
+        [self makeToast:@"复制成功" duration:2.0];
+                
     }else if([btn.titleLabel.text isEqualToString:@"拨打"]){
         NSLog(@"xxxxxx");
         NSMutableString * str=[[NSMutableString alloc] initWithFormat:@"tel:%@",self.contentLabel.text];
